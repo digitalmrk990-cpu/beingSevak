@@ -685,26 +685,21 @@ DONATION
 }
 
 .donate-btn{
-  display:inline-block;
+    display:inline-block;
+    padding:15px 36px;
+    background:#00a3da;
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:700;
+    transition:0.4s;
+    box-shadow:
+    0 10px 25px rgba(11,77,120,0.25);
+  }
 
-  background:#fff;
-  color:#00a3da;
-
-  text-decoration:none;
-
-  padding:14px 28px;
-
-  border-radius:50px;
-
-  font-size:14px;
-  font-weight:800;
-
-  transition:0.3s;
-}
-
-.donate-btn:hover{
-  transform:translateY(-4px);
-}
+  .donate-btn:hover{
+    background: var(--pink-dark); transform: translateY(-1px); 
+  }
 
 
 /* MOBILE */

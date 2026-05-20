@@ -2723,8 +2723,7 @@ body{
   }
 
   .donate-btn:hover{
-    transform:translateY(-5px);
-    background:#083552;
+    background: var(--pink-dark); transform: translateY(-1px); 
   }
 
 /* RESPONSIVE */
