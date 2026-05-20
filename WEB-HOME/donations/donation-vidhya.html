@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Donate Inline – BSCT</title>
+<title>Mission Vidhya – Donate | BSCT</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
@@ -90,7 +90,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 /* ── BODY ── */
 .form-body { padding: 28px 32px 32px; }
 
-/* ── MISSION SELECT ── */
+/* ── TABS ── */
 .field-group { margin-bottom: 22px; }
 .field-group label {
   display: block;
@@ -101,64 +101,64 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   margin-bottom: 8px;
 }
 .field-group label .req { color: #e53935; }
-.dist-tabs {
+.vidya-tabs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-.dist-tab {
+.vidya-tab {
   flex: 1;
-  min-width: 140px;
+  min-width: 160px;
   padding: 12px 10px;
   border: 2px solid var(--border);
   border-radius: 12px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--mid);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
 }
-.dist-tab i { display: block; font-size: 1.3rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
-.dist-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
-.dist-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
-.dist-tab.active i { color: var(--white); }
+.vidya-tab i { display: block; font-size: 1.3rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
+.vidya-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
+.vidya-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
+.vidya-tab.active i { color: var(--white); }
 
-/* ── DISTRIBUTION PANELS ── */
-.dist-panel { display: none; animation: panelFade 0.4s ease; }
-.dist-panel.active { display: block; }
+/* ── PANELS ── */
+.vidya-panel { display: none; animation: panelFade 0.4s ease; }
+.vidya-panel.active { display: block; }
 @keyframes panelFade {
   0% { opacity:0; transform:translateY(10px); }
   100% { opacity:1; transform:translateY(0); }
 }
-.dist-desc {
+.vidya-desc {
   background: #f0f8ff;
   border: 2px solid var(--border);
   border-radius: 14px;
   padding: 20px 22px;
   margin-bottom: 22px;
 }
-.dist-desc h3 {
+.vidya-desc h3 {
   font-family:'Montserrat',sans-serif;
   font-size: 1.1rem;
   color: var(--navy);
   margin-bottom: 10px;
 }
-.dist-desc h3 i { color: var(--cyan); margin-right: 8px; }
-.dist-desc p {
+.vidya-desc h3 i { color: var(--cyan); margin-right: 8px; }
+.vidya-desc p {
   font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.7;
   margin-bottom: 14px;
 }
-.dist-impact {
+.vidya-impact {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.dist-impact span {
+.vidya-impact span {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -166,7 +166,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 0.78rem;
   color: var(--text-mid);
 }
-.dist-impact span strong { color: var(--cyan); }
+.vidya-impact span strong { color: var(--cyan); }
 
 /* ── AMOUNT ── */
 .amount-row {
@@ -284,7 +284,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 1.3rem;
   color: var(--cyan);
 }
-.donate-btn-inline {
+.donate-btn-vidya {
   background: linear-gradient(135deg, var(--cyan), var(--mid));
   color: var(--white);
   border: none;
@@ -299,7 +299,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.donate-btn-inline::before {
+.donate-btn-vidya::before {
   content: '';
   position: absolute;
   top: 0; left: -100%;
@@ -307,16 +307,16 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: 0.5s;
 }
-.donate-btn-inline:hover::before { left: 100%; }
-.donate-btn-inline:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
+.donate-btn-vidya:hover::before { left: 100%; }
+.donate-btn-vidya:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
-  .dist-tab { min-width: 100%; }
+  .vidya-tab { min-width: 100%; }
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
-  .donate-btn-inline { width: 100%; text-align: center; }
+  .donate-btn-vidya { width: 100%; text-align: center; }
 }
 </style>
 </head>
@@ -324,70 +324,109 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 <div class="donate-wrap">
   <div class="form-header">
-    <h2>Food Distribution Donation</h2>
-    <p>Your contribution helps feed those who need it most</p>
+    <h2><i class="fas fa-graduation-cap"></i> Mission Vidhya Donation</h2>
+    <p>Empower children through education, technology &amp; care</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="form-body">
     <div class="field-group">
-      <label>Choose Distribution Type <span class="req">*</span></label>
-      <div class="dist-tabs" id="distTabs">
-        <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
-          <i class="fas fa-shopping-basket"></i> Ration Distribution
+      <label>Choose Programme <span class="req">*</span></label>
+      <div class="vidya-tabs" id="vidyaTabs">
+        <button class="vidya-tab active" data-vidya="edukit" onclick="selectVidya(this)">
+          <i class="fas fa-pencil-alt"></i> Education Kit
         </button>
-        <button class="dist-tab" data-dist="snacks" onclick="selectDist(this)">
-          <i class="fas fa-cookie"></i> Snacks Distribution
+        <button class="vidya-tab" data-vidya="nutrikit" onclick="selectVidya(this)">
+          <i class="fas fa-apple-alt"></i> Nutrition Kit
         </button>
-        <button class="dist-tab" data-dist="meal" onclick="selectDist(this)">
-          <i class="fas fa-utensils"></i> Meal Distribution
+        <button class="vidya-tab" data-vidya="emergency" onclick="selectVidya(this)">
+          <i class="fas fa-ambulance"></i> Emergency Case
         </button>
-        <button class="dist-tab" data-dist="roti" onclick="selectDist(this)">
-          <i class="fas fa-bread-slice"></i> Roti Drive
+        <button class="vidya-tab" data-vidya="computer" onclick="selectVidya(this)">
+          <i class="fas fa-desktop"></i> Computer Centre
+        </button>
+        <button class="vidya-tab" data-vidya="patshala" onclick="selectVidya(this)">
+          <i class="fas fa-school"></i> Digital Patshala
+        </button>
+        <button class="vidya-tab" data-vidya="ai" onclick="selectVidya(this)">
+          <i class="fas fa-robot"></i> AI Centre
         </button>
       </div>
     </div>
 
-    <!-- Description Panels -->
-    <div class="dist-panel active" id="panel-ration">
-      <div class="dist-desc">
-        <h3><i class="fas fa-shopping-basket"></i> Ration Distribution</h3>
-        <p>Support families with essential dry ration kits including rice, wheat, dal, oil, spices, and other daily necessities. Your donation ensures that underprivileged families don't go to bed hungry.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,500</strong> feeds a family for a month</span>
-          <span><strong>₹5,000</strong> supports 3 families</span>
+    <!-- Education Kit -->
+    <div class="vidya-panel active" id="panel-edukit">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-pencil-alt"></i> Education Kit Distribution</h3>
+        <p>Provide school essentials — notebooks, pencils, bags, stationery, and uniforms — to underprivileged children. Each kit ensures a child has everything they need to attend school with confidence and dignity.</p>
+        <div class="vidya-impact">
+          <span><strong>₹500</strong> kits one child for a year</span>
+          <span><strong>₹5,000</strong> supports 10 children</span>
+          <span><strong>₹25,000</strong> covers an entire classroom</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-snacks">
-      <div class="dist-desc">
-        <h3><i class="fas fa-cookie"></i> Snacks Distribution</h3>
-        <p>Provide nutritious snacks to children and elderly in need. Our snack distribution programs reach schools, orphanages, and old age homes, ensuring regular healthy bites for those who need them most.</p>
-        <div class="dist-impact">
-          <span><strong>₹500</strong> provides snacks for 10 children</span>
-          <span><strong>₹2,500</strong> covers a full distribution drive</span>
+    <!-- Nutrition Kit -->
+    <div class="vidya-panel" id="panel-nutrikit">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-apple-alt"></i> Nutrition Kit Distribution</h3>
+        <p>Fight classroom hunger with nutritious food kits containing healthy snacks, fortified biscuits, fruits, and milk. Proper nutrition boosts concentration, attendance, and academic performance.</p>
+        <div class="vidya-impact">
+          <span><strong>₹300</strong> provides monthly nutrition for one child</span>
+          <span><strong>₹3,000</strong> supports 10 children for a month</span>
+          <span><strong>₹15,000</strong> covers a full class for a term</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-meal">
-      <div class="dist-desc">
-        <h3><i class="fas fa-utensils"></i> Meal Distribution</h3>
-        <p>Help us serve hot, nutritious meals to homeless individuals and families. Each meal provides balanced nutrition to those who otherwise would have nothing to eat. Together we can fight hunger.</p>
-        <div class="dist-impact">
-          <span><strong>₹50</strong> provides one full meal</span>
-          <span><strong>₹10,000</strong> serves 200 meals</span>
+    <!-- Emergency Case History -->
+    <div class="vidya-panel" id="panel-emergency">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-ambulance"></i> Emergency Case History Support</h3>
+        <p>Help children facing medical emergencies, family crises, or sudden hardship. Your donation covers urgent medical bills, school fee continuity, and immediate relief so no child drops out due to an emergency.</p>
+        <div class="vidya-impact">
+          <span><strong>₹2,000</strong> covers emergency medical checkup</span>
+          <span><strong>₹10,000</strong> supports a family in crisis</span>
+          <span><strong>₹25,000</strong> ensures a child's full academic year</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-roti">
-      <div class="dist-desc">
-        <h3><i class="fas fa-bread-slice"></i> Roti Drive</h3>
-        <p>Our Roti Drive collects and distributes fresh rotis to the hungry. Your contribution supports the logistics, ingredients, and volunteers who make this daily mission possible. Every roti brings a smile.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,000</strong> feeds 50 people with rotis</span>
-          <span><strong>₹7,000</strong> supports a week-long drive</span>
+    <!-- Computer Centre -->
+    <div class="vidya-panel" id="panel-computer">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-desktop"></i> Seva Computer Centre</h3>
+        <p>Bridge the digital divide by supporting our computer education centre. Children learn basic computing, MS Office, internet skills, and coding fundamentals — preparing them for the modern world.</p>
+        <div class="vidya-impact">
+          <span><strong>₹1,000</strong> sponsors a month of computer training</span>
+          <span><strong>₹12,000</strong> supports a full course for one child</span>
+          <span><strong>₹50,000</strong> helps maintain the centre for a month</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Patshala -->
+    <div class="vidya-panel" id="panel-patshala">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-school"></i> Sevak Digital Patshala</h3>
+        <p>Our Digital Patshala brings smart classrooms to rural and underprivileged areas. We provide tablets, projectors, e-learning content, and trained instructors to deliver quality digital education.</p>
+        <div class="vidya-impact">
+          <span><strong>₹1,500</strong> provides a tablet for one child</span>
+          <span><strong>₹15,000</strong> sets up a smart classroom corner</span>
+          <span><strong>₹75,000</strong> fully equips a Digital Patshala</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Centre -->
+    <div class="vidya-panel" id="panel-ai">
+      <div class="vidya-desc">
+        <h3><i class="fas fa-robot"></i> Sevak AI Centre</h3>
+        <p>Introduce children to the future with our AI Learning Centre. Students explore artificial intelligence, robotics, and coding through hands-on projects. Your support builds tomorrow's innovators today.</p>
+        <div class="vidya-impact">
+          <span><strong>₹2,000</strong> sponsors a month of AI learning</span>
+          <span><strong>₹20,000</strong> funds a robotics workshop</span>
+          <span><strong>₹1,00,000</strong> helps establish the AI Centre</span>
         </div>
       </div>
     </div>
@@ -397,12 +436,12 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
       <div class="amount-row">
         <div class="amount-box">
           <span class="rupee">₹</span>
-          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateInlineTotal()"/>
+          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateTotal()"/>
         </div>
-        <button class="amt-preset" onclick="setInlineAmt(500,this)">₹500</button>
-        <button class="amt-preset active" onclick="setInlineAmt(1000,this)">₹1,000</button>
-        <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
-        <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
+        <button class="amt-preset" onclick="setAmt(500,this)">₹500</button>
+        <button class="amt-preset active" onclick="setAmt(1000,this)">₹1,000</button>
+        <button class="amt-preset" onclick="setAmt(2500,this)">₹2,500</button>
+        <button class="amt-preset" onclick="setAmt(5000,this)">₹5,000</button>
       </div>
     </div>
 
@@ -432,9 +471,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <div class="action-row">
       <div class="total-box">
         <span class="total-label">Donation Total:</span>
-        <span class="total-val" id="inlineTotal">₹1,000.00</span>
+        <span class="total-val" id="totalDisplay">₹1,000.00</span>
       </div>
-      <button class="donate-btn-inline" onclick="handleInlineDonate()">
+      <button class="donate-btn-vidya" onclick="handleDonate()">
         <i class="fas fa-heart"></i> Donate Now
       </button>
     </div>
@@ -442,23 +481,26 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 </div>
 
 <script>
-function selectDist(el) {
-  document.querySelectorAll('.dist-tab').forEach(b => b.classList.remove('active'));
+function selectVidya(el) {
+  document.querySelectorAll('.vidya-tab').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.querySelectorAll('.dist-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + el.dataset.dist).classList.add('active');
+  document.querySelectorAll('.vidya-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + el.dataset.vidya).classList.add('active');
 }
-function setInlineAmt(val, btn) {
+
+function setAmt(val, btn) {
   document.getElementById('donateAmount').value = val;
   document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  updateInlineTotal();
+  updateTotal();
 }
-function updateInlineTotal() {
+
+function updateTotal() {
   const n = parseFloat(document.getElementById('donateAmount').value) || 0;
-  document.getElementById('inlineTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  document.getElementById('totalDisplay').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
-function handleInlineDonate() {
+
+function handleDonate() {
   const amt = document.getElementById('donateAmount').value;
   const name = document.getElementById('fname').value;
   const email = document.getElementById('email').value;
