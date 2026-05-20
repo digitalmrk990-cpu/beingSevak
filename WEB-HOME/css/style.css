@@ -18,17 +18,7 @@
   --shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-/*html { scroll-behavior: smooth; }*/
-html,
-body{
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-/* Sections ko normal height do */
-section{
-  min-height: auto !important;
-  height: auto !important;
-}
+html { scroll-behavior: smooth; }
 body{font-family: "Times New Roman", Times, serif;}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -1219,7 +1209,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 .projects-hero .overlay{
   position:absolute;
   inset:0;
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #1a4080 100%);
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -1691,10 +1681,59 @@ body{
 /* ============================================
    IMPACT SECTION
    ============================================ */
+
+
+
+   /* Keep Same Background */
 .impact-section {
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #1a4080 100%);
-  padding: 80px 20px;
+  background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+  padding: 20px 10px;
 }
+
+/* Box Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* Updated Box Style */
+.stat-item {
+  background: rgba(255,255,255,0.15); /* changed color */
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+
+  padding: 20px 15px; /* height kam */
+  min-height: 140px;  /* box smaller */
+
+  transition: 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* Hover */
+.stat-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.22);
+}
+
+/* Number */
+.stat-num {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px; /* thoda small */
+  font-weight: 900;
+  color: #ffffff; /* changed */
+  margin-bottom: 8px;
+}
+
+/* Label */
+.stat-label {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
 .impact-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -1710,7 +1749,7 @@ body{
 }
 .impact-title p { color: rgba(255,255,255,0.7); font-size: 16px; }
 
-.stats-grid {
+/*.stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
@@ -1842,18 +1881,48 @@ body{
     margin-bottom:20px;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     border-left:5px solid #00a3da;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Blue Hover Effect */
+.info-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-100%;
+    width:100%;
+    height:100%;
+    background:#00a3da;
+    transition:0.5s ease;
+    z-index:-1;
+}
+
+/* Hover */
+.info-card:hover::before{
+    bottom:0;
+}
+
+/* Text White on Hover */
+.info-card:hover h3,
+.info-card:hover p{
+    color:#fff;
 }
 
 .info-card h3{
     font-size:24px;
     color:#00a3da;
     margin-bottom:8px;
+    transition:0.4s;
 }
 
 .info-card p{
     font-size:18px;
     line-height:1.7;
     color:#555;
+    transition:0.4s;
 }
 
 .second-card{
