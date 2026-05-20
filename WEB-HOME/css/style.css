@@ -2015,12 +2015,27 @@ body{
 
 /*================= Our Activitie ================= */
 
-/* Layout */
+/* Layout - Auto Rolling Marquee */
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
 .slider-track{
     display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
     gap:35px;
+    width: max-content;
+    animation: scrollActivities 30s linear infinite;
+}
+
+@keyframes scrollActivities {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
 }
 
 /* 3D Card */
@@ -2035,6 +2050,7 @@ body{
     box-shadow:
       0 15px 35px rgba(0,0,0,0.08),
       inset 0 1px 0 rgba(255,255,255,0.7);
+    flex-shrink: 0;
 }
 
 /* Gradient Light */
@@ -2054,7 +2070,7 @@ body{
 /* Image */
 .circle-card img{
     width:100%;
-    height:260px;
+    height:200px;
     object-fit:cover;
     display:block;
     transition:0.6s ease;
@@ -2062,8 +2078,8 @@ body{
 
 /* Bottom Content */
 .circle-card h3{
-    padding:22px;
-    font-size:25px;
+    padding:16px 22px 4px;
+    font-size:22px;
     text-align:center;
     color:#00a3d4;
     background:#fff;
@@ -2071,6 +2087,37 @@ body{
     position:relative;
     z-index:2;
     transition:0.4s;
+}
+
+/* Description */
+.circle-desc {
+    padding: 4px 18px 12px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+    background: #fff;
+    margin: 0;
+}
+
+/* Read More Button */
+.circle-read-more {
+    display: block;
+    text-align: center;
+    padding: 10px 18px 18px;
+    background: #fff;
+    color: #00a3da;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.circle-read-more:hover {
+    color: #007d94;
+    letter-spacing: 1px;
 }
 
 /* Hover Effect */
@@ -2127,8 +2174,16 @@ body{
     }
 
     .circle-card{
-        width:100%;
-        max-width:320px;
+        width:240px;
+    }
+
+    .circle-card img {
+        height: 160px;
+    }
+
+    .slider-track {
+        gap: 20px;
+        animation: scrollActivities 20s linear infinite;
     }
 }
 
@@ -3148,31 +3203,53 @@ body{
 }
 
 .testimonial-wrapper{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.testimonial-card{
-    width:320px;
-    background:#fff;
-    padding:35px 28px;
-    border-radius:25px;
-    position:relative;
-    transition:0.4s;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    width:100%;
     overflow:hidden;
 }
 
+.testimonial-track{
+    display:flex;
+    gap:30px;
+    width:max-content;
+    animation: scrollTestimonials 40s linear infinite;
+}
+
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testimonial-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card{
+    width:260px;
+    background:#fff;
+    padding:22px 20px;
+    border-radius:18px;
+    position:relative;
+    transition:0.4s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+
+/* Blue water fill from bottom */
 .testimonial-card::before{
     content:'';
     position:absolute;
-    top:0;
     left:0;
+    bottom:0;
     width:100%;
-    height:6px;
-    background:linear-gradient(90deg,#00a3da,#4fc3e8);
+    height:0%;
+    background:#00a3da;
+    transition:0.4s ease;
+    z-index:1;
+    border-radius:18px;
+}
+
+.testimonial-card:hover::before{
+    height:100%;
 }
 
 .testimonial-card:hover{
@@ -3180,51 +3257,63 @@ body{
     box-shadow:0 18px 40px rgba(0,0,0,0.12);
 }
 
+/* Keep content above blue layer */
+.testimonial-card > *{
+    position:relative;
+    z-index:2;
+}
+
 .quote{
-    font-size:55px;
+    font-size:36px;
     color:#00a3da;
     line-height:1;
-    margin-bottom:15px;
+    margin-bottom:10px;
+    transition:0.3s ease;
 }
 
 .testimonial-card p{
-    font-size:16px;
+    font-size:14px;
     color:#555;
-    line-height:1.8;
-    margin-bottom:30px;
+    line-height:1.6;
+    margin-bottom:18px;
+    transition:0.3s ease;
 }
 
 .donor-info{
     border-top:1px solid #e5e5e5;
-    padding-top:18px;
+    padding-top:12px;
+    transition:0.3s ease;
 }
 
 .donor-info h4{
-    font-size:20px;
+    font-size:16px;
     color:#0b1c39;
-    margin-bottom:5px;
+    margin-bottom:3px;
+    transition:0.3s ease;
 }
 
 .donor-info span{
-    font-size:14px;
+    font-size:12px;
     color:#00a3da;
     font-weight:600;
+    transition:0.3s ease;
 }
 
-/* Responsive */
+/* White text on hover */
+.testimonial-card:hover .quote,
+.testimonial-card:hover p,
+.testimonial-card:hover .donor-info,
+.testimonial-card:hover .donor-info h4,
+.testimonial-card:hover .donor-info span{
+    color:#fff !important;
+    border-color:rgba(255,255,255,0.3);
+}
+
 @media(max-width:992px){
     .testimonial-card{
-        width:100%;
+        width:220px;
     }
 }
-
-
-
-
-
-
-
-
 
 /* ============================================
    FEATURED SECTION
@@ -3501,6 +3590,29 @@ body{
   .causes-grid { grid-template-columns: repeat(2, 1fr); }
   .featured-grid { grid-template-columns: 1fr; }
   .featured-card.large { height: 340px; }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: #fff;
 }
 
 @media (max-width: 600px) {
