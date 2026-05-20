@@ -18,7 +18,17 @@
   --shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-html { scroll-behavior: smooth; }
+/*html { scroll-behavior: smooth; }*/
+html,
+body{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+/* Sections ko normal height do */
+section{
+  min-height: auto !important;
+  height: auto !important;
+}
 body{font-family: "Times New Roman", Times, serif;}
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -566,7 +576,23 @@ input, select { font-family: inherit; outline: none; border: none; }
 /* ============================================
    HERO SLIDER (IMAGES)
    ============================================ */
+
 .hero-slider {
+  position: relative;
+  width: 90%;        /* full screen se thoda chota */
+  max-width: 1200px; /* maximum width */
+  height: 420px;     /* height kam ki */
+  overflow: hidden;
+  background: #111;
+  margin: 0 auto;    /* center me */
+  border-radius: 20px; /* optional stylish corners */
+}
+
+
+
+
+
+/*.hero-slider {
   position: relative;
   width: 100%;
   height: 580px;
@@ -1405,10 +1431,10 @@ body{
 
 .section-header h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 38px;
+  font-size: 68px;
   font-weight: 800;
   color: var(--navy);
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .section-header p {
@@ -2072,6 +2098,58 @@ body{
 .about-left{
   flex: 1;
   min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 3D Image Container */
+.single-image-box{
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  perspective: 1200px;
+}
+
+/* Image Style */
+.about-img{
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* image cut nahi hogi */
+  border-radius: 30px;
+  
+  /* 3D Effect */
+  transform: rotateY(-6deg) rotateX(4deg);
+  transition: 0.6s ease;
+  
+  /* Shadow */
+  box-shadow:
+    0 25px 45px rgba(0,0,0,0.18),
+    0 10px 20px rgba(244,45,146,0.18);
+
+  background: #fff;
+}
+
+/* Hover Animation */
+.about-img:hover{
+  transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+  .single-image-box{
+    max-width: 100%;
+  }
+
+  .about-img{
+    border-radius: 20px;
+  }
+}
+
+
+/*.about-left{
+  flex: 1;
+  min-width: 320px;
 }
 
 .slider{
@@ -2112,7 +2190,7 @@ body{
 }
 
 .about-right p{
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.9;
   color: #555;
   margin-bottom: 20px;
@@ -2126,7 +2204,66 @@ body{
   flex-wrap: wrap;
 }
 
+
+
 .about-box{
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.4s;
+  border-top: 5px solid #00a3da;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Blue Hover Background */
+.about-box::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: #00a3da;
+  transition: 0.5s ease;
+  z-index: -1;
+}
+
+/* Hover Effect */
+.about-box:hover::before{
+  bottom: 0;
+}
+
+.about-box:hover{
+  transform: translateY(-10px);
+}
+
+/* Text Color Change */
+.about-box:hover h3,
+.about-box:hover p{
+  color: white;
+}
+
+.about-box h3{
+  color: #00a3da;
+  margin-bottom: 15px;
+  font-size: 24px;
+  transition: 0.4s;
+}
+
+.about-box p{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  transition: 0.4s;
+}
+
+/*.about-box{
   flex: 1;
   min-width: 250px;
   background: white;
