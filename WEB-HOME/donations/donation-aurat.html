@@ -97,6 +97,49 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   margin-bottom: 8px;
 }
 .field-group label .req { color: #e53935; }
+
+.freq-toggle {
+  display: flex;
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 4px;
+  border: 2px solid var(--border);
+  margin-bottom: 22px;
+}
+.freq-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.freq-btn.active {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.freq-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: freqFlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes freqFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
 .aurat-tabs {
   display: flex;
   gap: 8px;
@@ -116,17 +159,47 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.aurat-tab i { display: block; font-size: 1.5rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
-.aurat-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
-.aurat-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
-.aurat-tab.active i { color: var(--white); }
+.aurat-tab i { display: block; font-size: 1.5rem; margin-bottom: 6px; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.aurat-tab:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,162,217,0.18); }
+.aurat-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 8px 25px rgba(0,162,217,0.35); transform: translateY(-2px) scale(1.03); }
+.aurat-tab.active i { color: var(--white); transform: scale(1.2); }
+.aurat-tab.active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: waterFlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes waterFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
 
-.aurat-panel { display: none; animation: panelFade 0.4s ease; }
-.aurat-panel.active { display: block; }
-@keyframes panelFade {
-  0% { opacity:0; transform:translateY(10px); }
-  100% { opacity:1; transform:translateY(0); }
+.aurat-panel { display: none; }
+.aurat-panel.active { display: block; animation: panelSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@keyframes panelSlide {
+  0% { opacity: 0; transform: translateY(30px) scale(0.97); clip-path: inset(0 0 20px 0); }
+  100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
+}
+.aurat-panel.active .aurat-desc h3 {
+  animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.aurat-panel.active .aurat-desc p {
+  animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.aurat-panel.active .aurat-impact span {
+  animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.aurat-panel.active .aurat-impact span:nth-child(2) { animation-delay: 0.35s; }
+.aurat-panel.active .aurat-impact span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes fadeUpItem {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 .aurat-desc {
   background: #f0f8ff;
@@ -210,6 +283,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .amt-preset:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 .amt-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+.preset-group { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
 .form-grid {
   display: grid;
@@ -359,16 +434,35 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     </div>
 
     <div class="field-group">
+      <label>Frequency <span class="req">*</span></label>
+      <div class="freq-toggle">
+        <button class="freq-btn active" onclick="selectFreq('once', this)">Just Once</button>
+        <button class="freq-btn" onclick="selectFreq('monthly', this)">Give Monthly</button>
+      </div>
+    </div>
+
+    <div class="field-group">
       <label>Donation Amount <span class="req">*</span></label>
       <div class="amount-row">
         <div class="amount-box">
           <span class="rupee">₹</span>
-          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateTotal()"/>
+          <input type="number" id="donateAmount" value="1250" min="1" oninput="updateTotal()"/>
         </div>
-        <button class="amt-preset" onclick="setAmt(500,this)">₹500</button>
-        <button class="amt-preset active" onclick="setAmt(1000,this)">₹1,000</button>
-        <button class="amt-preset" onclick="setAmt(2500,this)">₹2,500</button>
-        <button class="amt-preset" onclick="setAmt(5000,this)">₹5,000</button>
+        <div class="preset-group once-presets">
+          <button class="amt-preset active" onclick="setAmt(1250,this)">₹1,250</button>
+          <button class="amt-preset" onclick="setAmt(2500,this)">₹2,500</button>
+          <button class="amt-preset" onclick="setAmt(3750,this)">₹3,750</button>
+          <button class="amt-preset" onclick="setAmt(5000,this)">₹5,000</button>
+          <button class="amt-preset" onclick="setAmt(6250,this)">₹6,250</button>
+          <button class="amt-preset" onclick="setAmt(7500,this)">₹7,500</button>
+        </div>
+        <div class="preset-group monthly-presets" style="display:none">
+          <button class="amt-preset active" onclick="setAmt(500,this)">₹500</button>
+          <button class="amt-preset" onclick="setAmt(750,this)">₹750</button>
+          <button class="amt-preset" onclick="setAmt(1000,this)">₹1,000</button>
+          <button class="amt-preset" onclick="setAmt(1250,this)">₹1,250</button>
+          <button class="amt-preset" onclick="setAmt(1500,this)">₹1,500</button>
+        </div>
       </div>
     </div>
 
@@ -411,8 +505,22 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 function selectAurat(el) {
   document.querySelectorAll('.aurat-tab').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.querySelectorAll('.aurat-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.aurat-panel').forEach(p => {
+    p.classList.remove('active');
+    void p.offsetHeight;
+  });
   document.getElementById('panel-' + el.dataset.aurat).classList.add('active');
+}
+
+let donationFreq = 'once';
+function selectFreq(val, btn) {
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  donationFreq = val;
+  document.querySelectorAll('.preset-group').forEach(g => g.style.display = 'none');
+  document.querySelector('.' + val + '-presets').style.display = 'flex';
+  const first = document.querySelector('.' + val + '-presets .amt-preset');
+  if (first) setAmt(parseInt(first.getAttribute('onclick').match(/\d+/)[0]), first);
 }
 
 function setAmt(val, btn) {

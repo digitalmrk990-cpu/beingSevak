@@ -136,6 +136,49 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
   margin-bottom: 10px;
 }
 .s-label .req { color: #e53935; }
+
+.freq-toggle {
+  display: flex;
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 4px;
+  border: 2px solid var(--border);
+  margin-bottom: 20px;
+}
+.freq-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.freq-btn.active {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.freq-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: freqFlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes freqFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
 .s-amt-row {
   display: flex;
   gap: 8px;
@@ -182,72 +225,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
 .s-preset:hover { border-color: var(--cyan); color: var(--cyan); }
 .s-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
 
-.s-field { margin-bottom: 16px; }
-.s-field label {
-  display: block;
-  font-family:'Montserrat',sans-serif;
-  font-weight: 600;
-  font-size: 0.76rem;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-.s-field label .req { color: #e53935; }
-.s-field input, .s-field select, .s-field textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  font-size: 0.85rem;
-  font-family:'Open Sans',sans-serif;
-  color: var(--text-dark);
-  background: #f9fdff;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.s-field input:focus, .s-field select:focus, .s-field textarea:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0,162,217,0.12);
-}
-.s-field textarea { min-height: 70px; resize: vertical; }
-.s-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-/* ── NAV BUTTONS ── */
-.s-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 2px solid var(--border);
-}
-.s-btn {
-  padding: 11px 28px;
-  font-family:'Montserrat',sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-.s-btn-prev {
-  background: #e8edf2;
-  color: var(--text-mid);
-}
-.s-btn-prev:hover { background: #d5dce4; }
-.s-btn-next {
-  background: linear-gradient(135deg, var(--cyan), var(--mid));
-  color: var(--white);
-  box-shadow: 0 6px 20px rgba(0,162,217,0.3);
-}
-.s-btn-next:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,162,217,0.35); }
-.s-btn-next:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
-.s-btn-submit {
-  background: linear-gradient(135deg, var(--green), #1e8c3e);
-  color: var(--white);
-  box-shadow: 0 6px 20px rgba(46,184,92,0.3);
-}
-.s-btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(46,184,92,0.35); }
+.preset-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
 /* ── STEP 3: REVIEW ── */
 .review-box {
@@ -296,12 +274,29 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
     <div class="s-amt-row">
       <div class="s-amt-box">
         <span class="rs">₹</span>
-        <input type="number" id="sAmt" value="1000" min="1" oninput="updateSReview()"/>
+        <input type="number" id="sAmt" value="1250" min="1" oninput="updateSReview()"/>
       </div>
-      <button class="s-preset" onclick="setSAmt(500,this)">₹500</button>
-      <button class="s-preset active" onclick="setSAmt(1000,this)">₹1,000</button>
-      <button class="s-preset" onclick="setSAmt(2500,this)">₹2,500</button>
-      <button class="s-preset" onclick="setSAmt(10000,this)">₹10K</button>
+      <div class="preset-group once-presets">
+        <button class="s-preset active" onclick="setSAmt(1250,this)">₹1,250</button>
+        <button class="s-preset" onclick="setSAmt(2500,this)">₹2,500</button>
+        <button class="s-preset" onclick="setSAmt(3750,this)">₹3,750</button>
+        <button class="s-preset" onclick="setSAmt(5000,this)">₹5,000</button>
+        <button class="s-preset" onclick="setSAmt(6250,this)">₹6,250</button>
+        <button class="s-preset" onclick="setSAmt(7500,this)">₹7,500</button>
+      </div>
+      <div class="preset-group monthly-presets" style="display:none">
+        <button class="s-preset active" onclick="setSAmt(500,this)">₹500</button>
+        <button class="s-preset" onclick="setSAmt(750,this)">₹750</button>
+        <button class="s-preset" onclick="setSAmt(1000,this)">₹1,000</button>
+        <button class="s-preset" onclick="setSAmt(1250,this)">₹1,250</button>
+        <button class="s-preset" onclick="setSAmt(1500,this)">₹1,500</button>
+      </div>
+    </div>
+
+    <div class="s-label" style="margin-top:4px;">Frequency <span class="req">*</span></div>
+    <div class="freq-toggle" style="margin-bottom:18px;">
+      <button class="freq-btn active" onclick="selectFreq('once', this)">Just Once</button>
+      <button class="freq-btn" onclick="selectFreq('monthly', this)">Give Monthly</button>
     </div>
 
     <div class="s-label">Choose Mission</div>
@@ -392,6 +387,17 @@ function goStep(n) {
   });
   currentStep = n;
   updateSReview();
+}
+
+let donationFreq = 'once';
+function selectFreq(val, btn) {
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  donationFreq = val;
+  document.querySelectorAll('.preset-group').forEach(g => g.style.display = 'none');
+  document.querySelector('.' + val + '-presets').style.display = 'flex';
+  const first = document.querySelector('.' + val + '-presets .s-preset');
+  if (first) setSAmt(parseInt(first.getAttribute('onclick').match(/\d+/)[0]), first);
 }
 
 function setSAmt(val, btn) {

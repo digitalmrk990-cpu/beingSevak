@@ -81,6 +81,49 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
   color: var(--navy);
   margin-bottom: 8px;
 }
+
+.freq-toggle {
+  display: flex;
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 4px;
+  border: 2px solid var(--border);
+  margin-bottom: 18px;
+}
+.freq-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  font-family:'Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.freq-btn.active {
+  background: linear-gradient(135deg, var(--cyan), var(--mid));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.freq-btn.active::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: freqFlow 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes freqFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
 .q-amt-row {
   display: flex;
   gap: 6px;
@@ -127,6 +170,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
 }
 .q-preset:hover { border-color: var(--cyan); color: var(--cyan); }
 .q-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
+
+.preset-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 
 /* ── NAME ── */
 .q-field { margin-bottom: 12px; }
@@ -219,11 +264,29 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
     <div class="q-amt-row">
       <div class="q-amt-box">
         <span class="rs">₹</span>
-        <input type="number" id="qAmt" value="500" min="1" oninput="updateQTotal()"/>
+        <input type="number" id="qAmt" value="1250" min="1" oninput="updateQTotal()"/>
       </div>
-      <button class="q-preset active" onclick="setQAmt(500,this)">₹500</button>
-      <button class="q-preset" onclick="setQAmt(1000,this)">₹1K</button>
-      <button class="q-preset" onclick="setQAmt(2500,this)">₹2.5K</button>
+      <div class="preset-group once-presets">
+        <button class="q-preset active" onclick="setQAmt(1250,this)">₹1,250</button>
+        <button class="q-preset" onclick="setQAmt(2500,this)">₹2,500</button>
+        <button class="q-preset" onclick="setQAmt(3750,this)">₹3,750</button>
+        <button class="q-preset" onclick="setQAmt(5000,this)">₹5,000</button>
+        <button class="q-preset" onclick="setQAmt(6250,this)">₹6,250</button>
+        <button class="q-preset" onclick="setQAmt(7500,this)">₹7,500</button>
+      </div>
+      <div class="preset-group monthly-presets" style="display:none">
+        <button class="q-preset active" onclick="setQAmt(500,this)">₹500</button>
+        <button class="q-preset" onclick="setQAmt(750,this)">₹750</button>
+        <button class="q-preset" onclick="setQAmt(1000,this)">₹1,000</button>
+        <button class="q-preset" onclick="setQAmt(1250,this)">₹1,250</button>
+        <button class="q-preset" onclick="setQAmt(1500,this)">₹1,500</button>
+      </div>
+    </div>
+
+    <div class="q-label" style="margin-top:4px;">Frequency <span class="req">*</span></div>
+    <div class="freq-toggle" style="margin-bottom:14px;">
+      <button class="freq-btn active" onclick="selectFreq('once', this)">Just Once</button>
+      <button class="freq-btn" onclick="selectFreq('monthly', this)">Give Monthly</button>
     </div>
 
     <div class="q-field">
@@ -251,6 +314,17 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); padding:2
 </div>
 
 <script>
+let donationFreq = 'once';
+function selectFreq(val, btn) {
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  donationFreq = val;
+  document.querySelectorAll('.preset-group').forEach(g => g.style.display = 'none');
+  document.querySelector('.' + val + '-presets').style.display = 'flex';
+  const first = document.querySelector('.' + val + '-presets .q-preset');
+  if (first) setQAmt(parseInt(first.getAttribute('onclick').match(/\d+/)[0]), first);
+}
+
 function setQAmt(val, btn) {
   document.getElementById('qAmt').value = val;
   document.querySelectorAll('.q-preset').forEach(b => b.classList.remove('active'));
