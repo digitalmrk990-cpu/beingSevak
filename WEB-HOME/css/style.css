@@ -342,6 +342,12 @@ input, select { font-family: inherit; outline: none; border: none; }
   transform: rotate(180deg);
 }
 
+
+
+
+
+
+
 /* Right Side */
 .nav-right {
   display: flex;
@@ -3405,10 +3411,77 @@ body{
 }
 .featured-card:hover .feat-img { transform: scale(1.04); }
 
-.feat-img-1 { background: linear-gradient(135deg, #8a2318, #4a0e0e); }
-.feat-img-2 { background: linear-gradient(135deg, #1a6b8a, #0d4157); }
-.feat-img-3 { background: linear-gradient(135deg, #5c1a6b, #2a0e4a); }
+.feat-img-1 {
+  background-image: url("images/project1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.feat-img-2 {
+  background-image: url("images/project2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.feat-img-1 {
+  background-image: url("https://your-image-link.jpg");
+}
+.feat-img-1,
+.feat-img-2 {
+  height: 250px;
+  border-radius: 12px;
+}
+/* GRID */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.featured-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 400px;
+}
+
+/* IMAGE */
+.feat-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* IMAGES */
+.feat-img-1 {
+  background-image: url("images/project1.jpg");
+}
+
+.feat-img-2 {
+  background-image: url("images/project2.jpg");
+}
+
+/* OVERLAY */
+.feat-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .feat-overlay {
   position: absolute;
   inset: 0;
@@ -3542,13 +3615,16 @@ body{
   gap: 10px;
   margin-bottom: 14px;
 }
-.footer-logo-circle { font-size: 32px; }
+.footer-logo-circle { font-size: 12px; }
 .footer-logo span {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 800;
   color: white;
   letter-spacing: 0.5px;
+}
+.footer-logo-img{
+  width: 70px;
 }
 .footer-desc {
   font-size: 13px;
@@ -3624,7 +3700,28 @@ body{
   transition: color 0.2s;
 }
 .footer-links a:hover { color: rgba(255,255,255,0.8); }
+.brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #00a3da;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
+.brochure-btn:hover {
+  background: #0077a3;
+  transform: translateY(-2px);
+}
+
+.brochure-btn i {
+  font-size: 16px;
+}
 /* ============================================
    RESPONSIVE
    ============================================ */
