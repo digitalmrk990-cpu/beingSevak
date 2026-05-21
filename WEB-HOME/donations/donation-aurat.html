@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Donate Inline – BSCT</title>
+<title>Mission Aurat – Donate | BSCT</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
@@ -23,7 +23,6 @@
 }
 body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var(--text-dark); padding:20px; }
 
-/* ── WRAPPER ── */
 .donate-wrap {
   max-width: 780px;
   margin: 0 auto;
@@ -38,7 +37,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   100% { opacity:1; transform:translateY(0) scale(1); }
 }
 
-/* ── HEADER ── */
 .form-header {
   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   padding: 28px 32px;
@@ -87,10 +85,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   z-index: 1;
 }
 
-/* ── BODY ── */
 .form-body { padding: 28px 32px 32px; }
 
-/* ── MISSION SELECT ── */
 .field-group { margin-bottom: 22px; }
 .field-group label {
   display: block;
@@ -101,15 +97,15 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   margin-bottom: 8px;
 }
 .field-group label .req { color: #e53935; }
-.dist-tabs {
+.aurat-tabs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-.dist-tab {
+.aurat-tab {
   flex: 1;
-  min-width: 140px;
-  padding: 12px 10px;
+  min-width: 200px;
+  padding: 14px 10px;
   border: 2px solid var(--border);
   border-radius: 12px;
   background: var(--white);
@@ -121,44 +117,43 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   transition: all 0.3s ease;
   text-align: center;
 }
-.dist-tab i { display: block; font-size: 1.3rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
-.dist-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
-.dist-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
-.dist-tab.active i { color: var(--white); }
+.aurat-tab i { display: block; font-size: 1.5rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
+.aurat-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
+.aurat-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
+.aurat-tab.active i { color: var(--white); }
 
-/* ── DISTRIBUTION PANELS ── */
-.dist-panel { display: none; animation: panelFade 0.4s ease; }
-.dist-panel.active { display: block; }
+.aurat-panel { display: none; animation: panelFade 0.4s ease; }
+.aurat-panel.active { display: block; }
 @keyframes panelFade {
   0% { opacity:0; transform:translateY(10px); }
   100% { opacity:1; transform:translateY(0); }
 }
-.dist-desc {
+.aurat-desc {
   background: #f0f8ff;
   border: 2px solid var(--border);
   border-radius: 14px;
   padding: 20px 22px;
   margin-bottom: 22px;
 }
-.dist-desc h3 {
+.aurat-desc h3 {
   font-family:'Montserrat',sans-serif;
   font-size: 1.1rem;
   color: var(--navy);
   margin-bottom: 10px;
 }
-.dist-desc h3 i { color: var(--cyan); margin-right: 8px; }
-.dist-desc p {
+.aurat-desc h3 i { color: var(--cyan); margin-right: 8px; }
+.aurat-desc p {
   font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.7;
   margin-bottom: 14px;
 }
-.dist-impact {
+.aurat-impact {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.dist-impact span {
+.aurat-impact span {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -166,9 +161,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 0.78rem;
   color: var(--text-mid);
 }
-.dist-impact span strong { color: var(--cyan); }
+.aurat-impact span strong { color: var(--cyan); }
 
-/* ── AMOUNT ── */
 .amount-row {
   display: flex;
   align-items: center;
@@ -217,7 +211,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .amt-preset:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 .amt-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
 
-/* ── FORM GRID ── */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -256,7 +249,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .form-group textarea { min-height: 70px; resize: vertical; }
 
-/* ── TOTAL + DONATE ── */
 .action-row {
   display: flex;
   align-items: center;
@@ -284,7 +276,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 1.3rem;
   color: var(--cyan);
 }
-.donate-btn-inline {
+.donate-btn-aurat {
   background: linear-gradient(135deg, var(--cyan), var(--mid));
   color: var(--white);
   border: none;
@@ -299,7 +291,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.donate-btn-inline::before {
+.donate-btn-aurat::before {
   content: '';
   position: absolute;
   top: 0; left: -100%;
@@ -307,16 +299,15 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: 0.5s;
 }
-.donate-btn-inline:hover::before { left: 100%; }
-.donate-btn-inline:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
+.donate-btn-aurat:hover::before { left: 100%; }
+.donate-btn-aurat:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
-  .dist-tab { min-width: 100%; }
+  .aurat-tab { min-width: 100%; }
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
-  .donate-btn-inline { width: 100%; text-align: center; }
+  .donate-btn-aurat { width: 100%; text-align: center; }
 }
 </style>
 </head>
@@ -324,70 +315,45 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 <div class="donate-wrap">
   <div class="form-header">
-    <h2>Food Distribution Donation</h2>
-    <p>Your contribution helps feed those who need it most</p>
+    <h2><i class="fas fa-fist-raised"></i> Mission Aurat Donation</h2>
+    <p>Empower women through hygiene, dignity &amp; self-reliance</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="form-body">
     <div class="field-group">
-      <label>Choose Distribution Type <span class="req">*</span></label>
-      <div class="dist-tabs" id="distTabs">
-        <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
-          <i class="fas fa-shopping-basket"></i> Ration Distribution
+      <label>Choose Programme <span class="req">*</span></label>
+      <div class="aurat-tabs" id="auratTabs">
+        <button class="aurat-tab active" data-aurat="hygienkit" onclick="selectAurat(this)">
+          <i class="fas fa-hand-holding-heart"></i> Hygien Kit Distribution
         </button>
-        <button class="dist-tab" data-dist="snacks" onclick="selectDist(this)">
-          <i class="fas fa-cookie"></i> Snacks Distribution
-        </button>
-        <button class="dist-tab" data-dist="meal" onclick="selectDist(this)">
-          <i class="fas fa-utensils"></i> Meal Distribution
-        </button>
-        <button class="dist-tab" data-dist="roti" onclick="selectDist(this)">
-          <i class="fas fa-bread-slice"></i> Roti Drive
+        <button class="aurat-tab" data-aurat="pad" onclick="selectAurat(this)">
+          <i class="fas fa-venus"></i> Pad Distribution
         </button>
       </div>
     </div>
 
-    <!-- Description Panels -->
-    <div class="dist-panel active" id="panel-ration">
-      <div class="dist-desc">
-        <h3><i class="fas fa-shopping-basket"></i> Ration Distribution</h3>
-        <p>Support families with essential dry ration kits including rice, wheat, dal, oil, spices, and other daily necessities. Your donation ensures that underprivileged families don't go to bed hungry.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,500</strong> feeds a family for a month</span>
-          <span><strong>₹5,000</strong> supports 3 families</span>
+    <!-- Hygien Kit -->
+    <div class="aurat-panel active" id="panel-hygienkit">
+      <div class="aurat-desc">
+        <h3><i class="fas fa-hand-holding-heart"></i> Hygien Kit Distribution</h3>
+        <p>Provide essential hygiene kits containing soap, shampoo, sanitary pads, toothbrush, toothpaste, comb, nail cutter, towel, and other daily essentials to underprivileged women. Each kit restores dignity and promotes basic health and cleanliness among women in slums and rural areas.</p>
+        <div class="aurat-impact">
+          <span><strong>₹300</strong> kits one woman for a month</span>
+          <span><strong>₹3,000</strong> supports 10 women</span>
+          <span><strong>₹15,000</strong> covers an entire community drive</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-snacks">
-      <div class="dist-desc">
-        <h3><i class="fas fa-cookie"></i> Snacks Distribution</h3>
-        <p>Provide nutritious snacks to children and elderly in need. Our snack distribution programs reach schools, orphanages, and old age homes, ensuring regular healthy bites for those who need them most.</p>
-        <div class="dist-impact">
-          <span><strong>₹500</strong> provides snacks for 10 children</span>
-          <span><strong>₹2,500</strong> covers a full distribution drive</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dist-panel" id="panel-meal">
-      <div class="dist-desc">
-        <h3><i class="fas fa-utensils"></i> Meal Distribution</h3>
-        <p>Help us serve hot, nutritious meals to homeless individuals and families. Each meal provides balanced nutrition to those who otherwise would have nothing to eat. Together we can fight hunger.</p>
-        <div class="dist-impact">
-          <span><strong>₹50</strong> provides one full meal</span>
-          <span><strong>₹10,000</strong> serves 200 meals</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="dist-panel" id="panel-roti">
-      <div class="dist-desc">
-        <h3><i class="fas fa-bread-slice"></i> Roti Drive</h3>
-        <p>Our Roti Drive collects and distributes fresh rotis to the hungry. Your contribution supports the logistics, ingredients, and volunteers who make this daily mission possible. Every roti brings a smile.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,000</strong> feeds 50 people with rotis</span>
-          <span><strong>₹7,000</strong> supports a week-long drive</span>
+    <!-- Pad Distribution -->
+    <div class="aurat-panel" id="panel-pad">
+      <div class="aurat-desc">
+        <h3><i class="fas fa-venus"></i> Pad Distribution</h3>
+        <p>Break the stigma around menstruation by distributing high-quality sanitary pads to women and girls in underserved communities. Each pack ensures menstrual hygiene, reduces health risks, and enables girls to attend school without interruption. Combined with awareness sessions on menstrual health management.</p>
+        <div class="aurat-impact">
+          <span><strong>₹100</strong> provides a month's pad supply for one girl</span>
+          <span><strong>₹1,000</strong> supports 10 girls for a month</span>
+          <span><strong>₹10,000</strong> covers a full school year for 100 girls</span>
         </div>
       </div>
     </div>
@@ -397,12 +363,12 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
       <div class="amount-row">
         <div class="amount-box">
           <span class="rupee">₹</span>
-          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateInlineTotal()"/>
+          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateTotal()"/>
         </div>
-        <button class="amt-preset" onclick="setInlineAmt(500,this)">₹500</button>
-        <button class="amt-preset active" onclick="setInlineAmt(1000,this)">₹1,000</button>
-        <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
-        <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
+        <button class="amt-preset" onclick="setAmt(500,this)">₹500</button>
+        <button class="amt-preset active" onclick="setAmt(1000,this)">₹1,000</button>
+        <button class="amt-preset" onclick="setAmt(2500,this)">₹2,500</button>
+        <button class="amt-preset" onclick="setAmt(5000,this)">₹5,000</button>
       </div>
     </div>
 
@@ -432,9 +398,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <div class="action-row">
       <div class="total-box">
         <span class="total-label">Donation Total:</span>
-        <span class="total-val" id="inlineTotal">₹1,000.00</span>
+        <span class="total-val" id="totalDisplay">₹1,000.00</span>
       </div>
-      <button class="donate-btn-inline" onclick="handleInlineDonate()">
+      <button class="donate-btn-aurat" onclick="handleDonate()">
         <i class="fas fa-heart"></i> Donate Now
       </button>
     </div>
@@ -442,23 +408,26 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 </div>
 
 <script>
-function selectDist(el) {
-  document.querySelectorAll('.dist-tab').forEach(b => b.classList.remove('active'));
+function selectAurat(el) {
+  document.querySelectorAll('.aurat-tab').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.querySelectorAll('.dist-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + el.dataset.dist).classList.add('active');
+  document.querySelectorAll('.aurat-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + el.dataset.aurat).classList.add('active');
 }
-function setInlineAmt(val, btn) {
+
+function setAmt(val, btn) {
   document.getElementById('donateAmount').value = val;
   document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  updateInlineTotal();
+  updateTotal();
 }
-function updateInlineTotal() {
+
+function updateTotal() {
   const n = parseFloat(document.getElementById('donateAmount').value) || 0;
-  document.getElementById('inlineTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  document.getElementById('totalDisplay').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
-function handleInlineDonate() {
+
+function handleDonate() {
   const amt = document.getElementById('donateAmount').value;
   const name = document.getElementById('fname').value;
   const email = document.getElementById('email').value;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Donate Inline – BSCT</title>
+<title>Mission Bezubaan – Donate | BSCT</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
@@ -23,7 +23,6 @@
 }
 body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var(--text-dark); padding:20px; }
 
-/* ── WRAPPER ── */
 .donate-wrap {
   max-width: 780px;
   margin: 0 auto;
@@ -38,7 +37,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   100% { opacity:1; transform:translateY(0) scale(1); }
 }
 
-/* ── HEADER ── */
 .form-header {
   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   padding: 28px 32px;
@@ -87,10 +85,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   z-index: 1;
 }
 
-/* ── BODY ── */
 .form-body { padding: 28px 32px 32px; }
 
-/* ── MISSION SELECT ── */
 .field-group { margin-bottom: 22px; }
 .field-group label {
   display: block;
@@ -101,64 +97,63 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   margin-bottom: 8px;
 }
 .field-group label .req { color: #e53935; }
-.dist-tabs {
+.bezu-tabs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-.dist-tab {
+.bezu-tab {
   flex: 1;
-  min-width: 140px;
-  padding: 12px 10px;
+  min-width: 160px;
+  padding: 14px 10px;
   border: 2px solid var(--border);
   border-radius: 12px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--mid);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
 }
-.dist-tab i { display: block; font-size: 1.3rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
-.dist-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
-.dist-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
-.dist-tab.active i { color: var(--white); }
+.bezu-tab i { display: block; font-size: 1.4rem; margin-bottom: 6px; color: var(--cyan); transition: 0.3s; }
+.bezu-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.15); }
+.bezu-tab.active { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
+.bezu-tab.active i { color: var(--white); }
 
-/* ── DISTRIBUTION PANELS ── */
-.dist-panel { display: none; animation: panelFade 0.4s ease; }
-.dist-panel.active { display: block; }
+.bezu-panel { display: none; animation: panelFade 0.4s ease; }
+.bezu-panel.active { display: block; }
 @keyframes panelFade {
   0% { opacity:0; transform:translateY(10px); }
   100% { opacity:1; transform:translateY(0); }
 }
-.dist-desc {
+.bezu-desc {
   background: #f0f8ff;
   border: 2px solid var(--border);
   border-radius: 14px;
   padding: 20px 22px;
   margin-bottom: 22px;
 }
-.dist-desc h3 {
+.bezu-desc h3 {
   font-family:'Montserrat',sans-serif;
   font-size: 1.1rem;
   color: var(--navy);
   margin-bottom: 10px;
 }
-.dist-desc h3 i { color: var(--cyan); margin-right: 8px; }
-.dist-desc p {
+.bezu-desc h3 i { color: var(--cyan); margin-right: 8px; }
+.bezu-desc p {
   font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.7;
   margin-bottom: 14px;
 }
-.dist-impact {
+.bezu-impact {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.dist-impact span {
+.bezu-impact span {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -166,9 +161,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 0.78rem;
   color: var(--text-mid);
 }
-.dist-impact span strong { color: var(--cyan); }
+.bezu-impact span strong { color: var(--cyan); }
 
-/* ── AMOUNT ── */
 .amount-row {
   display: flex;
   align-items: center;
@@ -217,7 +211,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .amt-preset:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 .amt-preset.active { background: var(--cyan); border-color: var(--cyan); color: var(--white); }
 
-/* ── FORM GRID ── */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -256,7 +249,6 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .form-group textarea { min-height: 70px; resize: vertical; }
 
-/* ── TOTAL + DONATE ── */
 .action-row {
   display: flex;
   align-items: center;
@@ -284,7 +276,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 1.3rem;
   color: var(--cyan);
 }
-.donate-btn-inline {
+.donate-btn-bezu {
   background: linear-gradient(135deg, var(--cyan), var(--mid));
   color: var(--white);
   border: none;
@@ -299,7 +291,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.donate-btn-inline::before {
+.donate-btn-bezu::before {
   content: '';
   position: absolute;
   top: 0; left: -100%;
@@ -307,16 +299,15 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: 0.5s;
 }
-.donate-btn-inline:hover::before { left: 100%; }
-.donate-btn-inline:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
+.donate-btn-bezu:hover::before { left: 100%; }
+.donate-btn-bezu:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
-  .dist-tab { min-width: 100%; }
+  .bezu-tab { min-width: 100%; }
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
-  .donate-btn-inline { width: 100%; text-align: center; }
+  .donate-btn-bezu { width: 100%; text-align: center; }
 }
 </style>
 </head>
@@ -324,70 +315,77 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 <div class="donate-wrap">
   <div class="form-header">
-    <h2>Food Distribution Donation</h2>
-    <p>Your contribution helps feed those who need it most</p>
+    <h2><i class="fas fa-paw"></i> Mission Bezubaan Donation</h2>
+    <p>Be their voice — feed, care &amp; protect voiceless street animals</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="form-body">
     <div class="field-group">
-      <label>Choose Distribution Type <span class="req">*</span></label>
-      <div class="dist-tabs" id="distTabs">
-        <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
-          <i class="fas fa-shopping-basket"></i> Ration Distribution
+      <label>Choose Programme <span class="req">*</span></label>
+      <div class="bezu-tabs" id="bezuTabs">
+        <button class="bezu-tab active" data-bezu="feeding" onclick="selectBezu(this)">
+          <i class="fas fa-utensils"></i> Animal Feeding Centre
         </button>
-        <button class="dist-tab" data-dist="snacks" onclick="selectDist(this)">
-          <i class="fas fa-cookie"></i> Snacks Distribution
+        <button class="bezu-tab" data-bezu="biscuit" onclick="selectBezu(this)">
+          <i class="fas fa-cookie-bite"></i> Biscuit Milk Pedigree
         </button>
-        <button class="dist-tab" data-dist="meal" onclick="selectDist(this)">
-          <i class="fas fa-utensils"></i> Meal Distribution
+        <button class="bezu-tab" data-bezu="medical" onclick="selectBezu(this)">
+          <i class="fas fa-notes-medical"></i> Medical Care Support
         </button>
-        <button class="dist-tab" data-dist="roti" onclick="selectDist(this)">
-          <i class="fas fa-bread-slice"></i> Roti Drive
+        <button class="bezu-tab" data-bezu="rescue" onclick="selectBezu(this)">
+          <i class="fas fa-hand-holding-heart"></i> Rescue & Shelter
         </button>
       </div>
     </div>
 
-    <!-- Description Panels -->
-    <div class="dist-panel active" id="panel-ration">
-      <div class="dist-desc">
-        <h3><i class="fas fa-shopping-basket"></i> Ration Distribution</h3>
-        <p>Support families with essential dry ration kits including rice, wheat, dal, oil, spices, and other daily necessities. Your donation ensures that underprivileged families don't go to bed hungry.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,500</strong> feeds a family for a month</span>
-          <span><strong>₹5,000</strong> supports 3 families</span>
+    <!-- Animal Feeding Centre -->
+    <div class="bezu-panel active" id="panel-feeding">
+      <div class="bezu-desc">
+        <h3><i class="fas fa-utensils"></i> Animal Feeding Centre</h3>
+        <p>Support our dedicated feeding centres that provide nutritious meals to stray dogs, cats, and other street animals every day. Each feeding session ensures that no animal sleeps hungry. We prepare wholesome food and distribute it across multiple feeding points in slums, market areas, and residential colonies.</p>
+        <div class="bezu-impact">
+          <span><strong>₹500</strong> feeds animals for a week</span>
+          <span><strong>₹2,000</strong> supports a feeding centre for a month</span>
+          <span><strong>₹10,000</strong> sustains a centre for 6 months</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-snacks">
-      <div class="dist-desc">
-        <h3><i class="fas fa-cookie"></i> Snacks Distribution</h3>
-        <p>Provide nutritious snacks to children and elderly in need. Our snack distribution programs reach schools, orphanages, and old age homes, ensuring regular healthy bites for those who need them most.</p>
-        <div class="dist-impact">
-          <span><strong>₹500</strong> provides snacks for 10 children</span>
-          <span><strong>₹2,500</strong> covers a full distribution drive</span>
+    <!-- Biscuit Milk Pedigree -->
+    <div class="bezu-panel" id="panel-biscuit">
+      <div class="bezu-desc">
+        <h3><i class="fas fa-cookie-bite"></i> Biscuit Milk Pedigree Distribution</h3>
+        <p>Distribute nutritious biscuits, milk packets, and premium pedigree dog food to stray animals on the streets. This programme ensures animals get balanced nutrition even in harsh weather conditions. Our teams regularly patrol identified zones to reach hungry animals with these essential food supplies.</p>
+        <div class="bezu-impact">
+          <span><strong>₹300</strong> provides food for 10 animals</span>
+          <span><strong>₹1,500</strong> covers a full distribution drive</span>
+          <span><strong>₹5,000</strong> supports a month of regular feeding</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-meal">
-      <div class="dist-desc">
-        <h3><i class="fas fa-utensils"></i> Meal Distribution</h3>
-        <p>Help us serve hot, nutritious meals to homeless individuals and families. Each meal provides balanced nutrition to those who otherwise would have nothing to eat. Together we can fight hunger.</p>
-        <div class="dist-impact">
-          <span><strong>₹50</strong> provides one full meal</span>
-          <span><strong>₹10,000</strong> serves 200 meals</span>
+    <!-- Medical Care Support -->
+    <div class="bezu-panel" id="panel-medical">
+      <div class="bezu-desc">
+        <h3><i class="fas fa-notes-medical"></i> Medical Care Support</h3>
+        <p>Provide emergency medical treatment, vaccinations, and sterilisation for injured and sick street animals. Our network of volunteer veterinarians helps treat wounds, mange, infections, and performs critical surgeries. We also run anti-rabies vaccination drives to protect both animals and communities.</p>
+        <div class="bezu-impact">
+          <span><strong>₹1,000</strong> covers basic treatment for one animal</span>
+          <span><strong>₹5,000</strong> funds a vaccination camp</span>
+          <span><strong>₹15,000</strong> supports emergency surgery</span>
         </div>
       </div>
     </div>
 
-    <div class="dist-panel" id="panel-roti">
-      <div class="dist-desc">
-        <h3><i class="fas fa-bread-slice"></i> Roti Drive</h3>
-        <p>Our Roti Drive collects and distributes fresh rotis to the hungry. Your contribution supports the logistics, ingredients, and volunteers who make this daily mission possible. Every roti brings a smile.</p>
-        <div class="dist-impact">
-          <span><strong>₹1,000</strong> feeds 50 people with rotis</span>
-          <span><strong>₹7,000</strong> supports a week-long drive</span>
+    <!-- Rescue & Shelter -->
+    <div class="bezu-panel" id="panel-rescue">
+      <div class="bezu-desc">
+        <h3><i class="fas fa-hand-holding-heart"></i> Rescue & Shelter</h3>
+        <p>Help us rescue abandoned, injured, and orphaned animals and provide them with a safe shelter. Our rescue team responds to distress calls and brings animals to temporary shelters where they receive care, warmth, and love until they recover or find a forever home.</p>
+        <div class="bezu-impact">
+          <span><strong>₹2,000</strong> supports a rescue operation</span>
+          <span><strong>₹8,000</strong> provides shelter for a month</span>
+          <span><strong>₹25,000</strong> builds a permanent shelter space</span>
         </div>
       </div>
     </div>
@@ -397,12 +395,12 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
       <div class="amount-row">
         <div class="amount-box">
           <span class="rupee">₹</span>
-          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateInlineTotal()"/>
+          <input type="number" id="donateAmount" value="1000" min="1" oninput="updateTotal()"/>
         </div>
-        <button class="amt-preset" onclick="setInlineAmt(500,this)">₹500</button>
-        <button class="amt-preset active" onclick="setInlineAmt(1000,this)">₹1,000</button>
-        <button class="amt-preset" onclick="setInlineAmt(2500,this)">₹2,500</button>
-        <button class="amt-preset" onclick="setInlineAmt(5000,this)">₹5,000</button>
+        <button class="amt-preset" onclick="setAmt(500,this)">₹500</button>
+        <button class="amt-preset active" onclick="setAmt(1000,this)">₹1,000</button>
+        <button class="amt-preset" onclick="setAmt(2500,this)">₹2,500</button>
+        <button class="amt-preset" onclick="setAmt(5000,this)">₹5,000</button>
       </div>
     </div>
 
@@ -432,9 +430,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <div class="action-row">
       <div class="total-box">
         <span class="total-label">Donation Total:</span>
-        <span class="total-val" id="inlineTotal">₹1,000.00</span>
+        <span class="total-val" id="totalDisplay">₹1,000.00</span>
       </div>
-      <button class="donate-btn-inline" onclick="handleInlineDonate()">
+      <button class="donate-btn-bezu" onclick="handleDonate()">
         <i class="fas fa-heart"></i> Donate Now
       </button>
     </div>
@@ -442,23 +440,26 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 </div>
 
 <script>
-function selectDist(el) {
-  document.querySelectorAll('.dist-tab').forEach(b => b.classList.remove('active'));
+function selectBezu(el) {
+  document.querySelectorAll('.bezu-tab').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.querySelectorAll('.dist-panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('panel-' + el.dataset.dist).classList.add('active');
+  document.querySelectorAll('.bezu-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + el.dataset.bezu).classList.add('active');
 }
-function setInlineAmt(val, btn) {
+
+function setAmt(val, btn) {
   document.getElementById('donateAmount').value = val;
   document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  updateInlineTotal();
+  updateTotal();
 }
-function updateInlineTotal() {
+
+function updateTotal() {
   const n = parseFloat(document.getElementById('donateAmount').value) || 0;
-  document.getElementById('inlineTotal').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+  document.getElementById('totalDisplay').textContent = '₹' + n.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
-function handleInlineDonate() {
+
+function handleDonate() {
   const amt = document.getElementById('donateAmount').value;
   const name = document.getElementById('fname').value;
   const email = document.getElementById('email').value;
@@ -471,8 +472,8 @@ function handleInlineDonate() {
 }
 </script>
 <!-- WhatsApp Floating Button -->
-<!-- <a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
-</a> -->
+</a>
 </body>
 </html>
