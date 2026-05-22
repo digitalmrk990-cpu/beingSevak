@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="eco.css" />
+  <style>
+    .donation-frame {
+      width: 100%;
+      min-height: 550px;
+      border: none;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -157,6 +165,21 @@
   </div>
 </section>
 
+<iframe 
+    src="../donations/donation-ecowarriors.html"
+    class="donation-frame"
+    scrolling="no">
+</iframe>
+<script>
+window.addEventListener('message', function(e) {
+  var frames = document.querySelectorAll('.donation-frame');
+  for (var i = 0; i < frames.length; i++) {
+    if (frames[i].contentWindow === e.source) {
+      frames[i].style.height = e.data + 'px';
+    }
+  }
+});
+</script>
 
 <!-- IMPACT -->
 <section class="impact" id="impact">

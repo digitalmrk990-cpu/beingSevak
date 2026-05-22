@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Mission Atmanirbhar – Donate | BSCT</title>
+<title>Mission Arogya – Donate | BSCT</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -142,20 +142,20 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   100% { transform: translateX(300%); }
 }
 
-.atma-tabs {
+.arogya-tabs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-.atma-tab {
+.arogya-tab {
   flex: 1;
-  min-width: 115px;
+  min-width: 120px;
   padding: 12px 8px;
   border: 2px solid var(--border);
   border-radius: 12px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--mid);
   cursor: pointer;
@@ -164,11 +164,11 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.atma-tab i { display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.atma-tab:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,162,217,0.18); }
-.atma-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 8px 25px rgba(0,162,217,0.35); transform: translateY(-2px) scale(1.03); }
-.atma-tab.active i { color: var(--white); transform: scale(1.2); }
-.atma-tab.active::after {
+.arogya-tab i { display: block; font-size: 1.2rem; margin-bottom: 4px; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.arogya-tab:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,162,217,0.18); }
+.arogya-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 8px 25px rgba(0,162,217,0.35); transform: translateY(-2px) scale(1.03); }
+.arogya-tab.active i { color: var(--white); transform: scale(1.2); }
+.arogya-tab.active::after {
   content: '';
   position: absolute;
   top: 0; left: -100%;
@@ -182,53 +182,53 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   100% { transform: translateX(300%); }
 }
 
-.atma-panel { display: none; }
-.atma-panel.active { display: block; animation: panelSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.arogya-panel { display: none; }
+.arogya-panel.active { display: block; animation: panelSlide 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
 @keyframes panelSlide {
   0% { opacity: 0; transform: translateY(30px) scale(0.97); clip-path: inset(0 0 20px 0); }
   100% { opacity: 1; transform: translateY(0) scale(1); clip-path: inset(0 0 0 0); }
 }
-.atma-panel.active .atma-desc h3 {
+.arogya-panel.active .arogya-desc h3 {
   animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
-.atma-panel.active .atma-desc p {
+.arogya-panel.active .arogya-desc p {
   animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
-.atma-panel.active .atma-impact span {
+.arogya-panel.active .arogya-impact span {
   animation: fadeUpItem 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
-.atma-panel.active .atma-impact span:nth-child(2) { animation-delay: 0.35s; }
-.atma-panel.active .atma-impact span:nth-child(3) { animation-delay: 0.4s; }
+.arogya-panel.active .arogya-impact span:nth-child(2) { animation-delay: 0.35s; }
+.arogya-panel.active .arogya-impact span:nth-child(3) { animation-delay: 0.4s; }
 @keyframes fadeUpItem {
   0% { opacity: 0; transform: translateY(16px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.atma-desc {
+.arogya-desc {
   background: #f0f8ff;
   border: 2px solid var(--border);
   border-radius: 14px;
   padding: 20px 22px;
   margin-bottom: 22px;
 }
-.atma-desc h3 {
+.arogya-desc h3 {
   font-family:'Montserrat',sans-serif;
   font-size: 1.1rem;
   color: var(--navy);
   margin-bottom: 10px;
 }
-.atma-desc h3 i { color: var(--cyan); margin-right: 8px; }
-.atma-desc p {
+.arogya-desc h3 i { color: var(--cyan); margin-right: 8px; }
+.arogya-desc p {
   font-size: 0.85rem;
   color: var(--text-mid);
   line-height: 1.7;
   margin-bottom: 14px;
 }
-.atma-impact {
+.arogya-impact {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-.atma-impact span {
+.arogya-impact span {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -236,7 +236,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 0.78rem;
   color: var(--text-mid);
 }
-.atma-impact span strong { color: var(--cyan); }
+.arogya-impact span strong { color: var(--cyan); }
 
 .amount-row {
   display: flex;
@@ -353,7 +353,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 1.3rem;
   color: var(--cyan);
 }
-.donate-btn-atma {
+.donate-btn-arogya {
   background: linear-gradient(135deg, var(--cyan), var(--mid));
   color: var(--white);
   border: none;
@@ -368,7 +368,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.donate-btn-atma::before {
+.donate-btn-arogya::before {
   content: '';
   position: absolute;
   top: 0; left: -100%;
@@ -376,16 +376,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
   transition: 0.5s;
 }
-.donate-btn-atma:hover::before { left: 100%; }
-.donate-btn-atma:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
-
-@media (max-width: 600px) {
-  .form-body { padding: 20px 18px; }
-  .atma-tab { min-width: 100%; }
-  .form-grid { grid-template-columns: 1fr; }
-  .action-row { flex-direction: column; align-items: stretch; }
-  .donate-btn-atma { width: 100%; text-align: center; }
-}
+.donate-btn-arogya:hover::before { left: 100%; }
+.donate-btn-arogya:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
 /* ── LANDSCAPE ── */
 .donate-wrap.landscape{max-width:100%;}
@@ -394,90 +386,43 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-wrap.landscape .field-group{margin-bottom:12px;}
 .donate-wrap.landscape .top-row{display:flex;gap:16px;flex-wrap:wrap;}
 .donate-wrap.landscape .top-row .col{flex:1;min-width:180px;}
-.donate-wrap.landscape .atma-tabs{flex-wrap:nowrap;}
-.donate-wrap.landscape .atma-tab{min-width:0;padding:8px 6px;font-size:0.7rem;}
-.donate-wrap.landscape .atma-tab i{font-size:1rem;margin-bottom:2px;}
+.donate-wrap.landscape .arogya-tabs{flex-wrap:nowrap;}
+.donate-wrap.landscape .arogya-tab{min-width:0;padding:8px 6px;font-size:0.7rem;}
+.donate-wrap.landscape .arogya-tab i{font-size:1rem;margin-bottom:2px;}
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
 .donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
 .donate-wrap.landscape .amt-preset{padding:6px 10px;font-size:0.7rem;}
-.donate-wrap.landscape .atma-desc{padding:10px 14px;margin-bottom:10px;}
-.donate-wrap.landscape .atma-desc p{font-size:0.78rem;margin-bottom:6px;line-height:1.4;}
+.donate-wrap.landscape .arogya-desc{padding:10px 14px;margin-bottom:10px;}
+.donate-wrap.landscape .arogya-desc p{font-size:0.78rem;margin-bottom:6px;line-height:1.4;}
 .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr 1fr 1fr 1fr;}
 .donate-wrap.landscape .form-grid .full{grid-column:auto;}
 .donate-wrap.landscape .form-group input,.donate-wrap.landscape .form-group textarea{padding:7px 10px;font-size:0.78rem;}
 .donate-wrap.landscape .form-group textarea{min-height:36px;}
 .donate-wrap.landscape .action-row{margin-top:12px;padding-top:12px;}
-.donate-wrap.landscape .donate-btn-atma{padding:10px 24px;font-size:0.85rem;}
+.donate-wrap.landscape .donate-btn-arogya{padding:10px 24px;font-size:0.85rem;}
 @media(max-width:768px){
   .donate-wrap.landscape .top-row{flex-direction:column;}
   .donate-wrap.landscape .top-row .col{min-width:100%;}
   .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr;}
-  .donate-wrap.landscape .atma-tabs{flex-wrap:wrap;}
+  .donate-wrap.landscape .arogya-tabs{flex-wrap:wrap;}
 }
 
-/* ── QUANTITY CONTROLS ── */
-.qty-section {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+@media (max-width: 600px) {
+  .form-body { padding: 20px 18px; }
+  .arogya-tab { min-width: 100%; }
+  .form-grid { grid-template-columns: 1fr; }
+  .action-row { flex-direction: column; align-items: stretch; }
+  .donate-btn-arogya { width: 100%; text-align: center; }
 }
-.qty-section label {
-  font-family:'Montserrat',sans-serif;
-  font-weight: 700;
-  font-size: 0.78rem;
-  color: var(--navy);
-  display: block;
-  margin-bottom: 8px;
-}
-.qty-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.qty-control {
-  display: inline-flex;
-  align-items: center;
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--white);
-}
-.qty-control button {
-  width: 36px;
-  height: 36px;
-  border: none;
-  background: var(--light-bg);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--navy);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.qty-control button:hover { background: var(--cyan); color: var(--white); }
-.qty-control .qty-val {
-  width: 48px;
-  text-align: center;
-  font-family:'Montserrat',sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--navy);
-}
-.qty-detail {
-  font-size: 0.82rem;
-  color: var(--text-mid);
-  font-weight: 600;
-}
-.qty-detail strong { color: var(--cyan); }
 </style>
 </head>
 <body>
 
 <div class="donate-wrap landscape">
   <div class="form-header">
-    <h2><i class="fas fa-hand-fist"></i> Mission Atmanirbhar Donation</h2>
-    <p>Empower lives through skills, tools &amp; self-reliance</p>
+    <h2><i class="fas fa-heartbeat"></i> Mission Arogya Donation</h2>
+    <p>Your contribution brings healthcare &amp; hope to those in need</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="form-body">
@@ -486,24 +431,18 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
       <div class="col">
         <div class="field-group">
           <label>Choose Programme <span class="req">*</span></label>
-          <div class="atma-tabs" id="atmaTabs">
-            <button class="atma-tab active" data-atma="tools" onclick="selectAtma(this)">
-              <i class="fas fa-toolbox"></i> Tools of Life
+          <div class="arogya-tabs" id="arogyaTabs">
+            <button class="arogya-tab active" data-arogya="vision" onclick="selectArogya(this)">
+              <i class="fas fa-eye"></i> Mission for Vision
             </button>
-            <button class="atma-tab" data-atma="rojgar" onclick="selectAtma(this)">
-              <i class="fas fa-briefcase"></i> Rojgar Booth
-            </button>
-            <button class="atma-tab" data-atma="sewing" onclick="selectAtma(this)">
-              <i class="fas fa-cut"></i> Sewing Machine
-            </button>
-            <button class="atma-tab" data-atma="floormill" onclick="selectAtma(this)">
-              <i class="fas fa-industry"></i> Floor Mill
-            </button>
-            <button class="atma-tab" data-atma="tricycle" onclick="selectAtma(this)">
-              <i class="fas fa-wheelchair"></i> Tricycle
-            </button>
-            <button class="atma-tab" data-atma="blindstick" onclick="selectAtma(this)">
-              <i class="fas fa-cane"></i> Blind Stick
+            <!-- <button class="arogya-tab" data-arogya="babycare" onclick="selectArogya(this)">
+              <i class="fas fa-baby"></i> Baby Care Centre
+            </button> -->
+            <!-- <button class="arogya-tab" data-arogya="h2" onclick="selectArogya(this)">
+              <i class="fas fa-hand-holding-water"></i> H<sub>2</sub>
+            </button> -->
+            <button class="arogya-tab" data-arogya="emergency" onclick="selectArogya(this)">
+              <i class="fas fa-ambulance"></i> Medical Emergency
             </button>
           </div>
         </div>
@@ -545,107 +484,54 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
       </div>
     </div>
 
-    <!-- Tools of Life -->
-    <div class="atma-panel active" id="panel-tools">
-      <div class="atma-desc">
-        <h3><i class="fas fa-toolbox"></i> Tools of Life</h3>
-        <p>Provide essential livelihood toolkits to underprivileged individuals — carpentry sets, tailoring kits, plumbing tools, and more. Each toolkit enables a person to start their own small business or earn daily wages with dignity. Your support gives someone the tools they need to build a better future.</p>
-        <div class="atma-impact">
-          <span><strong>₹1,500</strong> provides a basic toolkit</span>
-          <span><strong>₹3,000</strong> supplies a professional toolkit</span>
-          <span><strong>₹10,000</strong> supports 5 individuals with tools</span>
+    <!-- Mission for Vision -->
+    <div class="arogya-panel active" id="panel-vision">
+      <div class="arogya-desc">
+        <h3><i class="fas fa-eye"></i> Mission for Vision</h3>
+        <p>Help restore sight and prevent blindness among underprivileged communities. Our Mission for Vision programme provides free eye check-up camps, cataract surgeries, distribution of spectacles, and vision awareness drives in rural and slum areas. Your support can bring the gift of sight to someone living in darkness.</p>
+        <div class="arogya-impact">
+          <span><strong>₹500</strong> provides an eye check-up for 1 person</span>
+          <span><strong>₹2,000</strong> covers cataract surgery for 1 patient</span>
+          <span><strong>₹10,000</strong> supports a full eye camp for 100 people</span>
         </div>
       </div>
     </div>
 
-    <!-- Rojgar Booth -->
-    <div class="atma-panel" id="panel-rojgar">
-      <div class="atma-desc">
-        <h3><i class="fas fa-briefcase"></i> Rojgar Booth</h3>
-        <p>Support our employment assistance booths that connect daily-wage workers, labourers, and job seekers with local employers. Rojgar Booths provide a platform where people can register their skills, find work opportunities, and achieve financial independence. Each booth serves as a bridge between the unemployed and meaningful work.</p>
-        <div class="atma-impact">
-          <span><strong>₹2,000</strong> runs a booth for a week</span>
-          <span><strong>₹8,000</strong> sustains a booth for a month</span>
-          <span><strong>₹25,000</strong> sets up a new Rojgar Booth</span>
+    <!-- Baby Care Centre -->
+    <div class="arogya-panel" id="panel-babycare">
+      <div class="arogya-desc">
+        <h3><i class="fas fa-baby"></i> Baby Care Centre</h3>
+        <p>Support our Baby Care Centre that provides essential care, nutrition, and medical attention to newborns and infants from impoverished families. We offer free diapers, formula milk, vaccinations, regular health check-ups, and counselling for young mothers. Every baby deserves a healthy start in life.</p>
+        <div class="arogya-impact">
+          <span><strong>₹1,000</strong> provides baby care kit for 1 infant</span>
+          <span><strong>₹3,000</strong> covers vaccinations &amp; check-ups for a month</span>
+          <span><strong>₹15,000</strong> sustains the centre for a week</span>
         </div>
       </div>
     </div>
 
-    <!-- Sewing Machine -->
-    <div class="atma-panel" id="panel-sewing">
-      <div class="atma-desc">
-        <h3><i class="fas fa-cut"></i> Sewing Machine Distribution</h3>
-        <p>Empower visually impaired individuals with sewing machines to start their own tailoring business. A sewing machine is not just a tool — it is a source of income, confidence, and independence. We distribute high-quality machines along with initial training and fabric to help recipients begin earning immediately.</p>
-        <div class="atma-impact">
-          <span><strong>₹14,700</strong> provides sewing machines for 3 visually impaired individuals</span>
-        </div>
-        <div class="qty-section">
-          <label>Quantity <span class="req">*</span></label>
-          <div class="qty-row">
-            <div class="qty-control">
-              <button onclick="changeQty('sewing',-1)">−</button>
-              <span class="qty-val" id="qty-sewing">1</span>
-              <button onclick="changeQty('sewing',1)">+</button>
-            </div>
-            <span class="qty-detail">₹14,700 × <span id="qtyLabel-sewing">1</span> = <strong>₹<span id="subtotal-sewing">14,700</span></strong></span>
-          </div>
+    <!-- H2 -->
+    <div class="arogya-panel" id="panel-h2">
+      <div class="arogya-desc">
+        <h3><i class="fas fa-hand-holding-water"></i> H<sub>2</sub> – Health &amp; Hygiene</h3>
+        <p>Promote health and hygiene through the distribution of sanitary pads, hygiene kits, soaps, hand sanitisers, and clean drinking water solutions. Our H<sub>2</sub> programme focuses on preventing disease through proper hygiene practices, especially among women and children in underserved communities.</p>
+        <div class="arogya-impact">
+          <span><strong>₹500</strong> provides hygiene kits for 5 women</span>
+          <span><strong>₹2,000</strong> supplies sanitary pad vending machine refill</span>
+          <span><strong>₹8,000</strong> runs a hygiene awareness camp</span>
         </div>
       </div>
     </div>
 
-    <!-- Floor Mill -->
-    <div class="atma-panel" id="panel-floormill">
-      <div class="atma-desc">
-        <h3><i class="fas fa-industry"></i> Floor Mill for Visually Impaired</h3>
-        <p>Provide floor mills (atta chakki) to visually impaired individuals, enabling them to start a small-scale flour grinding business. A floor mill is a sustainable source of income that fosters self-reliance and dignity. Each unit comes with initial training and support to help beneficiaries run their enterprise successfully.</p>
-        <div class="atma-impact">
-          <span><strong>₹34,000</strong> provides floor mill for 2 visually impaired individuals</span>
-        </div>
-        <div class="qty-section">
-          <label>Quantity <span class="req">*</span></label>
-          <div class="qty-row">
-            <div class="qty-control">
-              <button onclick="changeQty('floormill',-1)">−</button>
-              <span class="qty-val" id="qty-floormill">1</span>
-              <button onclick="changeQty('floormill',1)">+</button>
-            </div>
-            <span class="qty-detail">₹34,000 × <span id="qtyLabel-floormill">1</span> = <strong>₹<span id="subtotal-floormill">34,000</span></strong></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tricycle -->
-    <div class="atma-panel" id="panel-tricycle">
-      <div class="atma-desc">
-        <h3><i class="fas fa-wheelchair"></i> Tricycle Distribution</h3>
-        <p>Distribute specially designed tricycles to specially abled individuals who cannot walk. A tricycle restores mobility, freedom, and the ability to perform daily tasks independently. Each tricycle is customised to the user's needs and comes with a free maintenance checkup.</p>
-        <div class="atma-impact">
-          <span><strong>₹8,000</strong> provides one tricycle for 1 specially abled individual</span>
-        </div>
-        <div class="qty-section">
-          <label>Quantity <span class="req">*</span></label>
-          <div class="qty-row">
-            <div class="qty-control">
-              <button onclick="changeQty('tricycle',-1)">−</button>
-              <span class="qty-val" id="qty-tricycle">1</span>
-              <button onclick="changeQty('tricycle',1)">+</button>
-            </div>
-            <span class="qty-detail">₹8,000 × <span id="qtyLabel-tricycle">1</span> = <strong>₹<span id="subtotal-tricycle">8,000</span></strong></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Blind Stick -->
-    <div class="atma-panel" id="panel-blindstick">
-      <div class="atma-desc">
-        <h3><i class="fas fa-cane"></i> Blind Stick Distribution</h3>
-        <p>Provide high-quality white canes (blind sticks) to visually impaired individuals to help them navigate independently. A sturdy, reflective cane is a lifeline for the blind — enabling safe movement, building confidence, and reducing dependency on others. We distribute ergonomic canes with free mobility training.</p>
-        <div class="atma-impact">
-          <span><strong>₹500</strong> provides one blind stick</span>
-          <span><strong>₹2,500</strong> supports 5 visually impaired persons</span>
-          <span><strong>₹10,000</strong> covers 20 canes + training camp</span>
+    <!-- Medical Emergency -->
+    <div class="arogya-panel" id="panel-emergency">
+      <div class="arogya-desc">
+        <h3><i class="fas fa-ambulance"></i> Medical Emergency Fund</h3>
+        <p>Provide critical financial assistance to patients and families facing medical emergencies. Our Medical Emergency fund covers accident care, ICU bills, life-saving surgeries, ambulance services, and medicine for those who cannot afford treatment. Every second counts — your donation can save a life.</p>
+        <div class="arogya-impact">
+          <span><strong>₹2,000</strong> covers ambulance &amp; initial emergency care</span>
+          <span><strong>₹10,000</strong> supports a critical surgery patient</span>
+          <span><strong>₹25,000</strong> provides full ICU support for a week</span>
         </div>
       </div>
     </div>
@@ -676,9 +562,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <div class="action-row">
       <div class="total-box">
         <span class="total-label">Donation Total:</span>
-        <span class="total-val" id="totalDisplay">₹1,000.00</span>
+        <span class="total-val" id="totalDisplay">₹1,250.00</span>
       </div>
-      <button class="donate-btn-atma" onclick="handleDonate()">
+      <button class="donate-btn-arogya" onclick="handleDonate()">
         <i class="fas fa-heart"></i> Donate Now
       </button>
     </div>
@@ -686,78 +572,15 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 </div>
 
 <script>
-const UNIT_PRICES = { sewing:14700, floormill:34000, tricycle:8000 };
-let quantities = { sewing:1, floormill:1, tricycle:1 };
-
-const DEFAULT_PRESETS = {
-  once: [1250, 2500, 3750, 5000, 6250, 7500],
-  monthly: [500, 750, 1000, 1250, 1500]
-};
-
-function updatePresets(prog) {
-  const isQty = !!UNIT_PRICES[prog];
-  document.querySelectorAll('.preset-group').forEach(group => {
-    const isOnce = group.classList.contains('once-presets');
-    const btns = group.querySelectorAll('.amt-preset');
-    const values = isQty
-      ? [1,2,3,4,5].map(n => UNIT_PRICES[prog] * n)
-      : (isOnce ? DEFAULT_PRESETS.once : DEFAULT_PRESETS.monthly);
-    btns.forEach((btn, i) => {
-      if (i < values.length) {
-        const v = values[i];
-        btn.textContent = '₹' + v.toLocaleString('en-IN');
-        btn.setAttribute('onclick', 'setAmt(' + v + ', this)');
-      }
-    });
-  });
-  syncActivePreset();
-}
-
-function syncActivePreset() {
-  const amt = parseInt(document.getElementById('donateAmount').value);
-  document.querySelectorAll('.amt-preset').forEach(b => {
-    b.classList.remove('active');
-    const m = b.getAttribute('onclick').match(/\d+/);
-    if (m && parseInt(m[0]) === amt) b.classList.add('active');
-  });
-}
-
-function selectAtma(el) {
-  document.querySelectorAll('.atma-tab').forEach(b => b.classList.remove('active'));
+function selectArogya(el) {
+  document.querySelectorAll('.arogya-tab').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.querySelectorAll('.atma-panel').forEach(p => {
+  document.querySelectorAll('.arogya-panel').forEach(p => {
     p.classList.remove('active');
     void p.offsetHeight;
   });
-  document.getElementById('panel-' + el.dataset.atma).classList.add('active');
-  if (UNIT_PRICES[el.dataset.atma]) {
-    syncAmountFromQty(el.dataset.atma);
-  } else {
-    updatePresets(el.dataset.atma);
-    const first = document.querySelector('.once-presets .amt-preset');
-    if (first) setAmt(parseInt(first.getAttribute('onclick').match(/\d+/)[0]), first);
-  }
+  document.getElementById('panel-' + el.dataset.arogya).classList.add('active');
   setTimeout(sendHeight, 100);
-}
-
-function changeQty(prog, delta) {
-  quantities[prog] = Math.max(1, (quantities[prog] || 1) + delta);
-  document.getElementById('qty-' + prog).textContent = quantities[prog];
-  document.getElementById('qtyLabel-' + prog).textContent = quantities[prog];
-  const sub = UNIT_PRICES[prog] * quantities[prog];
-  document.getElementById('subtotal-' + prog).textContent = sub.toLocaleString('en-IN');
-  const activeTab = document.querySelector('.atma-tab.active');
-  if (activeTab && activeTab.dataset.atma === prog) {
-    syncAmountFromQty(prog);
-  }
-  setTimeout(sendHeight, 100);
-}
-
-function syncAmountFromQty(prog) {
-  const amt = UNIT_PRICES[prog] * (quantities[prog] || 1);
-  document.getElementById('donateAmount').value = amt;
-  updatePresets(prog);
-  updateTotal();
 }
 
 let donationFreq = 'once';
@@ -769,6 +592,7 @@ function selectFreq(val, btn) {
   document.querySelector('.' + val + '-presets').style.display = 'flex';
   const first = document.querySelector('.' + val + '-presets .amt-preset');
   if (first) setAmt(parseInt(first.getAttribute('onclick').match(/\d+/)[0]), first);
+  setTimeout(sendHeight, 100);
 }
 
 function setAmt(val, btn) {
@@ -776,16 +600,6 @@ function setAmt(val, btn) {
   document.querySelectorAll('.amt-preset').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   updateTotal();
-  const activeTab = document.querySelector('.atma-tab.active');
-  if (activeTab && UNIT_PRICES[activeTab.dataset.atma]) {
-    const prog = activeTab.dataset.atma;
-    const qty = Math.max(1, Math.round(val / UNIT_PRICES[prog]));
-    quantities[prog] = qty;
-    document.getElementById('qty-' + prog).textContent = qty;
-    document.getElementById('qtyLabel-' + prog).textContent = qty;
-    const sub = UNIT_PRICES[prog] * qty;
-    document.getElementById('subtotal-' + prog).textContent = sub.toLocaleString('en-IN');
-  }
   setTimeout(sendHeight, 100);
 }
 
@@ -799,29 +613,19 @@ function handleDonate() {
   const name = document.getElementById('fname').value;
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;
-  const activeTab = document.querySelector('.atma-tab.active');
+  const activeTab = document.querySelector('.arogya-tab.active');
   const programme = activeTab ? activeTab.textContent.trim() : 'General Donation';
   donateWithRazorpay({
     amount: amt,
     name: name,
     email: email,
     phone: phone,
-    description: 'Donation - Atmanirbhar - ' + programme,
-    mission: 'Atmanirbhar'
+    description: 'Donation - Arogya - ' + programme,
+    mission: 'Arogya'
   });
 }
-
-(function() {
-  var activeTab = document.querySelector('.atma-tab.active');
-  if (activeTab && UNIT_PRICES[activeTab.dataset.atma]) {
-    syncAmountFromQty(activeTab.dataset.atma);
-  }
-})();
 </script>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+
 <script>
 function sendHeight() {
   var h = document.documentElement.scrollHeight;
