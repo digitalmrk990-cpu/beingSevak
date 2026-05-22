@@ -1,0 +1,17 @@
+# Large files / archives
+*.zip
+*.exe
+*.msi
+*.dmg
+*.iso
+*.tar.gz
+*.tar
+*.7z
+*.rar
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/settings.json
