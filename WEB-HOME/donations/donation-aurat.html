@@ -413,7 +413,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr;}
   .donate-wrap.landscape .aurat-tabs{flex-wrap:wrap;}
 }
-}
+
 </style>
 </head>
 <body>
@@ -609,5 +609,15 @@ function handleDonate() {
 <!-- <a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a> -->
+<script>
+(function() {
+  function sendHeight() {
+    var h = document.documentElement.scrollHeight;
+    parent.postMessage(h, '*');
+  }
+  window.addEventListener('load', function() { setTimeout(sendHeight, 300); });
+  window.addEventListener('resize', function() { setTimeout(sendHeight, 200); });
+})();
+</script>
 </body>
 </html>
