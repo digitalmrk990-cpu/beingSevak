@@ -110,6 +110,139 @@
       background:#1f6fd6;
     }
 
+    /* ─── TAX BOX & HERO (Annapurna style) ─── */
+    .tax-box{
+      width:100%; height:70px; display:flex; justify-content:center;
+      align-items:center; text-align:center;
+      background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+      color:#fff; border-radius:0px; margin:20px 0; padding:10px;
+    }
+    .tax-box h1{
+      font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800;
+      letter-spacing:2px; color:#fff; margin:0;
+    }
+    .hero{
+      min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; gap:0px; position:relative; overflow:hidden; padding:10px 8%;
+    }
+    .hero-content{ position:relative; z-index:2; }
+    .hero-content .tag{
+      background:transparent; color:#00a3da; padding:0; border-radius:0;
+      display:inline-block; margin-bottom:25px; font-weight:800; font-size:30px; letter-spacing:1px;
+    }
+    .hero h1{ font-size:62px; line-height:1.1; margin-bottom:25px; color:var(--navy); }
+    .hero h1 span{ color:#00a3da; }
+    .hero p{ font-size:18px; line-height:1.9; color:#66788a; margin-bottom:35px; }
+    .hero-buttons{ display:flex; gap:18px; flex-wrap:wrap; }
+    .hero-buttons .donate-btn{
+      display:inline-block; padding:15px 36px; background:#00a3da; color:#fff;
+      text-decoration:none; border-radius:6px; font-weight:700; transition:0.4s;
+      box-shadow:0 10px 25px rgba(11,77,120,0.25);
+    }
+    .hero-buttons .donate-btn:hover{ background:#007d94; transform:translateY(-1px); }
+    .hero-image{ position:relative; z-index:2; display:flex; justify-content:center; }
+    .hero-image img{
+      width:100%; max-width:500px; border-radius:30px;
+      box-shadow:0 25px 50px rgba(0,0,0,0.15); transition:0.5s ease;
+    }
+    .hero-image img:hover{ transform:scale(1.02); }
+    .floating-card{
+      position:absolute; background:rgba(255,255,255,0.95); backdrop-filter:blur(8px);
+      padding:18px 24px; border-radius:18px; box-shadow:0 15px 35px rgba(0,0,0,0.12);
+      text-align:center; z-index:3; animation:floatCard 4s ease-in-out infinite alternate;
+    }
+    .floating-card.card1{ top:5%; left:-10px; }
+    .floating-card.card2{ bottom:10%; right:-10px; animation-delay:2s; }
+    .floating-card h3{ font-size:28px; font-weight:800; color:#00a3da; }
+    .floating-card p{ font-size:13px; color:#555; margin:0; }
+    @keyframes floatCard{ 0%{transform:translateY(0);} 100%{transform:translateY(-15px);} }
+    .blur{
+      position:absolute; width:500px; height:500px; border-radius:50%;
+      filter:blur(120px); opacity:0.15; z-index:0; pointer-events:none;
+    }
+    .blur1{ background:#00a3da; top:-100px; left:-100px; }
+    .blur2{ background:#315270; bottom:-100px; right:-100px; }
+    @media(max-width:900px){
+      .hero{ grid-template-columns:1fr; text-align:center; gap:50px; }
+      .hero h1{font-size:42px;} .hero p{font-size:16px;}
+      .hero-buttons{justify-content:center;} .hero-image img{max-width:90%;}
+      .floating-card.card1{left:5%;} .floating-card.card2{right:5%;}
+    }
+    @media(max-width:550px){
+      .hero h1{font-size:32px;} .hero p{font-size:14px;}
+      .floating-card{padding:12px 16px;} .floating-card h3{font-size:22px;}
+    }
+
+    /* ─── DOCUMENT PORTAL ─── */
+    .doc-portal{ padding:60px 6%; background:#f4f7fb; }
+    .doc-portal-inner{ max-width:1100px; margin:0 auto; }
+    .doc-portal-title{ text-align:center; margin-bottom:40px; }
+    .doc-portal-title h2{
+      font-family:'Montserrat',sans-serif; font-size:36px; font-weight:800;
+      color:var(--navy); margin-bottom:8px;
+    }
+    .doc-portal-title p{ font-size:16px; color:#66788a; }
+
+    /* TABS */
+    .doc-tabs{
+      display:flex; gap:4px; margin-bottom:40px;
+      background:linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+      border-radius:12px; padding:4px; overflow-x:auto;
+    }
+    .doc-tab{
+      flex:1; padding:14px 20px; text-align:center; border:none; cursor:pointer;
+      font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px;
+      color:rgba(255,255,255,0.7); background:transparent;
+      border-radius:10px; transition:0.3s ease; white-space:nowrap; letter-spacing:0.5px;
+    }
+    .doc-tab:hover{ color:#fff; background:rgba(255,255,255,0.1); }
+    .doc-tab.active{
+      color:#003b73; background:#fff; box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+    .doc-tab i{ margin-right:8px; }
+
+    /* CARDS */
+    .doc-cards{ display:none; }
+    .doc-cards.active{ display:block; }
+    .doc-card{
+      display:flex; align-items:center; gap:18px;
+      background:#fff; border-radius:14px; padding:18px 24px;
+      margin-bottom:14px; box-shadow:0 4px 16px rgba(0,0,0,0.06);
+      transition:0.3s ease; cursor:pointer;
+    }
+    .doc-card:hover{
+      transform:translateX(6px); box-shadow:0 8px 28px rgba(0,0,0,0.12);
+    }
+    .doc-card-icon{
+      width:50px; height:50px; min-width:50px;
+      background:linear-gradient(135deg,#00a3da,#0072a0);
+      border-radius:12px; display:flex; align-items:center; justify-content:center;
+      color:#fff; font-size:22px;
+    }
+    .doc-card-body{ flex:1; }
+    .doc-card-body h4{
+      font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700;
+      color:var(--navy); margin-bottom:4px;
+    }
+    .doc-card-body p{ font-size:13px; color:#66788a; margin:0; }
+    .doc-card-arrow{
+      width:40px; height:40px; min-width:40px;
+      background:#f0f4f8; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:#00a3da; font-size:18px; transition:0.3s ease;
+    }
+    .doc-card:hover .doc-card-arrow{
+      transform:translateX(6px); background:#00a3da; color:#fff;
+    }
+
+    @media(max-width:768px){
+      .doc-tabs{ flex-direction:column; gap:2px; border-radius:10px; }
+      .doc-tab{ font-size:13px; padding:12px; }
+      .doc-card{ padding:14px 16px; }
+      .doc-card-body h4{ font-size:14px; }
+      .doc-portal-title h2{ font-size:28px; }
+    }
+
     /* =========================================
        FOOTER
     ========================================= */
@@ -967,76 +1100,92 @@
     </div>
   </div>
 
-  <!-- HERO BANNER (Enhanced with floating cards) -->
-  <section class="page-hero">
-    <div class="hero-glow g1"></div>
-    <div class="hero-glow g2"></div>
-    <div class="hero-grid">
-      <div class="hero-left">
-        <span class="hero-tag">BEING SEVAK CHARITABLE TRUST</span>
-        <h1>Trust <span>Documents</span></h1>
-        <p class="hero-desc">
-          View important legal certificates, registrations, compliance documents,
-          and annual activity reports of Being Sevak Charitable Trust.
-        </p>
-        <div class="hero-breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="sep">»</span>
-          <span>Trust Documents</span>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-card card1">
-          <h3>18+</h3>
-          <p>Registered Documents</p>
-        </div>
-        <div class="hero-card card2">
-          <h3>80G</h3>
-          <p>Tax Exemption</p>
-        </div>
-      </div>
-    </div>
+  <!-- TAX BOX HEADER (Annapurna style) -->
+  <section class="tax-box">
+    <h1>Trust Documents</h1>
   </section>
 
-  <!-- DOCUMENT SECTION -->
-  <section class="trust-section">
-
-    <div class="section-title">
-      <h2>Trust Certificates & Reports</h2>
-
-      <p>
-        View important legal certificates, registrations, compliance documents,
-        and annual activity reports of Being Sevak Charitable Trust.
-      </p>
+  <!-- HERO SECTION (Annapurna style) -->
+  <section class="hero" id="home">
+  
+    <div class="hero-content">
+      <span class="tag">BEING SEVAK CHARITABLE TRUST</span>
+      <h1>Trust <span>Documents</span></h1>
+      <p>View important legal certificates, registrations, compliance documents, and annual activity reports of Being Sevak Charitable Trust.</p>
+      <div class="hero-buttons">
+        <a href="#documents" class="donate-btn">View Documents</a>
+      </div>
     </div>
 
-    <div class="doc-grid">
-
-      <div class="doc-box blue">1. Regd. Certificate</div>
-      <div class="doc-box light">2. PAN Card</div>
-      <div class="doc-box blue">3. 80G Certificate New</div>
-      <div class="doc-box light">4. 80G Certificate Old</div>
-
-      <div class="doc-box light">5. 12A Certificate New</div>
-      <div class="doc-box blue">6. 12A Certificate Old</div>
-      <div class="doc-box light">7. Old CSR Funds Certificate</div>
-      <div class="doc-box blue">8. Niti Aayog</div>
-
-      <div class="doc-box blue">9. ISO Certificate</div>
-      <div class="doc-box light">10. Activity Report 2016</div>
-      <div class="doc-box blue">11. Activity Report 2017</div>
-      <div class="doc-box light">12. Activity Report 2018</div>
-
-      <div class="doc-box light">13. Activity Report 2019</div>
-      <div class="doc-box blue">14. Activity Report 2020</div>
-      <div class="doc-box light">15. Activity Report 2021</div>
-      <div class="doc-box blue">16. Activity Report 2022</div>
-
-      <div class="doc-box blue">17. Activity Report 2023</div>
-      <div class="doc-box light">18. Activity Report 2024</div>
-
+    <div class="hero-image">
+      <div class="floating-card card1">
+        <h3>18+</h3>
+        <p>Registered Documents</p>
+      </div>
+      <div class="floating-card card2">
+        <h3>80G</h3>
+        <p>Tax Exemption</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Trust Documents">
     </div>
 
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+
+  </section>
+
+  <!-- DOCUMENT PORTAL -->
+  <section class="doc-portal">
+    <div class="doc-portal-inner">
+
+      <div class="doc-portal-title">
+        <h2>Trust Documents & Reports</h2>
+        <p>Transparency, Accountability & Impact — Building Trust Through Every Action.</p>
+      </div>
+
+      <!-- TABS -->
+      <div class="doc-tabs">
+        <button class="doc-tab active" data-tab="trust-docs"><i class="fas fa-file-shield"></i> Trust Documents</button>
+        <button class="doc-tab" data-tab="activity-reports"><i class="fas fa-chart-line"></i> Activity Reports</button>
+        <button class="doc-tab" data-tab="report-cards"><i class="fas fa-clipboard-check"></i> Report Cards</button>
+      </div>
+
+      <!-- TRUST DOCUMENTS -->
+      <div class="doc-cards active" id="trust-docs">
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-contract"></i></div><div class="doc-card-body"><h4>Registration Certificate</h4><p>Legal Compliance Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-id-card"></i></div><div class="doc-card-body"><h4>PAN Card</h4><p>Tax Identification Document</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (New)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-certificate"></i></div><div class="doc-card-body"><h4>80G Certificate (Old)</h4><p>Tax Exemption Certificate</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (New)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice"></i></div><div class="doc-card-body"><h4>12A Certificate (Old)</h4><p>Trust Registration Exemption</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-hand-holding-heart"></i></div><div class="doc-card-body"><h4>CSR Funds Certificate</h4><p>Corporate Social Responsibility Compliance</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-building"></i></div><div class="doc-card-body"><h4>NITI Aayog Registration</h4><p>Government Registry</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-award"></i></div><div class="doc-card-body"><h4>ISO Certificate</h4><p>Quality Management Certification</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+      </div>
+
+      <!-- ACTIVITY REPORTS -->
+      <div class="doc-cards" id="activity-reports">
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2016</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2017</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2018</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2019</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2020</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2021</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2022</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2023</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-calendar-alt"></i></div><div class="doc-card-body"><h4>Activity Report 2024</h4><p>Annual Progress & Impact Summary</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+      </div>
+
+      <!-- REPORT CARDS -->
+      <div class="doc-cards" id="report-cards">
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-chart-pie"></i></div><div class="doc-card-body"><h4>Annual Impact Reports</h4><p>Yearly Impact & Outcome Analysis</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-file-invoice-dollar"></i></div><div class="doc-card-body"><h4>Financial Reports</h4><p>Audited Financial Statements</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-eye"></i></div><div class="doc-card-body"><h4>Transparency Reports</h4><p>Open Data & Governance Reports</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-users"></i></div><div class="doc-card-body"><h4>Beneficiary Reports</h4><p>Community Impact & Reach Analysis</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+        <div class="doc-card"><div class="doc-card-icon"><i class="fas fa-clipboard-list"></i></div><div class="doc-card-body"><h4>Organizational Report Cards</h4><p>Overall Performance Scorecard</p></div><div class="doc-card-arrow"><i class="fas fa-arrow-right"></i></div></div>
+      </div>
+
+    </div>
   </section>
 
   <!-- VALUES / COMPLIANCE SECTION -->
@@ -1267,17 +1416,12 @@
   <!-- SCRIPT -->
   <script>
 
+    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const closeMenu = document.getElementById('closeMenu');
-
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-    });
-
-    closeMenu.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
+    if (hamburger) hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+    if (closeMenu) closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
 
     // Scroll Reveal
     const revealEls = document.querySelectorAll('.reveal');
@@ -1290,6 +1434,16 @@
       });
     }, { threshold: 0.15 });
     revealEls.forEach(el => revealObserver.observe(el));
+
+    // Document Portal Tabs
+    document.querySelectorAll('.doc-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.doc-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.doc-cards').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById(this.dataset.tab).classList.add('active');
+      });
+    });
   </script>
 
 <!-- WhatsApp Floating Button -->
