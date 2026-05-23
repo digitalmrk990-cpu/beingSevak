@@ -126,6 +126,13 @@ input, select { font-family: inherit; outline: none; border: none; }
   gap: 8px;
   flex-shrink: 0;
 }
+.nav-quick2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+}
 .lang-btn, .zakat-btn {
   background: rgba(255,255,255,0.1);
   color: white;
