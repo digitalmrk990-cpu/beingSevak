@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers | Being Sevak Charitable Trust</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #03163E;
+      --mid:     #315371;
+      --cyan:    #00A2D9;
+      --cyan-light: #33bce8;
+      --green:   #2eb85c;
+      --gold:    #D4AF37;
+      --white:   #ffffff;
+      --light-bg:#f4f7fb;
+      --text-dark:#1a1a2e;
+      --text-mid: #4a5568;
+    }
+    body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x: hidden; }
+
+    .tax-box{
+      width:100%; height:70px; display:flex; justify-content:center;
+      align-items:center; text-align:center;
+      background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
+      color:#fff; border-radius:0px; margin:20px 0; padding:10px;
+    }
+    .tax-box h1{
+      font-family:'Montserrat',sans-serif; font-size:28px; font-weight:800;
+      letter-spacing:2px; color:#fff; margin:0;
+    }
+
+    .careers-section {
+      padding: 60px 6%;
+      background: var(--light-bg);
+    }
+    .careers-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .section-title h2 span { color: var(--cyan); }
+    .section-title p {
+      font-size: 16px;
+      color: var(--text-mid);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .careers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .info-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+    .info-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .info-card h3 i {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--cyan), #0072a0);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+    }
+    .info-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-left: 56px;
+    }
+    .info-card ul {
+      list-style: none;
+      margin-left: 56px;
+    }
+    .info-card ul li {
+      font-size: 14px;
+      color: var(--text-mid);
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-card ul li i {
+      color: var(--cyan);
+      font-size: 12px;
+    }
+
+    .form-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .form-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    .form-card > p {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .form-group label span { color: #e74c3c; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e8edf2;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
+      transition: 0.3s;
+      background: #fafbfc;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--cyan);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,163,218,0.1);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--cyan), #0072a0);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.4s;
+      letter-spacing: 0.5px;
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,163,218,0.3);
+    }
+
+    .volunteer-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .benefit-item {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .benefit-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    .benefit-item i {
+      font-size: 24px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .benefit-item h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .benefit-item p {
+      font-size: 12px;
+      color: var(--text-mid);
+      margin: 0;
+    }
+
+    @media(max-width: 860px) {
+      .careers-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .volunteer-benefits { grid-template-columns: 1fr; }
+      .section-title h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAIN NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo">
+
+        <div class="logo-circle">
+          <img src="logo11.png" alt="MATW Logo" style="width:100%;height:100%;object-fit:contain;" />
+
+          <div class="logo-fallback">
+            <div class="logo-globe"></div>
+          </div>
+        </div>
+
+        <!-- PNG IMAGE -->
+        <img src="images/bs.png" alt="Text Logo" class="BS-text-logo">
+
+      </a>
+
+      <!-- Language + Zakat Quick Links -->
+      <div class="nav-quick">
+
+        <div class="zakat-circle-wrap">
+          <div class="zakat-pulse-ring"></div>
+          <div class="zakat-pulse-ring ring2"></div>
+          <button class="zakat-circle-btn">
+            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
+          </button>
+          <span class="zakat-label">Annदान</span>
+        </div>
+
+      </div>
+      <br>
+      <div class="nav-quick">
+
+        <div class="zakat-circle-wrap">
+          <div class="zakat-pulse-ring"></div>
+          <div class="zakat-pulse-ring ring2"></div>
+          <button class="zakat-circle-btn">
+            <img src="https://matwproject.org.uk/static/media/zakat.4b8e5d8777306e3a7621.png" alt="Zakat" />
+          </button>
+          <span class="zakat-label">Sevakनिवास</span>
+        </div>
+
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="nav-links">
+        <div class="nav-item dropdown">
+          <a href="#">ABOUT US <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="about-bsct.html">About BSCT</a>
+            <a href="management.html">Management</a>
+            <!-- <a href="mission-vision.html">Mission/Vision</a> -->
+            <a href="trust-documents.html">Trust Documents</a>
+            <a href="where-we-work.html">Where We Work</a>
+            <a href="awards.html">Awards/Achievements</a>
+            <a href="#">Press Release</a>
+            <a href="#">In News Paper</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a href="#">WHAT WE DO <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="Mission Annapurna/Annapurna.html">Mission Annapurna</a>
+            <a href="Mission Annapurna/Vidhya.html">Mission Vidhya</a>
+            <a href="Mission Annapurna/aurat.html">Mission Aurat</a>
+            <a href="Mission Annapurna/bezubaan.html">Mission Bezubaan</a>
+            <a href="Mission Annapurna/atmanirbhar.html">Mission Atmanirbhar</a>
+            <a href="Mission Annapurna/Wellness.html">Mission Arogya</a>
+            <a href="Mission Annapurna/sevak.html">Sevak Niwas Kendra</a>
+            <a href="Mission Annapurna/beach.html">Mission Beach Sevak</a>
+            <a href="Mission Annapurna/Eco.html">Mission Eco-Warriors</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a href="#"> CSR</a>
+
+        </div>
+        <div class="nav-item">
+          <a href="#" class="new-badge"> 2026 <span class="badge-new">NEW</span></a>
+        </div>
+        <div class="nav-item">
+          <a href="contactus/contact.html">CONTACT US</a>
+        </div>
+        <div class="nav-item dropdown">
+          <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#">Individual Donation</a>
+            <a href="#">Volunteers(SEVAK BANO)</a>
+            <a href="#">Corporate Collaboration</a>
+            <a href="#">School/Institute Collaboration</a>
+            <a href="#">NGO Collaboration</a>
+            <a href="careers.html">Careers</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Right Side Icons -->
+      <div class="nav-right">
+
+        <div class="yt-avatar">
+          <a href="https://www.youtube.com/@BeingSevak" target="_blank" rel="noopener noreferrer">
+
+            <div class="yt-icon">
+              <i class="fab fa-youtube"></i>
+            </div>
+
+          </a>
+
+          <img class="avatar-img" src="images/host.png" alt="host" onerror="this.style.display='none'" />
+        </div>
+        <a href="donation.html" class="donate-btn">DONATE</a>
+
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+    <nav>
+      <a href="#">Give Now</a>
+      <a href="#">Zakat</a>
+      <a href="#">Islamic Giving</a>
+      <a href="#">Qurban 2026</a>
+      <a href="#">Amanah</a>
+      <a href="#">About Us</a>
+      <a href="#" class="mobile-donate-btn">DONATE</a>
+    </nav>
+  </div>
+
+  <!-- Tax Box -->
+  <section class="tax-box">
+    <h1>Careers</h1>
+  </section>
+
+  <!-- Main Section -->
+  <section class="careers-section">
+    <div class="careers-inner">
+
+      <div class="section-title">
+        <h2>Join Our <span>Mission</span></h2>
+        <p>Be part of a team dedicated to selfless service and social change. Explore career opportunities or volunteer with us.</p>
+      </div>
+
+      <div class="careers-grid">
+
+        <!-- Left: Info -->
+        <div>
+          <div class="info-card">
+            <h3><i class="fas fa-bullseye"></i> Why Join Us?</h3>
+            <p>Being Sevak Charitable Trust offers a meaningful work environment where you can make a real difference. We value passion, integrity, and a commitment to serving communities.</p>
+          </div>
+
+          <div class="info-card">
+            <h3><i class="fas fa-check-circle"></i> Current Openings</h3>
+            <ul>
+              <li><i class="fas fa-chevron-right"></i> Program Manager</li>
+              <li><i class="fas fa-chevron-right"></i> Social Media Coordinator</li>
+              <li><i class="fas fa-chevron-right"></i> Field Volunteer</li>
+              <li><i class="fas fa-chevron-right"></i> Fundraising Associate</li>
+              <li><i class="fas fa-chevron-right"></i> Content Writer</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3><i class="fas fa-heart"></i> Volunteer Benefits</h3>
+            <div class="volunteer-benefits">
+              <div class="benefit-item">
+                <i class="fas fa-award"></i>
+                <h4>Certificate</h4>
+                <p>Official recognition for your service</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h4>Skill Dev</h4>
+                <p>Learn & grow through real work</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-users"></i>
+                <h4>Network</h4>
+                <p>Connect with like-minded people</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>Impact</h4>
+                <p>Directly contribute to social change</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card">
+          <h3>Volunteer Application</h3>
+          <p>Fill out the form below and our team will get back to you.</p>
+
+          <form id="volunteerForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name <span>*</span></label>
+                <input type="text" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label>Email <span>*</span></label>
+                <input type="email" required placeholder="Your email address">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone <span>*</span></label>
+                <input type="tel" required placeholder="Your phone number">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" placeholder="Your city">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Area of Interest <span>*</span></label>
+              <select required>
+                <option value="">Select an option</option>
+                <option>Program Management</option>
+                <option>Field Volunteering</option>
+                <option>Fundraising</option>
+                <option>Content & Social Media</option>
+                <option>Teaching & Education</option>
+                <option>Healthcare Support</option>
+                <option>Administrative Support</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Availability</label>
+              <select>
+                <option>Full Time</option>
+                <option>Part Time</option>
+                <option>Weekends Only</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Why do you want to join us? <span>*</span></label>
+              <textarea required placeholder="Tell us about your motivation and experience..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="images/logo11.png" alt="Being Sevak Logo" class="footer-logo-img">
+          <img src="images/bs.png" alt="Text Logo" class="BS-text-logo">
+        </div>
+        <p class="footer-desc">Serving humanity with compassion, dignity, and hope — empowering lives through food, education, healthcare, and community support</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>About Us</h4>
+        <ul>
+          <li><a href="about-bsct.html">About BSCT</a></li>
+          <li><a href="management.html">Management</a></li>
+          <li><a href="mission-vision.html">Mission / Vision</a></li>
+          <li><a href="trust-documents.html">Trust Documents</a></li>
+          <li><a href="where-we-work.html">Where We Work</a></li>
+          <li><a href="awards.html">Awards / Achievements</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Projects</h4>
+        <ul>
+          <li><a href="Mission Annapurna/Annapurna.html">Mission Annapurna</a></li>
+          <li><a href="Mission Annapurna/Vidhya.html">Mission Vidhya</a></li>
+          <li><a href="Mission Annapurna/aurat.html">Mission Aurat</a></li>
+          <li><a href="Mission Annapurna/bezubaan.html">Mission Bezubaan</a></li>
+          <li><a href="Mission Annapurna/atmanirbhar.html">Mission Atmanirbhar</a></li>
+          <li><a href="Mission Annapurna/Wellness.html">Mission Arogya</a></li>
+          <li><a href="Mission Annapurna/sevak.html">Sevak Niwash Kendra</a></li>
+          <li><a href="Mission Annapurna/beach.html">Mission Beach Sevak</a></li>
+          <li><a href="Mission Annapurna/Eco.html">Mission Eco-Warriors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>GET INVOLVED</h4>
+        <ul>
+          <li><a href="#">Individual Donation</a></li>
+          <li><a href="#">Volunteers(SEVAK BANO)</a></li>
+          <li><a href="#">Corporate Collaboration</a></li>
+          <li><a href="#">School/Institute Collaboration</a></li>
+          <li><a href="#">NGO Collaboration</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i>+91 8879035035</p>
+        <p><i class="fas fa-envelope"></i> info@matwproject.org</p>
+        <p><i class="fas fa-map-marker-alt"></i> MUMBAI, INDIA</p>
+        <div class="footer-badges">
+          <a href="brochure.pdf" class="brochure-btn" download><i class="fas fa-file-pdf"></i> Brochure</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MATW Project. All rights reserved. Registered Charity No. 1176462</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918879035035?text=Hello%20Being%20Sevak%20Charitable%20Trust%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your interest! Our team will contact you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
