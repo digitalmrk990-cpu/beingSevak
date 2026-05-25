@@ -11,6 +11,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <style>
     *,
     *::before,
@@ -1022,6 +1024,547 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ═══════════════════════════════════════════
+       WHERE WE WORK - PREMIUM INTERACTIVE MAP
+       ═══════════════════════════════════════════ */
+
+    .www-section {
+      width: 100%;
+      background: #ffffff;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .www-container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ─── HEADER ─── */
+    .www-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .www-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--navy, #03163E);
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .www-title span {
+      color: #00a3da;
+    }
+
+    .www-subtitle {
+      font-size: 1.1rem;
+      color: #4a5568;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ─── COUNTER ─── */
+    .www-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 50px;
+      padding: 30px 40px;
+      background: linear-gradient(135deg, #f0f8ff, #e8f4fd);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,163,218,0.1);
+    }
+
+    .www-counter-item {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .www-counter-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #00a3da;
+      line-height: 1;
+    }
+
+    .www-counter-plus {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff6b00;
+    }
+
+    .www-counter-suffix {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #00a3da;
+    }
+
+    .www-counter-label {
+      display: block;
+      width: 100%;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a5568;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .www-counter-divider {
+      width: 2px;
+      height: 50px;
+      background: linear-gradient(180deg, transparent, #00a3da, transparent);
+    }
+
+    /* ─── GRID ─── */
+    .www-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ─── MAP ─── */
+    .www-map-col {
+      position: relative;
+    }
+
+    .www-map-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      background: #f8fafc;
+      transition: transform 0.5s ease, overflow 0s;
+    }
+
+    .www-map-wrap.zoomed {
+      transform: scale(1.3);
+      overflow: visible;
+      transition: transform 0.5s ease, overflow 0s;
+    }
+
+    .www-map-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─── PINS ─── */
+    .www-pin {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 5;
+      transition: opacity 0.4s ease;
+    }
+
+    .www-pin-dot {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #00a3da;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 10px rgba(0,163,218,0.5);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .www-pin-pulse {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(0,163,218,0.3);
+      transform: translate(-50%, -50%) scale(1);
+      animation: wwwPulse 2s ease-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes wwwPulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      70% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+    }
+
+    .www-pin.active .www-pin-dot {
+      background: #ff6b00;
+      box-shadow: 0 0 20px rgba(255,107,0,0.6);
+      transform: scale(1.3);
+    }
+
+    .www-pin.active .www-pin-pulse {
+      background: rgba(255,107,0,0.4);
+      animation-duration: 1.2s;
+    }
+
+    .www-pin.faded {
+      opacity: 0.3;
+    }
+
+    /* ─── TOOLTIP ─── */
+    .www-pin-tooltip {
+      position: absolute;
+      bottom: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+      min-width: 170px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s ease;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .www-pin-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid transparent;
+      border-top-color: #fff;
+    }
+
+    .www-pin.active .www-pin-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .www-pin-tooltip h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #00a3da;
+      margin-bottom: 8px;
+    }
+
+    .www-pin-tooltip p {
+      font-size: 0.82rem;
+      color: #4a5568;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .www-pin-tooltip p strong {
+      color: #1a1a2e;
+    }
+
+    /* ─── LEGEND ─── */
+    .www-legend {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 18px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+
+    .www-legend-title {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .www-legend-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .www-legend-item {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #4a5568;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .www-legend-item i {
+      font-size: 0.8rem;
+    }
+
+    /* ─── RIGHT PANEL ─── */
+    .www-list-col {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #eef2f6;
+    }
+
+    .www-list-header {
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid #e8ecf0;
+      background: #fafcfe;
+    }
+
+    .www-list-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #03163E;
+      margin-bottom: 4px;
+    }
+
+    .www-list-header h3 span {
+      color: #00a3da;
+    }
+
+    .www-list-header p {
+      font-size: 0.85rem;
+      color: #6b7f8f;
+    }
+
+    .www-list-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      padding: 8px 12px;
+      background: #ffffff;
+    }
+
+    .www-list-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .www-list-scroll::-webkit-scrollbar-track {
+      background: #f0f2f5;
+      border-radius: 8px;
+    }
+
+    .www-list-scroll::-webkit-scrollbar-thumb {
+      background: #c0c8d0;
+      border-radius: 8px;
+    }
+
+    /* ─── CARDS ─── */
+    .www-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      transition: all 0.35s ease;
+      cursor: pointer;
+      margin-bottom: 8px;
+      position: relative;
+      background: #f4f8fb;
+      border: 1px solid #d0d8e0;
+      min-height: 60px;
+    }
+
+    .www-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #00a3da;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: all 0.35s ease;
+      box-shadow: 0 3px 10px rgba(0,163,218,0.2);
+    }
+
+    .www-card-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .www-card-text h4 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0a1a2a;
+      margin-bottom: 3px;
+      transition: color 0.35s ease;
+      line-height: 1.3;
+      letter-spacing: 0.3px;
+    }
+
+    .www-card-text p {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #445566;
+      line-height: 1.4;
+      transition: color 0.35s ease;
+      margin: 0;
+    }
+
+    .www-card:hover {
+      background: #00a3da;
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(0,163,218,0.3);
+      border-color: #00a3da;
+    }
+
+    .www-card:hover .www-card-icon {
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .www-card:hover .www-card-text h4,
+    .www-card:hover .www-card-text p {
+      color: #ffffff;
+    }
+
+    .www-card.active-card {
+      background: #00a3da;
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(0,163,218,0.3);
+      border-color: #00a3da;
+    }
+
+    .www-card.active-card .www-card-icon {
+      background: rgba(255,255,255,0.3);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .www-card.active-card .www-card-text h4,
+    .www-card.active-card .www-card-text p {
+      color: #ffffff;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .www-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .www-list-scroll {
+        max-height: 400px;
+      }
+
+      .www-title {
+        font-size: 2.4rem;
+      }
+
+      .www-counter {
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .www-counter-num {
+        font-size: 2.2rem;
+      }
+
+      .www-counter-divider {
+        display: none;
+      }
+
+      .www-counter-item {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .www-section {
+        padding: 50px 16px;
+      }
+
+      .www-title {
+        font-size: 1.8rem;
+      }
+
+      .www-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .www-counter {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .www-counter-item {
+        min-width: auto;
+      }
+
+      .www-counter-num {
+        font-size: 2rem;
+      }
+
+      .www-list-scroll {
+        max-height: 350px;
+      }
+
+      .www-legend {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 12px;
+        border-radius: 12px;
+        padding: 12px 14px;
+      }
+
+      .www-legend-items {
+        gap: 8px;
+      }
+
+      .www-card:hover {
+        transform: translateX(4px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .www-title {
+        font-size: 1.5rem;
+      }
+
+      .www-list-scroll {
+        max-height: 300px;
+      }
+
+      .www-pin-tooltip {
+        min-width: 140px;
+        padding: 10px 14px;
+      }
+
+      .www-pin-tooltip h4 {
+        font-size: 0.85rem;
+      }
+
+      .www-pin-tooltip p {
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 
@@ -1245,71 +1788,313 @@
 
   </section>
 
-  <!-- MAIN SECTION -->
+  <!-- ========== WHERE WE WORK - PREMIUM INTERACTIVE ========== -->
 
-  <section class="where-we-work">
+  <section class="www-section">
 
-    <div class="section-title">
+    <div class="www-container">
 
-      <h2>WHERE WE WORK</h2>
-
-      <p>
-        Being Sevak Charitable Trust is actively working
-        across multiple states in India through initiatives
-        focused on education, nourishment, healthcare,
-        empowerment and social welfare.
-      </p>
-
-    </div>
-
-    <div class="work-grid">
-
-      <!-- MAP -->
-
-      <div class="map-wrapper">
-
-        <img src="https://beingsevak.org/wp-content/uploads/2023/10/Untitled-design-15.png" alt="India Map">
-
-        <div class="location" data-name="Dwarka" style="top:49%; left:17%;"></div>
-
-        <div class="location" data-name="Rajkot" style="top:50%; left:26%;"></div>
-
-        <div class="location" data-name="Narmada" style="top:52%; left:43%;"></div>
-
-        <div class="location" data-name="Mumbai" style="top:72%; left:20%;"></div>
-
-        <div class="location" data-name="Navi Mumbai" style="top:82%; left:20%;"></div>
-
-        <div class="location" data-name="Pune" style="top:65%; left:30%;"></div>
-
-        <div class="location" data-name="Odisha" style="top:72%; left:58%;"></div>
-
-        <div class="location" data-name="Kolkata" style="top:52%; left:83%;"></div>
-
-        <div class="location" data-name="Tamil Nadu" style="top:95%; left:40%;"></div>
-
-        <div class="location" data-name="Jalgaon" style="top:60%; left:28%;"></div>
-
+      <!-- Section Title -->
+      <div class="www-header">
+        <h2 class="www-title">Where We <span>Work</span></h2>
+        <p class="www-subtitle">Serving communities across India through education, healthcare, empowerment, sustainability and humanitarian initiatives.</p>
       </div>
 
-      <!-- LOCATION LIST -->
+      <!-- Counter Strip -->
+      <div class="www-counter">
+        <div class="www-counter-item">
+          <span class="www-counter-num" data-target="15">0</span>
+          <span class="www-counter-plus">+</span>
+          <span class="www-counter-label">Locations</span>
+        </div>
+        <div class="www-counter-divider"></div>
+        <div class="www-counter-item">
+          <span class="www-counter-num" data-target="100">0</span>
+          <span class="www-counter-plus">+</span>
+          <span class="www-counter-label">Projects</span>
+        </div>
+        <div class="www-counter-divider"></div>
+        <div class="www-counter-item">
+          <span class="www-counter-num" data-target="1">0</span>
+          <span class="www-counter-suffix">M</span>
+          <span class="www-counter-plus">+</span>
+          <span class="www-counter-label">Lives Impacted</span>
+        </div>
+      </div>
 
-      <div class="location-list">
+      <!-- Main Grid -->
+      <div class="www-grid">
 
-        <ul>
+        <!-- LEFT: Map -->
+        <div class="www-map-col">
+          <div class="www-map-wrap" id="wwwMapWrap">
+            <img src="https://beingsevak.org/wp-content/uploads/2023/10/Untitled-design-15.png" alt="India Map" class="www-map-img" id="wwwMapImg">
 
-          <li><i class="fa-solid fa-location-dot"></i>Mumbai</li>
-          <li><i class="fa-solid fa-location-dot"></i>Pune</li>
-          <li><i class="fa-solid fa-location-dot"></i>Jalgaon</li>
-          <li><i class="fa-solid fa-location-dot"></i>Kolkata</li>
-          <li><i class="fa-solid fa-location-dot"></i>Tamil Nadu</li>
-          <li><i class="fa-solid fa-location-dot"></i>Rajkot</li>
-          <li><i class="fa-solid fa-location-dot"></i>Dwarka</li>
-          <li><i class="fa-solid fa-location-dot"></i>Narmada</li>
-          <li><i class="fa-solid fa-location-dot"></i>Navi Mumbai</li>
-          <li><i class="fa-solid fa-location-dot"></i>Odisha</li>
+            <!-- Location Pins -->
+            <div class="www-pin" data-loc="mumbai" style="top:72%; left:20%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Mumbai</h4>
+                <p><strong>Projects:</strong> 12</p>
+                <p><strong>Beneficiaries:</strong> 2.5L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="navi-mumbai" style="top:82%; left:20%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Navi Mumbai</h4>
+                <p><strong>Projects:</strong> 8</p>
+                <p><strong>Beneficiaries:</strong> 1.2L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="pune" style="top:65%; left:30%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Pune</h4>
+                <p><strong>Projects:</strong> 10</p>
+                <p><strong>Beneficiaries:</strong> 1.8L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="jalgaon" style="top:60%; left:28%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Jalgaon</h4>
+                <p><strong>Projects:</strong> 6</p>
+                <p><strong>Beneficiaries:</strong> 80K+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="rajkot" style="top:50%; left:26%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Rajkot</h4>
+                <p><strong>Projects:</strong> 7</p>
+                <p><strong>Beneficiaries:</strong> 1L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="dwarka" style="top:49%; left:17%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Dwarka</h4>
+                <p><strong>Projects:</strong> 5</p>
+                <p><strong>Beneficiaries:</strong> 60K+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="rajasthan" style="top:36%; left:28%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Rajasthan</h4>
+                <p><strong>Projects:</strong> 9</p>
+                <p><strong>Beneficiaries:</strong> 1.5L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="punjab" style="top:20%; left:25%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Punjab</h4>
+                <p><strong>Projects:</strong> 4</p>
+                <p><strong>Beneficiaries:</strong> 50K+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="haryana" style="top:30%; left:24%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Haryana</h4>
+                <p><strong>Projects:</strong> 6</p>
+                <p><strong>Beneficiaries:</strong> 90K+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="uttar-pradesh" style="top:38%; left:42%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Uttar Pradesh</h4>
+                <p><strong>Projects:</strong> 11</p>
+                <p><strong>Beneficiaries:</strong> 2L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="madhya-pradesh" style="top:50%; left:33%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Madhya Pradesh</h4>
+                <p><strong>Projects:</strong> 8</p>
+                <p><strong>Beneficiaries:</strong> 1.3L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="odisha" style="top:72%; left:58%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Odisha</h4>
+                <p><strong>Projects:</strong> 7</p>
+                <p><strong>Beneficiaries:</strong> 1.1L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="kolkata" style="top:52%; left:83%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Kolkata</h4>
+                <p><strong>Projects:</strong> 14</p>
+                <p><strong>Beneficiaries:</strong> 3L+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="chengalpattu" style="top:90%; left:43%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Chengalpattu</h4>
+                <p><strong>Projects:</strong> 5</p>
+                <p><strong>Beneficiaries:</strong> 70K+</p>
+              </div>
+            </div>
+            <div class="www-pin" data-loc="tamil-nadu" style="top:95%; left:40%;">
+              <div class="www-pin-dot"></div>
+              <div class="www-pin-pulse"></div>
+              <div class="www-pin-tooltip">
+                <h4>Tamil Nadu</h4>
+                <p><strong>Projects:</strong> 10</p>
+                <p><strong>Beneficiaries:</strong> 1.6L+</p>
+              </div>
+            </div>
 
-        </ul>
+            <!-- Legend -->
+            <div class="www-legend">
+              <span class="www-legend-title">Focus Areas</span>
+              <div class="www-legend-items">
+                <span class="www-legend-item"><i class="fas fa-book-open" style="color:#00a3da"></i> Education</span>
+                <span class="www-legend-item"><i class="fas fa-heartbeat" style="color:#ff6b00"></i> Healthcare</span>
+                <span class="www-legend-item"><i class="fas fa-female" style="color:#e91e63"></i> Women Empower</span>
+                <span class="www-legend-item"><i class="fas fa-leaf" style="color:#4caf50"></i> Sustainability</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: Location Cards -->
+        <div class="www-list-col">
+          <div class="www-list-header">
+            <h3>Our <span>Locations</span></h3>
+            <p>Hover a location to see its impact</p>
+          </div>
+          <div class="www-list-scroll">
+            <div class="www-card" data-loc="mumbai">
+              <div class="www-card-icon"><i class="fas fa-city"></i></div>
+              <div class="www-card-text">
+                <h4>Mumbai</h4>
+                <p>Education, food distribution &amp; health camps</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="navi-mumbai">
+              <div class="www-card-icon"><i class="fas fa-building"></i></div>
+              <div class="www-card-text">
+                <h4>Navi Mumbai</h4>
+                <p>Women empowerment &amp; hygiene programs</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="pune">
+              <div class="www-card-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="www-card-text">
+                <h4>Pune</h4>
+                <p>Digital education &amp; skill development</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="jalgaon">
+              <div class="www-card-icon"><i class="fas fa-tractor"></i></div>
+              <div class="www-card-text">
+                <h4>Jalgaon</h4>
+                <p>Rural development &amp; livelihood support</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="rajkot">
+              <div class="www-card-icon"><i class="fas fa-industry"></i></div>
+              <div class="www-card-text">
+                <h4>Rajkot</h4>
+                <p>Vocational training &amp; self-reliance</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="dwarka">
+              <div class="www-card-icon"><i class="fas fa-water"></i></div>
+              <div class="www-card-text">
+                <h4>Dwarka</h4>
+                <p>Clean water &amp; sanitation projects</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="rajasthan">
+              <div class="www-card-icon"><i class="fas fa-sun"></i></div>
+              <div class="www-card-text">
+                <h4>Rajasthan</h4>
+                <p>Mid-day meals &amp; child nutrition</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="punjab">
+              <div class="www-card-icon"><i class="fas fa-wheat-alt"></i></div>
+              <div class="www-card-text">
+                <h4>Punjab</h4>
+                <p>Food distribution &amp; community kitchens</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="haryana">
+              <div class="www-card-icon"><i class="fas fa-school"></i></div>
+              <div class="www-card-text">
+                <h4>Haryana</h4>
+                <p>School renovation &amp; education drives</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="uttar-pradesh">
+              <div class="www-card-icon"><i class="fas fa-mosque"></i></div>
+              <div class="www-card-text">
+                <h4>Uttar Pradesh</h4>
+                <p>Healthcare camps &amp; hygiene kits</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="madhya-pradesh">
+              <div class="www-card-icon"><i class="fas fa-tree"></i></div>
+              <div class="www-card-text">
+                <h4>Madhya Pradesh</h4>
+                <p>Environment &amp; animal welfare programs</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="odisha">
+              <div class="www-card-icon"><i class="fas fa-fish"></i></div>
+              <div class="www-card-text">
+                <h4>Odisha</h4>
+                <p>Disaster relief &amp; community support</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="kolkata">
+              <div class="www-card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="www-card-text">
+                <h4>Kolkata</h4>
+                <p>Elderly care &amp; child development</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="chengalpattu">
+              <div class="www-card-icon"><i class="fas fa-hospital"></i></div>
+              <div class="www-card-text">
+                <h4>Chengalpattu</h4>
+                <p>Medical support &amp; dialysis centre</p>
+              </div>
+            </div>
+            <div class="www-card" data-loc="tamil-nadu">
+              <div class="www-card-icon"><i class="fas fa-praying-hands"></i></div>
+              <div class="www-card-text">
+                <h4>Tamil Nadu</h4>
+                <p>Multi-focus community outreach</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
 
@@ -1561,6 +2346,155 @@
       });
     }, { threshold: 0.15 });
     revealEls.forEach(el => revealObserver.observe(el));
+  </script>
+
+  <!-- ════════════════════════════════════════════════
+       WHERE WE WORK - INTERACTIVE MAP JAVASCRIPT
+       ════════════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const mapWrap = document.getElementById('wwwMapWrap');
+      const pins = document.querySelectorAll('.www-pin');
+      const cards = document.querySelectorAll('.www-card');
+      const wwwSection = document.querySelector('.www-section');
+
+      // ─── GSAP Entrance Animations ───
+      if (typeof gsap !== 'undefined') {
+        // Section fade-in
+        gsap.from('.www-header', { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out' });
+        gsap.from('.www-counter', { opacity: 0, y: 30, duration: 0.8, delay: 0.2, ease: 'power3.out' });
+        gsap.from('.www-map-col', { opacity: 0, x: -40, duration: 0.9, delay: 0.3, ease: 'power3.out' });
+        gsap.from('.www-list-col', { opacity: 0, x: 40, duration: 0.9, delay: 0.3, ease: 'power3.out' });
+        // Stagger cards - use fromTo to guarantee final opacity
+        gsap.fromTo('.www-card',
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, delay: 0.5, ease: 'power2.out' }
+        );
+        // Floating pins animation
+        pins.forEach((pin, i) => {
+          gsap.to(pin, {
+            y: -6,
+            duration: 2 + (i * 0.15),
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: i * 0.1
+          });
+        });
+      }
+
+      // ─── Counter Animation ───
+      const counterEls = document.querySelectorAll('.www-counter-num');
+      let countersStarted = false;
+
+      function animateCounters() {
+        if (countersStarted) return;
+        countersStarted = true;
+        counterEls.forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'));
+          const duration = 1500;
+          const start = performance.now();
+
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = current;
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = target;
+            }
+          }
+          requestAnimationFrame(update);
+        });
+      }
+
+      // ─── Card <-> Pin Interaction ───
+      function activateLocation(loc) {
+        // Remove all active states
+        pins.forEach(p => p.classList.remove('active', 'faded'));
+        cards.forEach(c => c.classList.remove('active-card'));
+
+        if (!loc) return;
+
+        // Activate matching pin
+        const activePin = document.querySelector(`.www-pin[data-loc="${loc}"]`);
+        const activeCard = document.querySelector(`.www-card[data-loc="${loc}"]`);
+
+        if (activePin) {
+          activePin.classList.add('active');
+          // Fade other pins
+          pins.forEach(p => {
+            if (p !== activePin) p.classList.add('faded');
+          });
+          // Zoom map into the pin area using transform-origin
+          if (mapWrap) {
+            const pinLeft = parseFloat(activePin.style.left);
+            const pinTop = parseFloat(activePin.style.top);
+            if (!isNaN(pinLeft) && !isNaN(pinTop)) {
+              mapWrap.style.transformOrigin = `${pinLeft}% ${pinTop}%`;
+            } else {
+              mapWrap.style.transformOrigin = '50% 50%';
+            }
+            mapWrap.classList.add('zoomed');
+          }
+        }
+
+        if (activeCard) {
+          activeCard.classList.add('active-card');
+          // Scroll card into view
+          activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      function deactivateAll() {
+        pins.forEach(p => p.classList.remove('active', 'faded'));
+        cards.forEach(c => c.classList.remove('active-card'));
+        if (mapWrap) {
+          mapWrap.classList.remove('zoomed');
+          mapWrap.style.transformOrigin = '';
+        }
+      }
+
+      // Hover on cards
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          const loc = this.getAttribute('data-loc');
+          activateLocation(loc);
+        });
+        card.addEventListener('mouseleave', function() {
+          deactivateAll();
+        });
+      });
+
+      // Hover on pins
+      pins.forEach(pin => {
+        pin.addEventListener('mouseenter', function() {
+          const loc = this.getAttribute('data-loc');
+          activateLocation(loc);
+        });
+        pin.addEventListener('mouseleave', function() {
+          deactivateAll();
+        });
+      });
+
+      // ─── Counter Observer ───
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const counterStrip = document.querySelector('.www-counter');
+      if (counterStrip) counterObserver.observe(counterStrip);
+
+    });
   </script>
 
   <!-- WhatsApp Floating Button -->

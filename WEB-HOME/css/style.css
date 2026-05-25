@@ -1348,7 +1348,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 /* ONLY LOGO SQUARE CARD */
 .project-card{
   min-width:140px;
-  height:140px;
+  height:200px;
   background:#fff;
   border:2px solid #e6f6fb;
   border-radius:22px;
@@ -3176,10 +3176,67 @@ body{
 
 /* LEFT IMAGES */
 .metro-images {
-  flex: 0.9;
+  flex: 1;
   min-width: 300px;
-  max-width: 460px;
+  max-width: 500px;
   position: relative;
+}
+
+/* BIG HERO IMAGE */
+.metro-hero-img {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.metro-hero-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2), 0 0 30px rgba(0,163,218,0.15);
+}
+
+.metro-hero-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.metro-hero-img:hover img {
+  transform: scale(1.05);
+}
+
+.metro-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,35,75,0.85) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  z-index: 2;
+}
+
+.metro-hero-overlay h3 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.metro-hero-overlay p {
+  color: rgba(255,255,255,0.9);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 .metro-image-grid {
@@ -3418,6 +3475,15 @@ body{
     flex-direction: column;
     gap: 35px;
   }
+  .metro-hero-img img {
+    height: 200px;
+  }
+  .metro-hero-overlay h3 {
+    font-size: 17px;
+  }
+  .metro-hero-overlay p {
+    font-size: 13px;
+  }
   .metro-image-grid {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -3443,6 +3509,18 @@ body{
 }
 
 @media(max-width: 500px) {
+  .metro-hero-img img {
+    height: 150px;
+  }
+  .metro-hero-overlay {
+    padding: 16px;
+  }
+  .metro-hero-overlay h3 {
+    font-size: 14px;
+  }
+  .metro-hero-overlay p {
+    font-size: 11px;
+  }
   .metro-section {
     padding: 40px 4%;
   }

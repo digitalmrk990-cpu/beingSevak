@@ -1,4 +1,13 @@
 const pressData = [
+   {
+    title: "Paryavaran Mitra",
+    date: "11 September 2021",
+    year: 2021,
+    description: "Governor presents 'Paryavaran Mitra Samman' on National Forest Martyrs' Day",
+    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.48.04.jpeg",
+    source: "Raj Bhavan",
+    link: "https://rajbhavan-maharashtra.gov.in/en/11-09-2021-governor-presents-paryavaran-mitra-samman-on-national-forest-martyrs-day/"
+  },
   {
     title: "\u0926\u093F\u0935\u094D\u092F\u093E\u0902\u0917 \u0938\u0902\u0917\u0940\u0924\u0915\u093E\u0930",
     date: "16 August 2021",
@@ -7,6 +16,15 @@ const pressData = [
     image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.20-1.jpeg",
     source: "AajTak",
     link: "https://www.aajtak.in/entertainment/bollywood-news/video/bollywood-singer-shankar-mahadevan-distributs-food-kit-and-mobile-phones-to-the-blind-musicians-being-sevak-1310613-2021-08-16"
+  },
+   {
+    title: "Social Responsibility",
+    date: "14 September 2021",
+    year: 2021,
+    description: "Being Sevak Charitable Trust ensuring commitments to social responsibility and humanity",
+    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-01-at-14.38.28-10-1.jpeg",
+    source: "Mid-Day",
+    link: "https://www.mid-day.com/lifestyle/infotainment/article/being-sevak-charitable-trust-ensuring-commitments-to-social-responsibility-and-humanity-23192304"
   },
   {
     title: "National Award",
@@ -17,15 +35,7 @@ const pressData = [
     source: "ANI News",
     link: "https://www.aninews.in/news/business/business/being-sevak-charitable-trust-hosts-the-national-awards-function-to-recognise-the-talent-of-indias-visually-challenged-achievers20211020170958/"
   },
-  {
-    title: "Social Responsibility",
-    date: "14 September 2021",
-    year: 2021,
-    description: "Being Sevak Charitable Trust ensuring commitments to social responsibility and humanity",
-    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-01-at-14.38.28-10-1.jpeg",
-    source: "Mid-Day",
-    link: "https://www.mid-day.com/lifestyle/infotainment/article/being-sevak-charitable-trust-ensuring-commitments-to-social-responsibility-and-humanity-23192304"
-  },
+ 
   {
     title: "Business Award",
     date: "September 2023",
@@ -53,15 +63,7 @@ const pressData = [
     source: "Hindustan Metro",
     link: "https://www.hindustanmetro.com/being-sevak-charitable-trust-initiates-save-the-flag-drive-on-16th-august-2023-promoting-respect-for-the-national-flag-post-independence-day-celebrations/"
   },
-  {
-    title: "Paryavaran Mitra",
-    date: "11 September 2021",
-    year: 2021,
-    description: "Governor presents 'Paryavaran Mitra Samman' on National Forest Martyrs' Day",
-    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.48.04.jpeg",
-    source: "Raj Bhavan",
-    link: "https://rajbhavan-maharashtra.gov.in/en/11-09-2021-governor-presents-paryavaran-mitra-samman-on-national-forest-martyrs-day/"
-  },
+ 
   {
     title: "Pandemic",
     date: "19 August 2021",
@@ -158,8 +160,6 @@ function renderPress() {
     }
     return true;
   });
-
-  filtered.sort((a, b) => getDateValue(b.date).localeCompare(getDateValue(a.date)));
 
   if (filtered.length === 0) {
     grid.innerHTML = `

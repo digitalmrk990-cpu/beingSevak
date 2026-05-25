@@ -1,0 +1,100 @@
+Create a premium interactive "Where We Work" section for Being Sevak Charitable Trust.
+
+DESIGN:
+- Full width section with white background.
+- Main color: #00a3da
+- Secondary color: #ff6b00
+- Modern NGO website style.
+- Section title: "Where We Work"
+- Subtitle: "Serving communities across India through education, healthcare, empowerment, sustainability and humanitarian initiatives."
+
+LAYOUT:
+- Two column layout on desktop.
+- Left side (65%): Interactive India Map.
+- Right side (35%): Scrollable list of locations.
+
+MAP:
+- Use the provided India map image as background.
+- Place animated location pins on:
+  Mumbai
+  Navi Mumbai
+  Pune
+  Jalgaon
+  Rajkot
+  Dwarka
+  Rajasthan
+  Punjab
+  Haryana
+  Uttar Pradesh
+  Madhya Pradesh
+  Odisha
+  Kolkata
+  Chengalpattu
+  Tamil Nadu
+
+INTERACTION:
+- When user hovers a location name in the right panel:
+  - The corresponding pin on map should glow.
+  - Pin should bounce smoothly.
+  - A circular pulse animation should appear around the pin.
+  - The map should slightly zoom to that area.
+  - A tooltip should appear showing:
+      Location Name
+      Projects Running
+      Beneficiaries Served
+  - Other pins become slightly faded.
+
+- When user leaves hover:
+  - Map returns smoothly to normal.
+  - Tooltip disappears.
+  - Pins return to normal state.
+
+RIGHT PANEL:
+- Each location displayed as a modern card.
+- Cards have:
+    Icon
+    Location name
+    Small description
+- Hover effect:
+    Background changes to #00a3da
+    Text becomes white
+    Card slides 8px right
+    Soft shadow appears
+
+ANIMATIONS:
+- GSAP animations preferred.
+- Smooth fade-up on section load.
+- Stagger animation for location cards.
+- Floating effect for map pins.
+- Pulse effect around active pin.
+- 60fps smooth transitions.
+
+EXTRA PREMIUM FEATURES:
+- Counter above map:
+    15+ Locations
+    100+ Projects
+    1M+ Lives Impacted
+
+- Add legend:
+    Education
+    Healthcare
+    Women Empowerment
+    Sustainability
+
+RESPONSIVE:
+- Desktop: side-by-side layout.
+- Tablet: map top, list bottom.
+- Mobile: accordion location list under map.
+
+TECH:
+- HTML5
+- CSS3
+- JavaScript
+- GSAP
+- No frameworks.
+- Clean, production-ready code.
+- Use absolute positioned hotspots over the map image.
+- All coordinates should be easily editable.
+
+Goal:
+Create a visually stunning NGO impact map where hovering a location from the right side instantly highlights that region on the India map with professional animations similar to corporate annual report websites.
