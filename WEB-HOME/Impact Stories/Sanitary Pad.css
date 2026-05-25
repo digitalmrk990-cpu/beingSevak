@@ -1,4 +1,3 @@
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -64,25 +63,24 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
 /* ─── Nav bar ─── */
 /* ─── Nav bar ─── */
 /* ─── Nav bar ─── */
-
-.medical-support-section{
+.sanitary-section{
     background:#fff;
     padding:100px 8%;
     overflow:hidden;
 }
 
-.medical-container{
+.sanitary-container{
     max-width:1300px;
     margin:auto;
 }
 
-.medical-heading{
+.sanitary-heading{
     text-align:center;
     max-width:850px;
     margin:0 auto 70px;
 }
 
-.medical-tag{
+.sanitary-tag{
     display:inline-block;
     padding:10px 24px;
     background:rgba(0,163,218,.12);
@@ -94,30 +92,30 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     margin-bottom:20px;
 }
 
-.medical-heading h2{
+.sanitary-heading h2{
     font-size:52px;
     color:#111;
     margin-bottom:20px;
 }
 
-.medical-heading p{
+.sanitary-heading p{
     color:#666;
     line-height:1.9;
     font-size:17px;
 }
 
-.medical-grid{
+.sanitary-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:60px;
     align-items:center;
 }
 
-.medical-image{
+.sanitary-image{
     position:relative;
 }
 
-.medical-image::before{
+.sanitary-image::before{
     content:"";
     position:absolute;
     width:200px;
@@ -129,7 +127,7 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     opacity:.12;
 }
 
-.medical-image img{
+.sanitary-image img{
     width:100%;
     border-radius:25px;
     box-shadow:0 15px 40px rgba(0,0,0,.12);
@@ -137,13 +135,13 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     z-index:2;
 }
 
-.medical-content{
+.sanitary-content{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:20px;
 }
 
-.medical-card{
+.sanitary-card{
     background:#fff;
     border:1px solid rgba(0,163,218,.15);
     padding:30px;
@@ -152,29 +150,29 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     transition:.4s;
 }
 
-.medical-card:hover{
+.sanitary-card:hover{
     background:#00a3da;
     transform:translateY(-8px);
 }
 
-.medical-card h3{
+.sanitary-card h3{
     font-size:22px;
     margin-bottom:12px;
     transition:.4s;
 }
 
-.medical-card p{
+.sanitary-card p{
     color:#666;
     line-height:1.7;
     transition:.4s;
 }
 
-.medical-card:hover h3,
-.medical-card:hover p{
+.sanitary-card:hover h3,
+.sanitary-card:hover p{
     color:#fff;
 }
 
-.medical-impact{
+.sanitary-impact{
     margin-top:80px;
     background:linear-gradient(135deg,#00a3da,#008ec0);
     padding:60px;
@@ -186,28 +184,28 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     align-items:center;
 }
 
-.medical-story span{
+.sanitary-story span{
     font-size:14px;
     font-weight:700;
     letter-spacing:1px;
 }
 
-.medical-story h3{
+.sanitary-story h3{
     font-size:42px;
     margin:15px 0;
 }
 
-.medical-story p{
+.sanitary-story p{
     line-height:1.9;
 }
 
-.medical-stats{
+.sanitary-stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:15px;
 }
 
-.medical-box{
+.sanitary-box{
     background:rgba(255,255,255,.12);
     backdrop-filter:blur(10px);
     padding:30px 15px;
@@ -215,43 +213,42 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     border-radius:20px;
 }
 
-.medical-box h2{
+.sanitary-box h2{
     font-size:40px;
     margin-bottom:10px;
 }
 
-.medical-box span{
+.sanitary-box span{
     font-size:14px;
 }
 
 @media(max-width:991px){
 
-    .medical-grid{
+    .sanitary-grid{
         grid-template-columns:1fr;
     }
 
-    .medical-content{
+    .sanitary-content{
         grid-template-columns:1fr;
     }
 
-    .medical-impact{
+    .sanitary-impact{
         grid-template-columns:1fr;
         padding:35px;
     }
 
-    .medical-stats{
+    .sanitary-stats{
         grid-template-columns:1fr;
     }
 
-    .medical-heading h2{
+    .sanitary-heading h2{
         font-size:38px;
     }
 
-    .medical-story h3{
+    .sanitary-story h3{
         font-size:30px;
     }
 }
-
 .shital-gallery-section{
     padding:90px 8%;
     background:#fff;
@@ -339,7 +336,6 @@ body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); overflow-x
     }
 
 }
-
 /* ─── footer ─── */
 /* ─── footer ─── */
 /* ─── footer ─── */
