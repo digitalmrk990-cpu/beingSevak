@@ -385,7 +385,13 @@
   left: 0;
   right: 0;
   padding: 50px 18px 18px;
-  background: linear-gradient(transparent 20%, rgba(3,22,62,0.88) 90%);
+background: linear-gradient(
+    to top,
+    rgba(0,163,218,0.95) 0%,
+    rgba(0,163,218,0.7) 50%,
+    rgba(255,255,255,0) 100%
+);
+  /* background: linear-gradient(transparent 20%, rgba(3,22,62,0.88) 90%); */
   opacity: 0;
   transition: opacity 0.35s ease;
   z-index: 2;
