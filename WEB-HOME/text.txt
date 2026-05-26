@@ -1,30 +1,85 @@
-in managment.html page we wanted make style like circles  of managment team , 
-in circle imag and below name with our theam and then add professional ui 
+Analyze the existing donation.html page and create a completely new donation section structure without modifying the current files.
 
+Requirements:
 
+1. Create a new folder:
+   /donation2
 
-Being Sevak Charitable Trust 
+2. Inside donation2 create:
+   - donation2.html
+   - donation2.css
+   - donation2.js
 
-Board of Trustees / Executive Committee
+3. Use separate CSS and JS files (no inline CSS or JS).
 
-The following individuals constitute the Board of Trustees and Executive Committee of the Trust and are entrusted with the governance, administration, strategic planning, and smooth functioning of the Trust:
+4. At the top of donation2.html create a horizontal navigation/tab section titled:
+   "What We Do Projects"
 
-1)	Mr. Priyank Shah – Founder & Chairperson
+5. Add the following project tabs in this exact order:
 
-2)	Ms. Jigna Patel – Treasurer
+   - Mission Annapurna
+     Link: donation-inline.html
 
-3)	Mrs. Shweta Shah – President
+   - Mission Vidya
+     Link: donation-Vidhya.html
 
+   - Mission Aurat
+     Link: donation-aurat.html
 
-4)	Mr. Mahendra Pal – Secretary
+   - Mission Bezubaan
+     Link: donation-bezubaan.html
 
-5)	Mr. Ashutosh Pawar – Joint Secretary
+   - Mission Atmanirbhar
+     Link: donation-atmanirbhar.html
 
-6)	Mr. Samir Sura – Advisory Board Member
+   - Mission Arogya
+     Link: donation-arogya.html
 
-7)	Ms. Vaishali Sawant – Accounts Executive
+   - Mission Eco Warriors
+     Link: donation-ecowarrios.html
 
-8)	Ms. Sakshi Singh – Project Head
+6. Design Requirements:
+   - Modern NGO/Charity website style
+   - Fully responsive (mobile, tablet, desktop)
+   - White background
+   - Primary color: #00a3ad
+   - Smooth hover effects
+   - Active tab highlight
+   - Sticky navigation on scroll
+   - Professional typography
+   - Clean spacing and alignment
 
-9)	Mr. Dilip Kumar Vishwarma – Core Team Member
+7. Structure:
+   - Hero Section
+   - What We Do Projects Navigation
+   - Content Area
+   - Donation Call-to-Action Section
+   - Footer
 
+8. CSS Requirements:
+   - Use Flexbox/Grid
+   - Responsive breakpoints
+   - Smooth transitions
+   - Hover underline animation on tabs
+   - Modern card styling
+
+9. JS Requirements:
+   - Active tab highlighting
+   - Sticky navigation behavior
+   - Smooth scrolling
+   - Mobile menu support if needed
+
+10. File Linking:
+    donation2.html must correctly link:
+    - donation2.css
+    - donation2.js
+
+11. Keep code clean, well commented, and production ready.
+
+Generate complete code for:
+- donation2.html
+- donation2.css
+- donation2.js
+
+Do not modify any existing project files.
+Create only the new donation2 folder and its files.

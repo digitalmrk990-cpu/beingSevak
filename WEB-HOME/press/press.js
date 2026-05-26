@@ -1,5 +1,5 @@
 const pressData = [
-   {
+  {
     title: "Paryavaran Mitra",
     date: "11 September 2021",
     year: 2021,
@@ -17,7 +17,7 @@ const pressData = [
     source: "AajTak",
     link: "https://www.aajtak.in/entertainment/bollywood-news/video/bollywood-singer-shankar-mahadevan-distributs-food-kit-and-mobile-phones-to-the-blind-musicians-being-sevak-1310613-2021-08-16"
   },
-   {
+  {
     title: "Social Responsibility",
     date: "14 September 2021",
     year: 2021,
@@ -31,11 +31,29 @@ const pressData = [
     date: "20 October 2021",
     year: 2021,
     description: "Being Sevak Charitable Trust hosts the National Awards function to recognise the talent of India's visually challenged achievers",
+    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.20.jpeg",
+    source: "Lokmat Times",
+    link: "https://www.lokmattimes.com/business/being-sevak-charitable-trust-hosts-the-national-awards-function-to-recognise-the-talent-of-indias/"
+  },
+  {
+    title: "Pandemic",
+    date: "19 August 2021",
+    year: 2021,
+    description: "Shankar Mahadevan Joins Hands With Charitable Trust 'Being Sevak' To Help Blind Musicians During Pandemic",
+    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.20-2.jpeg",
+    source: "Zee5",
+    link: "https://www.zee5.com/zee5news/shankar-mahadevan-joins-hands-with-charitable-trust-being-sevak-to-help-blind-musicians-during-pandemic/"
+  },
+  {
+    title: "National Award",
+    date: "20 October 2021",
+    year: 2021,
+    description: "Being Sevak Charitable Trust hosts the National Awards function to recognise the talent of India's visually challenged achievers",
     image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.23-2-1.jpeg",
     source: "ANI News",
     link: "https://www.aninews.in/news/business/business/being-sevak-charitable-trust-hosts-the-national-awards-function-to-recognise-the-talent-of-indias-visually-challenged-achievers20211020170958/"
   },
- 
+
   {
     title: "Business Award",
     date: "September 2023",
@@ -63,16 +81,8 @@ const pressData = [
     source: "Hindustan Metro",
     link: "https://www.hindustanmetro.com/being-sevak-charitable-trust-initiates-save-the-flag-drive-on-16th-august-2023-promoting-respect-for-the-national-flag-post-independence-day-celebrations/"
   },
- 
-  {
-    title: "Pandemic",
-    date: "19 August 2021",
-    year: 2021,
-    description: "Shankar Mahadevan Joins Hands With Charitable Trust 'Being Sevak' To Help Blind Musicians During Pandemic",
-    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.20-2.jpeg",
-    source: "Zee5",
-    link: "https://www.zee5.com/zee5news/shankar-mahadevan-joins-hands-with-charitable-trust-being-sevak-to-help-blind-musicians-during-pandemic/"
-  },
+
+
   {
     title: "Mission Annapurna",
     date: "20 January 2023",
@@ -109,15 +119,7 @@ const pressData = [
     source: "Xpress Times",
     link: "https://xpresstimes.in/being-sevak-charitable-trust-illuminates-diwali-for-visually-impaired-across-7-states-by-distributing-anna-potli/"
   },
-  {
-    title: "National Award",
-    date: "20 October 2021",
-    year: 2021,
-    description: "Being Sevak Charitable Trust hosts the National Awards function to recognise the talent of India's visually challenged achievers",
-    image: "https://beingsevak.org/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-04-at-12.47.20.jpeg",
-    source: "Lokmat Times",
-    link: "https://www.lokmattimes.com/business/being-sevak-charitable-trust-hosts-the-national-awards-function-to-recognise-the-talent-of-indias/"
-  },
+
   {
     title: "Janmashtami",
     date: "08 September 2023",
@@ -131,17 +133,17 @@ const pressData = [
 
 function getDateValue(dateStr) {
   const months = {
-    Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',
-    Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'
+    Jan: '01', Feb: '02', Mar: '03', Apr: '04', May: '05', Jun: '06',
+    Jul: '07', Aug: '08', Sep: '09', Oct: '10', Nov: '11', Dec: '12'
   };
   const parts = dateStr.split(' ');
   if (parts.length === 3) {
-    const d = parts[0].padStart(2,'0');
+    const d = parts[0].padStart(2, '0');
     const m = months[parts[1]] || '01';
     const y = parts[2];
     return `${y}-${m}-${d}`;
   }
-  return `${parts[parts.length-1]}-01-01`;
+  return `${parts[parts.length - 1]}-01-01`;
 }
 
 function renderPress() {
