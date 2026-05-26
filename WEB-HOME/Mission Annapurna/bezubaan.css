@@ -467,12 +467,12 @@ section{
    IMPACT
 ========================= */
 
-.impact-section{
+.impact-section2{
   width:100%;
   padding:100px 7%;
 }
 
-.impact-wrapper{
+.impact-wrapper2{
   width:100%;
 
   display:flex;
@@ -482,12 +482,12 @@ section{
   gap:70px;
 }
 
-.impact-content,
-.impact-image{
+.impact-content2,
+.impact-image2{
   flex:1;
 }
 
-.impact-image img{
+.impact-image2 img{
   width:100%;
   height:620px;
 
@@ -500,13 +500,13 @@ section{
   box-shadow:0 18px 45px rgba(0,0,0,0.08);
 }
 
-.impact-image:hover img{
+.impact-image2:hover img{
   transform:scale(1.04);
 }
 
 /* STATS */
 
-.impact-stats{
+.impact-stats2{
   display:flex;
   gap:22px;
 
@@ -515,7 +515,7 @@ section{
   flex-wrap:wrap;
 }
 
-.impact-stats div{
+.impact-stats2 div{
   background:#f8fbfd;
 
   padding:24px 26px;
@@ -529,23 +529,23 @@ section{
   transition:0.4s;
 }
 
-.impact-stats div:hover{
+.impact-stats2 div:hover{
   background:#00a3da;
   transform:translateY(-6px);
 }
 
-.impact-stats div:hover h3,
-.impact-stats div:hover p{
+.impact-stats2 div:hover h3,
+.impact-stats2 div:hover p{
   color:#fff;
 }
 
-.impact-stats h3{
+.impact-stats2 h3{
   font-size:34px;
   color:#00a3da;
   margin-bottom:6px;
 }
 
-.impact-stats p{
+.impact-stats2 p{
   font-size:14px;
 }
 
