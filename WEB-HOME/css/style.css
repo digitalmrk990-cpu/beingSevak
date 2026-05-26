@@ -812,7 +812,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   background-position: center;
 }
 .slide-bg-2 {
-  background-image: url("../images/A1.png");
+  background-image: url("../images/h2.png");
   background-size: cover;
   background-position: center;
 }
@@ -1575,7 +1575,7 @@ body{
 }
 
 .cause-img-6 {
-  background-image: url("../images/projecth2.png");
+  background-image: url("../images/h2img.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

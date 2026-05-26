@@ -1,1 +1,1 @@
-Unlink of file '.git/objects/pack/pack-ae594e75ffca54790b7eadd9d3d63faeac0334cb.idx' failed. Should I try again? (y/n)
+Unlink of file '.git/objects/pack/pack-ae594e75ffca54790b7eadd9d3d63faeac0334cb.idx' failed. Should I try again? (y/n)see in all donations.html pages we  have to liitle change choose distribution type section add in below the header means new section so that distribution type tabs showing proepely visble , then donation amount part alos make readeble and increase size

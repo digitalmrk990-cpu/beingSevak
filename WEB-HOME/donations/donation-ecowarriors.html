@@ -143,12 +143,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 .eco-tabs {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .eco-tab {
-  flex: 1;
-  min-width: 140px;
+  width: 150px;
+  height: 150px;
   padding: 12px 8px;
   border: 2px solid var(--border);
   border-radius: 12px;
@@ -263,8 +264,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .amount-box:focus-within { border-color: var(--cyan); }
 .amount-box .rupee {
-  padding: 10px 12px;
-  font-size: 15px;
+  padding: 14px 16px;
+  font-size: 18px;
   color: var(--text-mid);
   font-weight: 600;
   border-right: 2px solid var(--border);
@@ -272,19 +273,19 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .amount-box input {
   border: none; outline: none;
-  padding: 10px 14px;
-  font-size: 15px;
+  padding: 14px 16px;
+  font-size: 18px;
   font-weight: 600;
-  width: 110px;
+  width: 150px;
   background: transparent;
   color: var(--navy);
 }
 .amt-preset {
-  padding: 9px 16px;
+  padding: 12px 22px;
   border: 2px solid var(--border);
   border-radius: 20px;
   background: var(--white);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   font-family:'Montserrat',sans-serif;
   color: var(--mid);
@@ -361,13 +362,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .total-label {
   font-family:'Montserrat',sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--navy);
 }
 .total-val {
   font-family:'Montserrat',sans-serif;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: var(--cyan);
 }
 .donate-btn-eco {
@@ -396,8 +397,29 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-btn-eco:hover::before { left: 100%; }
 .donate-btn-eco:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,162,217,0.35); }
 
+/* ── DISTRIBUTION TYPE SECTION ── */
+.dist-section {
+  padding: 20px 24px 10px;
+  background: #f8fcff;
+  border-bottom: 2px solid var(--border);
+}
+.dist-section-head {
+  margin-bottom: 14px;
+}
+.dist-section-head h3 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.dist-section-head p {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
 /* ── LANDSCAPE ── */
-.donate-wrap.landscape{max-width:100%;}
+.donate-wrap.landscape{max-width:1100px;}
 .donate-wrap.landscape .form-header{padding:16px 24px;}
 .donate-wrap.landscape .form-body{padding:16px 20px;}
 .donate-wrap.landscape .field-group{margin-bottom:12px;}
@@ -409,7 +431,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
 .donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
-.donate-wrap.landscape .amt-preset{padding:6px 10px;font-size:0.7rem;}
+.donate-wrap.landscape .amt-preset{padding:8px 14px;font-size:0.85rem;}
 .donate-wrap.landscape .eco-desc{padding:10px 14px;margin-bottom:10px;}
 .donate-wrap.landscape .eco-desc p{font-size:0.78rem;margin-bottom:6px;line-height:1.4;}
 .donate-wrap.landscape .eco-impact .cost-row{padding:6px 12px;font-size:0.75rem;}
@@ -443,19 +465,20 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <p>Support a cleaner, greener future through sustainable waste management</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
+  <div class="dist-section">
+    <div class="dist-section-head">
+      <h3>Choose Distribution Type</h3>
+      <p>Select the type of distribution you want to support</p>
+    </div>
+    <div class="eco-tabs" id="ecoTabs">
+      <button class="eco-tab active" data-eco="crusher" onclick="selectEco(this)">
+        <i class="fas fa-recycle"></i> Bottle Crusher
+      </button>
+    </div>
+  </div>
   <div class="form-body">
 
     <div class="top-row">
-      <div class="col">
-        <div class="field-group">
-          <label>Choose Programme <span class="req">*</span></label>
-          <div class="eco-tabs" id="ecoTabs">
-            <button class="eco-tab active" data-eco="crusher" onclick="selectEco(this)">
-              <i class="fas fa-recycle"></i> Bottle Crusher
-            </button>
-          </div>
-        </div>
-      </div>
       <div class="col">
         <div class="field-group">
           <label>Frequency <span class="req">*</span></label>

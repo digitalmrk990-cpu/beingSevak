@@ -148,12 +148,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 .vidya-tabs {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .vidya-tab {
-  flex: 1;
-  min-width: 160px;
+  width: 150px;
+  height: 150px;
   padding: 12px 10px;
   border: 2px solid var(--border);
   border-radius: 12px;
@@ -260,8 +261,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .amount-box:focus-within { border-color: var(--cyan); }
 .amount-box .rupee {
-  padding: 10px 12px;
-  font-size: 15px;
+  padding: 14px 16px;
+  font-size: 18px;
   color: var(--text-mid);
   font-weight: 600;
   border-right: 2px solid var(--border);
@@ -269,19 +270,19 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 }
 .amount-box input {
   border: none; outline: none;
-  padding: 10px 14px;
-  font-size: 15px;
+  padding: 14px 16px;
+  font-size: 18px;
   font-weight: 600;
-  width: 110px;
+  width: 150px;
   background: transparent;
   color: var(--navy);
 }
 .amt-preset {
-  padding: 9px 16px;
+  padding: 12px 22px;
   border: 2px solid var(--border);
   border-radius: 20px;
   background: var(--white);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   font-family:'Montserrat',sans-serif;
   color: var(--mid);
@@ -350,13 +351,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .total-label {
   font-family:'Montserrat',sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--navy);
 }
 .total-val {
   font-family:'Montserrat',sans-serif;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: var(--cyan);
 }
 .donate-btn-vidya {
@@ -394,8 +395,29 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   .donate-btn-vidya { width: 100%; text-align: center; }
 }
 
+/* ── DISTRIBUTION TYPE SECTION ── */
+.dist-section {
+  padding: 20px 24px 10px;
+  background: #f8fcff;
+  border-bottom: 2px solid var(--border);
+}
+.dist-section-head {
+  margin-bottom: 14px;
+}
+.dist-section-head h3 {
+  font-family:'Montserrat',sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.dist-section-head p {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
 /* ── LANDSCAPE ── */
-.donate-wrap.landscape{max-width:100%;}
+.donate-wrap.landscape{max-width:1100px;}
 .donate-wrap.landscape .form-header{padding:16px 24px;}
 .donate-wrap.landscape .form-body{padding:16px 20px;}
 .donate-wrap.landscape .field-group{margin-bottom:12px;}
@@ -407,7 +429,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
 .donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
-.donate-wrap.landscape .amt-preset{padding:6px 10px;font-size:0.7rem;}
+.donate-wrap.landscape .amt-preset{padding:8px 14px;font-size:0.85rem;}
 .donate-wrap.landscape .vidya-desc{padding:10px 14px;margin-bottom:10px;}
 .donate-wrap.landscape .vidya-desc p{font-size:0.78rem;margin-bottom:6px;line-height:1.4;}
 .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr 1fr 1fr 1fr;}
@@ -432,34 +454,35 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
     <p>Empower children through education, technology &amp; care</p>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
+  <div class="dist-section">
+    <div class="dist-section-head">
+      <h3>Choose Distribution Type</h3>
+      <p>Select the type of distribution you want to support</p>
+    </div>
+    <div class="vidya-tabs" id="vidyaTabs">
+      <button class="vidya-tab active" data-vidya="edukit" onclick="selectVidya(this)">
+        <i class="fas fa-pencil-alt"></i> Education Kit
+      </button>
+      <button class="vidya-tab" data-vidya="nutrikit" onclick="selectVidya(this)">
+        <i class="fas fa-apple-alt"></i> Nutrition Kit
+      </button>
+      <button class="vidya-tab" data-vidya="emergency" onclick="selectVidya(this)">
+        <i class="fas fa-ambulance"></i> Emergency Case
+      </button>
+      <button class="vidya-tab" data-vidya="computer" onclick="selectVidya(this)">
+        <i class="fas fa-desktop"></i> Computer Centre
+      </button>
+      <button class="vidya-tab" data-vidya="patshala" onclick="selectVidya(this)">
+        <i class="fas fa-school"></i> Digital Patshala
+      </button>
+      <button class="vidya-tab" data-vidya="ai" onclick="selectVidya(this)">
+        <i class="fas fa-robot"></i> AI Centre
+      </button>
+    </div>
+  </div>
   <div class="form-body">
 
     <div class="top-row">
-      <div class="col">
-        <div class="field-group">
-          <label>Choose Programme <span class="req">*</span></label>
-          <div class="vidya-tabs" id="vidyaTabs">
-            <button class="vidya-tab active" data-vidya="edukit" onclick="selectVidya(this)">
-              <i class="fas fa-pencil-alt"></i> Education Kit
-            </button>
-            <button class="vidya-tab" data-vidya="nutrikit" onclick="selectVidya(this)">
-              <i class="fas fa-apple-alt"></i> Nutrition Kit
-            </button>
-            <button class="vidya-tab" data-vidya="emergency" onclick="selectVidya(this)">
-              <i class="fas fa-ambulance"></i> Emergency Case
-            </button>
-            <button class="vidya-tab" data-vidya="computer" onclick="selectVidya(this)">
-              <i class="fas fa-desktop"></i> Computer Centre
-            </button>
-            <button class="vidya-tab" data-vidya="patshala" onclick="selectVidya(this)">
-              <i class="fas fa-school"></i> Digital Patshala
-            </button>
-            <button class="vidya-tab" data-vidya="ai" onclick="selectVidya(this)">
-              <i class="fas fa-robot"></i> AI Centre
-            </button>
-          </div>
-        </div>
-      </div>
       <div class="col">
         <div class="field-group">
           <label>Frequency <span class="req">*</span></label>
