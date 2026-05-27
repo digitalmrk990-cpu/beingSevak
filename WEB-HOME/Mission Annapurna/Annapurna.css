@@ -394,7 +394,7 @@ nav a:hover{
 
 .highlight-card{
   background:#fff;
-  padding:8px 30px;
+  padding:20px 30px;
   border-radius:30px;
   transition:0.5s;
   position:relative;
@@ -419,6 +419,7 @@ nav a:hover{
   margin-bottom:18px;
   position:relative;
   z-index:2;
+  font-size:18px;
 }
 
 .highlight-card p{

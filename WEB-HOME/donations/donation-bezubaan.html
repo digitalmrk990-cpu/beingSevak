@@ -42,7 +42,9 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .form-header {
   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
   padding: 28px 32px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   overflow: hidden;
 }
@@ -58,33 +60,32 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   0% { transform:rotate(0deg); }
   100% { transform:rotate(360deg); }
 }
-.form-header h2 {
+.form-header-left { position: relative; z-index: 1; }
+.form-header-left h2 {
   font-family:'Montserrat',sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--white);
+}
+.form-header-left p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 4px;
+}
+.form-header-right {
+  text-align: right;
   position: relative;
   z-index: 1;
 }
-.form-header p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
-  margin-top: 6px;
-  position: relative;
-  z-index: 1;
-}
-.form-header .badge-80g {
+.form-header-right .badge-80g {
   display: inline-block;
   background: var(--gold);
   color: var(--navy);
   font-family:'Montserrat',sans-serif;
   font-weight: 700;
   font-size: 0.7rem;
-  padding: 3px 12px;
+  padding: 5px 16px;
   border-radius: 20px;
-  margin-top: 10px;
-  position: relative;
-  z-index: 1;
 }
 
 .form-body { padding: 28px 32px 32px; }
@@ -149,14 +150,12 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   justify-content: center;
 }
 .bezu-tab {
-  width: 150px;
-  height: 150px;
-  padding: 14px 10px;
+  padding: 18px 32px;
   border: 2px solid var(--border);
-  border-radius: 12px;
+  border-radius: 50px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--mid);
   cursor: pointer;
@@ -165,10 +164,10 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   position: relative;
   overflow: hidden;
 }
-.bezu-tab i { display: block; font-size: 1.4rem; margin-bottom: 6px; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.bezu-tab:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,162,217,0.18); }
-.bezu-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 8px 25px rgba(0,162,217,0.35); transform: translateY(-2px) scale(1.03); }
-.bezu-tab.active i { color: var(--white); transform: scale(1.2); }
+.bezu-tab i { margin-right: 8px; font-size: 1rem; color: var(--cyan); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bezu-tab:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,162,217,0.18); }
+.bezu-tab.active { border-color: var(--cyan); background: linear-gradient(135deg, var(--cyan), var(--mid)); color: var(--white); box-shadow: 0 6px 20px rgba(0,162,217,0.35); transform: translateY(-2px); }
+.bezu-tab.active i { color: var(--white); }
 .bezu-tab.active::after {
   content: '';
   position: absolute;
@@ -382,7 +381,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 @media (max-width: 600px) {
   .form-body { padding: 20px 18px; }
-  .bezu-tab { min-width: 100%; }
+  .bezu-tab { width: 100%; justify-content: center; }
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
   .donate-btn-bezu { width: 100%; text-align: center; }
@@ -395,7 +394,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   border-bottom: 2px solid var(--border);
 }
 .dist-section-head {
-  margin-bottom: 14px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .dist-section-head h3 {
   font-family:'Montserrat',sans-serif;
@@ -416,9 +416,8 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 .donate-wrap.landscape .field-group{margin-bottom:12px;}
 .donate-wrap.landscape .top-row{display:flex;gap:16px;flex-wrap:wrap;}
 .donate-wrap.landscape .top-row .col{flex:1;min-width:180px;}
-.donate-wrap.landscape .bezu-tabs{flex-wrap:nowrap;}
-.donate-wrap.landscape .bezu-tab{min-width:0;padding:8px 6px;font-size:0.7rem;}
-.donate-wrap.landscape .bezu-tab i{font-size:1rem;margin-bottom:2px;}
+.donate-wrap.landscape .bezu-tab{padding:12px 22px;font-size:0.78rem;}
+.donate-wrap.landscape .bezu-tab i{font-size:0.95rem;margin-right:6px;}
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
 .donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
@@ -443,9 +442,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 <div class="donate-wrap landscape">
   <div class="form-header">
-    <h2><i class="fas fa-paw"></i> Mission Bezubaan Donation</h2>
-    <p>Be their voice — feed, care &amp; protect voiceless street animals</p>
-    <span class="badge-80g">80G TAX EXEMPTION</span>
+    <div class="form-header-left">
+      <h2><i class="fas fa-paw"></i> Mission Bezubaan</h2>
+      <p>Your contribution helps make a difference</p>
+    </div>
+    <div class="form-header-right">
+      <span class="badge-80g">80G TAX EXEMPTION</span>
+    </div>
   </div>
   <div class="dist-section">
     <div class="dist-section-head">
