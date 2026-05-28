@@ -47,7 +47,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
 }
+.form-header-left { flex: 1; }
+.form-header .badge-80g { flex-shrink: 0; }
 .form-header::before {
   content: '';
   position: absolute;
@@ -106,11 +112,13 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 .freq-toggle {
   display: flex;
+  max-width: 340px;
   background: var(--light-bg);
   border-radius: 12px;
   padding: 4px;
   border: 2px solid var(--border);
   margin-bottom: 22px;
+  gap: 20px;
 }
 .freq-btn {
   flex: 1;
@@ -122,7 +130,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   font-size: 0.8rem;
   color: var(--text-mid);
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -153,10 +161,10 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   justify-content: center;
 }
 .dist-tab {
-  padding: 22px 44px;
-  min-width: 200px;
+  padding: 20px 34px;
+  min-width: 160px;
   border: 2px solid var(--border);
-  border-radius: 50px;
+  border-radius: 9px;
   background: var(--white);
   font-family:'Montserrat',sans-serif;
   font-size: 0.82rem;
@@ -410,16 +418,16 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 /* ── LANDSCAPE LAYOUT ── */
 .donate-wrap.landscape{max-width:1100px;}
-.donate-wrap.landscape .form-header{padding:16px 24px;}
+.donate-wrap.landscape .form-header{padding:14px 24px;}
 .donate-wrap.landscape .form-body{padding:16px 20px;}
 .donate-wrap.landscape .field-group{margin-bottom:12px;}
 .donate-wrap.landscape .top-row{display:flex;gap:16px;flex-wrap:wrap;}
 .donate-wrap.landscape .top-row .col{flex:1;min-width:180px;}
-.donate-wrap.landscape .dist-tabs{flex-wrap:nowrap;}
-.donate-wrap.landscape .dist-tab{min-width:0;padding:16px 34px;font-size:0.78rem;}
+.donate-wrap.landscape .dist-tabs{flex-wrap:nowrap;gap:8px;}
+.donate-wrap.landscape .dist-tab{min-width:0;padding:14px 24px;font-size:0.78rem;}
 .donate-wrap.landscape .dist-tab i{font-size:0.95rem;margin-right:6px;}
 .donate-wrap.landscape .freq-toggle{margin-bottom:0;}
-.donate-wrap.landscape .freq-btn{padding:8px 12px;font-size:0.75rem;}
+.donate-wrap.landscape .freq-btn{padding:8px 14px;font-size:0.75rem ;height:7vh;}
 .donate-wrap.landscape .amount-row{flex-wrap:nowrap;}
 .donate-wrap.landscape .amt-preset{padding:8px 14px;font-size:0.85rem;}
 .donate-wrap.landscape .dist-desc{padding:10px 14px;margin-bottom:10px;}
@@ -452,15 +460,17 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
 
 <div class="donate-wrap landscape">
   <div class="form-header">
-    <h2>Mission Annapurna Donation</h2>
-    <p>Your contribution helps feed those who need it most</p>
+    <div class="form-header-left">
+      <h2>Mission Annapurna Donation</h2>
+      <p>Your contribution helps feed those who need it most</p>
+    </div>
     <span class="badge-80g">80G TAX EXEMPTION</span>
   </div>
   <div class="dist-section">
-    <div class="dist-section-head">
+    <!-- <div class="dist-section-head">
       <h3>Choose Distribution Type</h3>
       <p>Select the type of distribution you want to support</p>
-    </div>
+    </div> -->
     <div class="dist-tabs" id="distTabs">
       <button class="dist-tab active" data-dist="ration" onclick="selectDist(this)">
         <i class="fas fa-shopping-basket"></i> Ration Distribution

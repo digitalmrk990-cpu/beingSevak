@@ -2506,7 +2506,7 @@ body{
   align-items: center;
   justify-content: center;
   gap: 60px;
-  padding: 80px 8%;
+  padding: 40px 8%;
   background: #f8fbfc;
   flex-wrap: wrap;
 }
