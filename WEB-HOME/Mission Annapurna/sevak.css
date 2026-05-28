@@ -848,4 +848,181 @@ RESPONSIVE
   box-shadow:0 25px 60px rgba(0,163,218,0.35);
 }
 
+/* =========================
+   AI DIGITAL SECTION
+========================= */
 
+.techvision-wrap{
+    width:100%;
+    padding:100px 7%;
+    background:#fff;
+    overflow:hidden;
+}
+
+.techvision-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+    flex-wrap:wrap;
+}
+
+/* LEFT SIDE */
+
+.techvision-image-side{
+    flex:1;
+    min-width:320px;
+}
+
+.techvision-image-box{
+    position:relative;
+    border-radius:35px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.12),
+    0 12px 30px rgba(0,163,218,0.18);
+    transition:0.5s;
+}
+
+.techvision-image-box:hover{
+    transform:translateY(-10px) rotate(-1deg);
+}
+
+.techvision-image-box img{
+    width:100%;
+    height:620px;
+    object-fit:cover;
+    display:block;
+}
+
+/* RIGHT SIDE */
+
+.techvision-content-side{
+    flex:1;
+    min-width:320px;
+}
+
+.techvision-mini-title{
+    display:inline-block;
+    padding:10px 22px;
+    background:#00a3da;
+    color:#fff;
+    border-radius:60px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:20px;
+    box-shadow:0 10px 25px rgba(0,163,218,0.25);
+}
+
+.techvision-content-side h2{
+    font-size:58px;
+    line-height:1.1;
+    color:#111;
+    margin-bottom:28px;
+    font-weight:800;
+}
+
+.techvision-content-side p{
+    font-size:17px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:18px;
+}
+
+/* FEATURE BOX */
+
+.techvision-feature-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:35px;
+}
+
+.techvision-feature-card{
+    flex:1;
+    min-width:180px;
+    background:#fff;
+    border:1px solid #e8f6fc;
+    padding:28px 22px;
+    border-radius:24px;
+    transition:0.4s;
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.05),
+    0 8px 20px rgba(0,163,218,0.08);
+}
+
+.techvision-feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.techvision-feature-card h3{
+    font-size:22px;
+    color:#00a3da;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.techvision-feature-card span{
+    font-size:15px;
+    color:#666;
+    line-height:1.7;
+}
+
+/* BUTTON */
+
+.techvision-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:16px 35px;
+    background:#00a3da;
+    color:#fff;
+    text-decoration:none;
+    border-radius:60px;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 15px 30px rgba(0,163,218,0.25);
+}
+
+.techvision-btn:hover{
+    background:#008dbd;
+    transform:translateY(-5px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+.techvision-container{
+    flex-direction:column;
+}
+
+.techvision-content-side h2{
+    font-size:42px;
+}
+
+.techvision-image-box img{
+    height:500px;
+}
+
+}
+
+@media(max-width:600px){
+
+.techvision-wrap{
+    padding:70px 5%;
+}
+
+.techvision-content-side h2{
+    font-size:34px;
+}
+
+.techvision-image-box img{
+    height:350px;
+}
+
+.techvision-feature-card{
+    min-width:100%;
+}
+
+}
