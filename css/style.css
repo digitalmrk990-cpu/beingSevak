@@ -2099,23 +2099,7 @@ body{
 @media(max-width:600px){
 
     .donation-images{
-        height:380px;
-    }
-
-    .img1{
-        width:180px;
-        height:220px;
-    }
-
-    .img2{
-        width:160px;
-        height:190px;
-    }
-
-    .img3{
-        width:220px;
-        height:160px;
-        left:70px;
+        height:300px;
     }
 
     .donation-content h1{
@@ -3994,21 +3978,58 @@ body{
 /* MOBILE */
 @media(max-width:900px){
 
+    .promise-box{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        padding:20px 5%;
+    }
+
+    .promise-logo{
+        min-width:100px;
+        width:100px;
+        height:100px;
+    }
+
     .promise-content{
         align-items:center;
     }
 
     .promise-content h2{
         text-align:center;
+        font-size:26px;
     }
 
     .promise-line{
         margin:auto auto 12px;
-        width:220px;
+        width:180px;
     }
 
     .promise-content p{
         text-align:center;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .promise-box{
+        padding:16px 4%;
+    }
+
+    .promise-logo{
+        min-width:80px;
+        width:80px;
+        height:80px;
+        border-width:5px;
+    }
+
+    .promise-content h2{
+        font-size:22px;
+    }
+
+    .promise-content p{
+        font-size:14px;
     }
 
 }
@@ -4555,6 +4576,17 @@ body{
 
 .brochure-btn i {
   font-size: 16px;
+}
+.footer-qr {
+  margin-top: 15px;
+  text-align: center;
+}
+.footer-qr img {
+  width: 130px;
+  height: 130px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.15);
+  display: block;
 }
 /* ============================================
    RESPONSIVE
