@@ -18,8 +18,8 @@
   --shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-html { scroll-behavior: smooth; }
-body{font-family: "Times New Roman", Times, serif;}
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body{font-family: "Times New Roman", Times, serif; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -677,7 +677,7 @@ input, select { font-family: inherit; outline: none; border: none; }
 .quick-donate-bar {
   background:#fff;
   border-bottom: 1px solid var(--border);
-  padding: 20px 0;
+  padding: 12px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .qd-inner {
@@ -4559,6 +4559,13 @@ body{
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 768px) {
+  .about-section { min-height: auto; padding: 30px 5%; }
+  .donation-section { min-height: auto; padding: 40px 5%; }
+}
+@media (max-width: 600px) {
+  .logo-marquee-section { height: auto; }
+}
 @media (max-width: 1100px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
@@ -4624,6 +4631,7 @@ body{
   .slide-title { font-size: 30px; }
   .slide-subtitle { font-size: 15px; }
   .slide-content { padding: 0 24px; }
+  .quick-donate-bar { padding: 8px 0; }
   .qd-inner { gap: 6px; }
   .preset-amt { display: none; }
   .payment-icons { display: none; }
@@ -4634,4 +4642,5 @@ body{
   .nl-form { min-width: unset; width: 100%; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .logo-marquee-section { height: auto; }
 }
