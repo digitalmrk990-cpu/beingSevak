@@ -172,7 +172,7 @@ body{
 /* WORK */
 .work{
   width:100%;
-  padding:90px 7%;
+  padding:60px 7%;
   text-align:center;
 }
 
@@ -219,8 +219,60 @@ body{
     text-align:center;
   }
 
+  .hero-left h1{
+    font-size:46px;
+  }
+
+  .hero-right img{
+    height:auto;
+    aspect-ratio:16/10;
+    max-height:420px;
+    transform:none;
+    animation:none;
+  }
+
+  .hero-right img:hover{
+    transform:none;
+  }
+
   .grid{
     grid-template-columns:1fr;
+  }
+
+  .item img{
+    height:auto;
+    aspect-ratio:16/10;
+  }
+
+  .impact{
+    padding:50px 5%;
+  }
+
+  .sevak-donation-content{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+    min-height:auto;
+  }
+
+  .sevak-title{
+    font-size:34px;
+  }
+
+  .sevak-desc{
+    font-size:14px;
+  }
+
+  .sevak-btn{
+    white-space:normal;
+  }
+
+  .work{
+    padding:50px 5%;
+  }
+
+  .work h2{
+    font-size:34px;
   }
 }
 
@@ -295,99 +347,107 @@ DONATION
 RESPONSIVE
 ========================= */
 
-@media(max-width:991px){
-
-  .hero-section,
-  .about-section{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-left,
-  .about-content{
-    max-width:100%;
-  }
-
-  .hero-buttons{
-    justify-content:center;
-  }
-
-  .hero-left h1{
-    font-size:46px;
-  }
-
-  .about-content h2,
-  .section-heading h2,
-  .donation-content h2{
-    font-size:34px;
-  }
-
-  .impact-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-item.big{
-    height:240px;
-  }
-
-  .feature-boxes{
-    flex-direction:column;
-  }
-
-  .floating-card{
-    min-width:130px;
-  }
-}
-
-
 @media(max-width:600px){
 
-  .hero-left h1{
-    font-size:38px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .impact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-right{
+  .hero{
+    padding:40px 5%;
     min-height:auto;
-    padding-bottom:40px;
   }
 
-  .main-image-card{
-    max-width:100%;
+  .hero-left h1{
+    font-size:32px;
   }
 
-  .floating-card{
-    position:relative;
+  .hero-left p{
+    font-size:15px;
+  }
 
-    top:auto;
-    left:auto;
-    right:auto;
-    bottom:auto;
+  .tag{
+    font-size:20px;
+  }
 
-    margin-top:15px;
+  .btns{
+    flex-direction:column;
+    align-items:center;
+  }
 
-    width:100%;
-    max-width:220px;
+  .btn{
+    padding:12px 28px;
+    font-size:15px;
+  }
+
+  .hero-right img{
+    height:auto;
+    aspect-ratio:4/3;
+    max-height:300px;
+    transform:none;
+    animation:none;
+    border-radius:24px;
+  }
+
+  .hero-right img:hover{
+    transform:none;
+  }
+
+  .impact{
+    padding:40px 5%;
+  }
+
+  .card{
+    padding:20px;
+    min-width:160px;
+  }
+
+  .card h2{
+    font-size:28px;
+  }
+
+  .work{
+    padding:40px 5%;
+  }
+
+  .work h2{
+    font-size:28px;
+    margin-bottom:25px;
+  }
+
+  .item img{
+    height:auto;
+    aspect-ratio:4/3;
+  }
+
+  .sevak-donation{
+    padding:40px 5%;
+  }
+
+  .sevak-donation-content{
+    gap:16px;
+  }
+
+  .sevak-title{
+    font-size:28px;
+  }
+
+  .sevak-desc{
+    font-size:13px;
+  }
+
+  .sevak-btn{
+    padding:12px 28px;
+    font-size:14px;
   }
 }
 
 /* TESTIMONIALS */
 
+.testimonial-section{
+  padding:50px 5%;
+}
+
 /* SECTION HEADER  font mate*/
 .section-header{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .section-header span{
@@ -411,12 +471,16 @@ RESPONSIVE
 }
 /* SECTION HEADER  font mate*/
 
-* TESTIMONIALS */
+/* TESTIMONIALS */
+
+.testimonial-section{
+  padding:50px 5%;
+}
 
 /* SECTION HEADER  font mate*/
 .section-header{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .section-header span{
@@ -542,7 +606,7 @@ RESPONSIVE
   color:#fff;
 
   border-radius:0px;
-  margin:20px 0;
+  margin:10px 0;
   padding:10px;
 
   box-shadow:0 15px 40px rgba(0,0,0,0.15);
@@ -697,7 +761,7 @@ RESPONSIVE
 /* IMPACT */
 .impact{
   width:100%;
-  padding:0px 7%;
+  padding:60px 7%;
   background:#f8fbfd;
 }
 
@@ -744,7 +808,7 @@ RESPONSIVE
 /* WORK */
 .work{
   width:100%;
-  padding:10px 7%;
+  padding:60px 7%;
   text-align:center;
 }
 
@@ -986,28 +1050,59 @@ RESPONSIVE
     font-size:42px;
 }
 
+.green-earth-main-img img{
+    height:auto;
+    aspect-ratio:16/10;
+}
+
+.green-earth-small-card img{
+    height:auto;
+    aspect-ratio:4/3;
+}
+
 }
 
 @media(max-width:600px){
 
 .green-earth-wrap{
-    padding:70px 5%;
+    padding:50px 5%;
 }
 
 .green-earth-content h2{
     font-size:34px;
 }
 
+.green-earth-content p{
+    font-size:15px;
+}
+
 .green-earth-main-img img{
-    height:320px;
+    height:auto;
+    aspect-ratio:4/3;
+    max-height:300px;
 }
 
 .green-earth-small-card img{
-    height:90px;
+    height:auto;
+    aspect-ratio:4/3;
 }
 
 .green-earth-bottom-grid{
     gap:10px;
+}
+
+.green-earth-box{
+    min-width:100%;
+    padding:20px;
+}
+
+.green-earth-box h3{
+    font-size:28px;
+}
+
+.green-earth-btn{
+    padding:14px 28px;
+    font-size:15px;
 }
 
 }

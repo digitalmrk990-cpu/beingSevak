@@ -33,7 +33,7 @@ HERO SECTION
   justify-content:center;
   gap:40px;
 
-  padding:70px 5%;
+  padding:50px 5%;
 
   overflow:hidden;
 
@@ -151,9 +151,6 @@ HERO SECTION
   width:100%;
   max-width:480px;
 
-  border-radius:30px;
-  overflow:hidden;
-
   position:relative;
   z-index:2;
 
@@ -165,7 +162,6 @@ HERO SECTION
 
   transition:0.6s ease;
 
-  /* ✨ floating animation */
   animation: floatCard 4s ease-in-out infinite;
 }
 
@@ -174,6 +170,7 @@ HERO SECTION
   width:100%;
   display:block;
   object-fit:cover;
+  border-radius:30px;
   transition:0.6s ease;
 }
 
@@ -234,13 +231,13 @@ HERO SECTION
 /* CARD POSITION */
 
 .card1{
-  top:80px;
-  left:20px;
+  top:-10px;
+  left:-10px;
 }
 
 .card2{
-  bottom:70px;
-  right:20px;
+  bottom:-10px;
+  right:-10px;
 }
 
 
@@ -275,7 +272,7 @@ ABOUT SECTION
 
   gap:45px;
 
-  padding:80px 5%;
+  padding:60px 5%;
 
   background:#fff;
 }
@@ -349,6 +346,7 @@ ABOUT SECTION
 
 .feature-boxes{
   display:flex;
+  flex-wrap:wrap;
   gap:15px;
 
   margin-top:28px;
@@ -360,6 +358,8 @@ ABOUT SECTION
   border-radius:22px;
   transition:0.3s ease;
   cursor:pointer;
+  flex:1 1 calc(50% - 15px);
+  min-width:160px;
 }
 
 /* hover blue effect */
@@ -396,7 +396,7 @@ IMPACT SECTION
 .impact-section{
   width:100%;
 
-  padding:80px 5%;
+  padding:60px 5%;
 
   background:
   radial-gradient(circle at top left,#dff6ff 0%,transparent 35%),
@@ -405,7 +405,7 @@ IMPACT SECTION
 
 .section-heading{
   text-align:center;
-  margin-bottom:45px;
+  margin-bottom:35px;
 }
 
 .section-heading span{
@@ -532,7 +532,7 @@ DONATION
 .sevak-donation{
   width:100%;
   background: linear-gradient(to right, #009BD4 0%, #0285C3 25%, #046FB1 50%, #074D97 75%, #083D8B 100%);
-  padding:55px 4%;
+  padding:50px 4%;
   min-height:120px;
   display:flex;
   align-items:center;
@@ -638,6 +638,25 @@ RESPONSIVE
   .floating-card{
     min-width:130px;
   }
+
+  .sevak-donation-content{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+    min-height:auto;
+  }
+
+  .sevak-title{
+    font-size:34px;
+  }
+
+  .sevak-desc{
+    font-size:14px;
+  }
+
+  .sevak-btn{
+    white-space:normal;
+  }
 }
 
 
@@ -690,14 +709,39 @@ RESPONSIVE
     font-size:10px;
     margin:0;
   }
+
+  .sevak-donation{
+    padding:40px 5%;
+  }
+
+  .sevak-donation-content{
+    gap:16px;
+  }
+
+  .sevak-title{
+    font-size:28px;
+  }
+
+  .sevak-desc{
+    font-size:13px;
+  }
+
+  .sevak-btn{
+    padding:12px 28px;
+    font-size:14px;
+  }
 }
 
 /* TESTIMONIALS */
 
+.testimonial-section{
+  padding:50px 5%;
+}
+
 /* SECTION HEADER  font mate*/
 .section-header{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .section-header span{
@@ -821,7 +865,7 @@ RESPONSIVE
   color:#fff;
 
   border-radius:0px;
-  margin:20px 0;
+  margin:10px 0;
   padding:10px;
 
   box-shadow:0 15px 40px rgba(0,0,0,0.15);
@@ -867,7 +911,7 @@ RESPONSIVE
 
 .techvision-wrap{
     width:100%;
-    padding:100px 7%;
+    padding:70px 7%;
     background:#fff;
     overflow:hidden;
 }
@@ -1023,7 +1067,7 @@ RESPONSIVE
 @media(max-width:600px){
 
 .techvision-wrap{
-    padding:70px 5%;
+    padding:50px 5%;
 }
 
 .techvision-content-side h2{
