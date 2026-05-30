@@ -286,7 +286,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /* =========================================
    IMPACT STORIES JS
-========================================= */
+======================================== */
+
+if (document.querySelector('.being-slide')) {
 
 const impactSlides = document.querySelectorAll('.being-slide');
 const impactDots = document.querySelectorAll('.being-dot');
@@ -324,9 +326,13 @@ setInterval(()=>{
 
 },5000);
 
+}
+
 /* =========================================
    FEATURED PROJECTS SLIDER
-========================================= */
+======================================== */
+
+if (document.querySelector('.featured-slide')) {
 
 const featuredSlides = document.querySelectorAll('.featured-slide');
 const featuredDots = document.querySelectorAll('.featured-dot');
@@ -352,3 +358,5 @@ featuredDots.forEach((dot, i) => {
 setInterval(() => {
   showFeaturedSlide(currentFeatured + 1);
 }, 5000);
+
+}

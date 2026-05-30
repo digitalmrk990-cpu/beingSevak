@@ -110,7 +110,7 @@
         <div class="nav-item dropdown">
           <a href="#">GET INVOLVED<i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-menu">
-            <a href="index.html">Individual Donation</a>
+            <a href="individual.html">Individual Donation</a>
             <a href="../careers.html">Volunteers(SEVAK BANO)</a>
             <a href="#">CSR</a>
             <a href="#">School/Institute Collaboration</a>
@@ -339,7 +339,7 @@
       <div class="footer-col">
         <h4>GET INVOLVED</h4>
         <ul>
-          <li><a href="index.html">Individual Donation</a></li>
+          <li><a href="individual.html">Individual Donation</a></li>
           <li><a href="../careers.html">Volunteers(SEVAK BANO)</a></li>
           <li><a href="#">CSR</a></li>
           <li><a href="#">School/Institute Collaboration</a></li>
@@ -385,6 +385,19 @@
     const closeMenu = document.getElementById('closeMenu');
     if (hamburger) hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
     if (closeMenu) closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    // Mobile accordion
+    document.querySelectorAll('.mnav-item.has-sub > .mnav-link').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = this.parentElement;
+        var isOpen = parent.classList.contains('open');
+        document.querySelectorAll('.mnav-item.has-sub.open').forEach(function (item) {
+          item.classList.remove('open');
+        });
+        if (!isOpen) { parent.classList.add('open'); }
+      });
+    });
 
     function setQuickAmt(val, btn) {
       document.getElementById('quickAmt').value = val;
