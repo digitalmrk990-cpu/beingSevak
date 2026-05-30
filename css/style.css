@@ -847,7 +847,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   max-width: 1300px;
   margin: 18px auto 24px;
   height: 620px;
-  overflow: visible;
+  overflow: hidden;
   border-radius: 16px;
   background: #111;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
@@ -858,6 +858,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   inset: 0;
   opacity: 0;
   overflow: hidden;
+  border-radius: inherit;
   transition: opacity 0.8s ease;
 }
 .slide.active { opacity: 1; z-index: 2; }
@@ -1023,13 +1024,15 @@ input, select { font-family: inherit; outline: none; border: none; }
 
 /* Slider Controls */
 .slider-controls {
-  position: relative;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
-  padding: 14px 0 6px;
 }
 .slider-arrow {
   width: 38px;
@@ -1755,7 +1758,7 @@ body{
 /* Urgent Appeals Marquee */
 .causes-marquee {
   width: 100%;
-  overflow-x: clip;
+  overflow: hidden;
   position: relative;
 }
 
@@ -1764,7 +1767,7 @@ body{
   gap: 24px;
   width: max-content;
   animation: causesScroll 30s linear infinite;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .causes-track .cause-card {
@@ -3057,12 +3060,12 @@ body{
 
 .logo-marquee-section::before{
   left:0;
-  background:linear-gradient(to right,#eefcff,transparent);
+  /* background:linear-gradient(to right,#eefcff,transparent); */
 }
 
 .logo-marquee-section::after{
   right:0;
-  background:linear-gradient(to left,#f8feff,transparent);
+  /* background:linear-gradient(to left,#f8feff,transparent); */
 }
 
 /* MARQUEE */
@@ -4763,7 +4766,7 @@ body{
   .navbar { padding: 8px 10px; }
   .navbar-inner { height: 52px; padding: 0 4px; gap: 4px; }
   .logo-circle { width: 34px; height: 34px; margin-right: 0; }
-  .BS-text-logo { height: 28px; margin-right: 0; }
+  .BS-text-logo { height: 56px; margin-right: 0; }
   .mob-donate-btn { padding: 5px 8px; font-size: 10px; }
   .hamburger { font-size: 16px; margin-left: 2px; }
   .logo-text { font-size: 11px; }
@@ -4784,7 +4787,7 @@ body{
   .slide-content { padding: 0 20px; }
   .slider-controls {
     gap: 10px;
-    padding: 10px 0 4px;
+    padding: 8px 0;
   }
   .slider-arrow { width: 28px; height: 28px; font-size: 11px; }
   .dot { width: 8px; height: 8px; }
@@ -4795,9 +4798,86 @@ body{
   .causes-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-num { font-size: 32px; }
-  .newsletter-inner { flex-direction: column; }
-  .nl-form { min-width: unset; width: 100%; }
+  .stat-box { padding: 12px; border-radius: 14px; }
+  .stat-box h3 { font-size: 20px; }
+  .stat-box span { font-size: 11px; }
+  .stat-item { padding: 14px 10px; min-height: 100px; }
+  .stat-num { font-size: 26px; }
+  .stat-label { font-size: 12px; }
+  .newsletter-section { padding: 36px 14px; }
+  .newsletter-inner { flex-direction: column; gap: 16px; }
+  .nl-text h2 { font-size: 24px; }
+  .nl-text p { font-size: 13px; }
+  .nl-form { min-width: unset; width: 100%; max-width: 100%; }
+  .nl-input { padding: 10px 12px; font-size: 13px; }
+  .nl-btn { padding: 10px 16px; font-size: 11px; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .logo-marquee-section { height: auto; }
+  .marquee-content { gap: 30px; }
+  .circle {
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+  }
+  .circle img {
+    width: 60px;
+    height: 60px;
+  }
+  .circle-box h2 { font-size: 14px; margin-top: 10px; }
+  .circle-box p { font-size: 10px; }
+  .featured-section { padding: 40px 12px; }
+  .featured-card { height: 240px; border-radius: 12px; }
+  .feat-overlay { padding: 16px; }
+  .feat-overlay h3 { font-size: 16px; }
+  .feat-overlay p { font-size: 12px; margin-bottom: 10px; }
+  .feat-tag { font-size: 9px; padding: 3px 8px; margin-bottom: 8px; }
+  .feat-btn { font-size: 11px; padding: 8px 16px; }
+  .featured-dots { gap: 10px; margin-top: 20px; }
+  .featured-dot { width: 10px; height: 10px; }
+  .featured-dot.active { width: 28px; }
+  .being-impact-slider { padding: 50px 12px; }
+  .being-slider-box {
+    height: 260px;
+    border-radius: 20px;
+  }
+  .being-text {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px;
+    border-radius: 16px;
+  }
+  .being-text h3 { font-size: 20px; margin-bottom: 6px; }
+  .being-text p { font-size: 12px; }
+  .being-dots { gap: 10px; margin-top: 20px; }
+  .being-dot { width: 10px; height: 10px; }
+  .being-dot.active { width: 26px; }
+  .about-section { min-height: auto; padding: 30px 5%; gap: 30px; }
+  .single-image-box { max-width: 100%; }
+  .about-img { border-radius: 16px; transform: none; }
+  .causes-track .cause-card { width: 240px; }
+  .metro-section { padding: 40px 4%; }
+  .metro-box { gap: 25px; }
+  .metro-hero-img img { height: 200px; }
+  .metro-image-grid { gap: 8px; }
+  .metro-img-box img { height: 120px; }
+  .metro-img-label { font-size: 10px; padding: 6px 8px; }
+  .metro-content h2 { font-size: 22px; }
+  .metro-content p { font-size: 14px; padding-left: 10px; }
+  .circle-card { width: 200px; border-radius: 20px; }
+  .circle-card img { height: 130px; }
+  .circle-card h3 { font-size: 16px; padding: 12px 14px 4px; }
+  .circle-desc { font-size: 12px; padding: 4px 12px 8px; }
+  .circle-read-more { font-size: 12px; padding: 8px 12px 12px; }
+  .projects-hero { height: 100px; }
+  .projects-hero h1 { font-size: 22px; }
+  .projects-hero p { font-size: 12px; }
+  .project-card { min-width: 100px; height: 120px; border-radius: 14px; }
+  .month-modal-content { max-width: 98vw; border-radius: 10px; }
+  .month-modal-content img { max-width: 98vw; max-height: 70vh; border-radius: 10px; }
+  .month-modal-close, .month-modal-download { width: 32px; height: 32px; font-size: 14px; top: 6px; }
+  .month-modal-download { right: 44px; }
+  .month-modal-nav { width: 30px; height: 30px; font-size: 12px; }
+  .month-modal-caption { font-size: 12px; padding: 10px 14px; }
 }
