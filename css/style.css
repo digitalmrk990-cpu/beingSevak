@@ -868,10 +868,10 @@ input, select { font-family: inherit; outline: none; border: none; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.05);
+  transform: scale(1);
   transition: transform 8s ease;
 }
-.slide.active .slide-bg { transform: scale(1); }
+.slide.active .slide-bg { transform: scale(1.08); }
 
 /* Slide Background Colors (gradient fallbacks) */
 .slide-bg-1 {
@@ -880,7 +880,7 @@ input, select { font-family: inherit; outline: none; border: none; }
   background-position: center;
 }
 .slide-bg-2 {
-  background-image: url("../images/h2.png");
+  background-image: url("../images/h2new.jpeg");
   background-size: cover;
   background-position: center;
 }
