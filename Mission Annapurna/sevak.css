@@ -436,7 +436,6 @@ IMPACT SECTION
   position:relative;
   overflow:hidden;
   cursor:pointer;
-  height:220px;
 
 }
 
@@ -620,7 +619,7 @@ RESPONSIVE
   }
 
   .impact-grid{
-    grid-template-columns:repeat(2,1fr);
+   grid-template-columns:repeat(2,1fr);
   }
 
   .gallery-grid{
@@ -671,7 +670,7 @@ RESPONSIVE
   }
 
   .impact-grid{
-    grid-template-columns:1fr;
+    /* grid-template-columns:1fr; */
   }
 
   .hero-right{
