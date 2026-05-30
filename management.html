@@ -311,7 +311,7 @@
     .hero-image{ position:relative; z-index:2; display:flex; justify-content:center; }
     .hero-image img{
       width:100%; max-width:500px; border-radius:30px;
-      box-shadow:0 25px 50px rgba(0,0,0,0.15); transition:0.5s ease;
+       transition:0.5s ease;
     }
     .hero-image img:hover{ transform:scale(1.02); }
     .floating-card{
@@ -783,12 +783,25 @@
     }
     @media (max-width: 768px) {
       .values-grid { grid-template-columns: 1fr; }
+      .values-section { padding: 40px 14px; }
+      .values-grid { gap: 14px; margin-top: 30px; }
+      .value-card { padding: 20px 16px; border-radius: 18px; }
+      .value-card .val-icon { font-size: 1.6rem; margin-bottom: 10px; }
+      .value-card h3 { font-size: 1rem; }
+      .value-card p { font-size: 0.8rem; }
       .hero-card.card1,
       .hero-card.card2 { position: relative; top: auto; left: auto; right: auto; bottom: auto; margin: 10px; min-width: 140px; }
       .hero-right { flex-direction: column; min-height: auto; }
       .hero-grid h1 { font-size: 1.8rem; }
       .hero-tag { font-size: 22px; }
-      .testimonial-grid { grid-template-columns: 1fr; }
+      .testimonials-section { padding: 40px 14px; }
+      .testimonials-inner { width: 100%; }
+      .testimonial-grid { gap: 14px; margin-top: 30px; grid-template-columns: 1fr; width: 100%; }
+      .testimonial-card { padding: 20px 16px; border-radius: 18px; width :fit-content}
+      .testimonial-card p { font-size: 0.8rem; margin-bottom: 14px; }
+      .testimonial-card h4 { font-size: 0.9rem; }
+      .testimonial-card span { font-size: 0.7rem; }
+      .testimonial-card .quote-icon { font-size: 1.2rem; margin-bottom: 8px; }
     }
   </style>
 </head>
@@ -1181,20 +1194,7 @@
         </div>
         <p class="footer-desc"> Serving humanity with compassion, dignity, and hope — empowering lives through food,
           education, healthcare, and community support</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+       
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -1230,6 +1230,20 @@
           <li><a href="school/school.html">School/Institute Collaboration</a></li>
           <li><a href="ngo-collaboration/ngo-ollaboratio.html">NGO Collaboration</a></li>
         </ul>
+         <div class="social-icons">
+          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>

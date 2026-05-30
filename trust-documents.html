@@ -125,7 +125,7 @@
       min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
       align-items:center; gap:0px; position:relative; overflow:hidden; padding:10px 8%;
     }
-    .hero-content{ position:relative; z-index:2; }
+    .hero-content{ position:relative; z-index:2; overflow:hidden; }
     .hero-content .tag{
       background:transparent; color:#00a3da; padding:0; border-radius:0;
       display:inline-block; margin-bottom:25px; font-weight:800; font-size:30px; letter-spacing:1px;
@@ -162,15 +162,26 @@
     }
     .blur1{ background:#00a3da; top:-100px; left:-100px; }
     .blur2{ background:#315270; bottom:-100px; right:-100px; }
+    @media(min-width:901px){
+      .blur{ width:300px; height:300px; }
+      .blur1{ top:-60px; left:-40px; }
+      .blur2{ bottom:-60px; right:-40px; }
+    }
     @media(max-width:900px){
-      .hero{ grid-template-columns:1fr; text-align:center; gap:50px; }
+      .hero{ grid-template-columns:1fr; text-align:center; }
       .hero h1{font-size:42px;} .hero p{font-size:16px;}
       .hero-buttons{justify-content:center;} .hero-image img{max-width:90%;}
       .floating-card.card1{left:5%;} .floating-card.card2{right:5%;}
     }
     @media(max-width:550px){
-      .hero h1{font-size:32px;} .hero p{font-size:14px;}
-      .floating-card{padding:12px 16px;} .floating-card h3{font-size:22px;}
+      .hero h1{font-size:28px;} .hero p{font-size:13px;}
+      .hero-image img{max-width:100%;border-radius:16px;}
+      .floating-card{padding:6px 10px;border-radius:12px;}
+      .floating-card h3{font-size:14px;}
+      .floating-card p{font-size:10px;}
+      .floating-card.card1{top:0;left:0;border-radius:0 0 12px 0;}
+      .floating-card.card2{bottom:0;right:0;border-radius:12px 0 0 0;}
+      .blur{display:none;}
     }
 
     /* ─── DOCUMENT PORTAL ─── */
@@ -282,10 +293,17 @@
       .booklet-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     }
     @media(max-width:768px){
+      .trust-section{ padding:40px 14px; }
+      .section-title h2{ font-size:28px; }
+      .doc-portal{ padding:36px 4%; }
+      .doc-box{ padding:18px 14px; min-height:90px; font-size:14px; }
       .doc-tabs{ flex-direction:column; gap:2px; border-radius:10px; }
-      .doc-tab{ font-size:13px; padding:12px; }
-      .doc-card{ padding:14px 16px; }
-      .doc-card-body h4{ font-size:14px; }
+      .doc-tab{ font-size:12px; padding:12px; }
+      .doc-card{ padding:12px 14px; }
+      .doc-card-icon{ width:40px; height:40px; }
+      .doc-card-body h4{ font-size:13px; }
+      .doc-card-body p{ font-size:12px; }
+      .doc-card-arrow{ width:30px; height:30px; }
       .doc-portal-title h2{ font-size:28px; }
       .booklet-grid { gap: 14px; }
     }
@@ -1048,6 +1066,7 @@
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+      width: fit-content
     }
 
     /* ─── RESPONSIVE ─── */
@@ -1331,6 +1350,8 @@
       <div class="hero-buttons">
         <a href="#documents" class="donate-btn">View Documents</a>
       </div>
+      <div class="blur blur1"></div>
+      <div class="blur blur2"></div>
     </div>
 
     <div class="hero-image">
@@ -1345,9 +1366,6 @@
       
       <img src="images/trustdocumentspng.png" alt="Trust Documents">
     </div>
-
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
 
   </section>
 
@@ -1540,20 +1558,7 @@
         </div>
         <p class="footer-desc"> Serving humanity with compassion, dignity, and hope — empowering lives through food,
           education, healthcare, and community support</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+       
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -1589,6 +1594,20 @@
           <li><a href="school/school.html">School/Institute Collaboration</a></li>
           <li><a href="ngo-collaboration/ngo-ollaboratio.html">NGO Collaboration</a></li>
         </ul>
+         <div class="social-icons">
+          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -1614,26 +1633,7 @@
   </footer>
 
   <!-- DISCLAIMER -->
-  <div class="disclaimer-block">
-
-    <p>
-      <strong>Disclaimer:</strong>
-      Being Sevak Charitable Trust shares the progressive vision of the Government
-      and works in collaboration with Government bodies, donors and NGOs for eye care,
-      education, nourishment, medical relief and social inclusion initiatives.
-    </p>
-
-    <br>
-
-    <p>
-      <strong>Fraud Alert:</strong>
-      Being Sevak Charitable Trust does not authorise collection of donations through personal accounts.
-      Report any suspicious activity immediately at
-      8879034034 / 8879035035 or
-      <a href="mailto:being.sevak@gmail.com">being.sevak@gmail.com</a>
-    </p>
-
-  </div>
+  
 
   <!-- SCRIPT -->
   <script src="js/nav.js"></script>
