@@ -448,6 +448,7 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   .donate-wrap.landscape .top-row .col{min-width:100%;}
   .donate-wrap.landscape .form-grid{grid-template-columns:1fr 1fr;}
   .donate-wrap.landscape .eco-tabs{flex-wrap:wrap;}
+  .donate-wrap.landscape .amount-row{flex-wrap:wrap;}
 }
 
 @media (max-width: 600px) {
@@ -456,6 +457,11 @@ body { font-family:'Open Sans',sans-serif; background:var(--light-bg); color:var
   .form-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; align-items: stretch; }
   .donate-btn-eco { width: 100%; text-align: center; }
+  .amount-row { gap: 8px; }
+  .amount-box input { width: 80px; padding: 10px; font-size: 15px; }
+  .amount-box .rupee { padding: 10px; font-size: 15px; }
+  .amt-preset { padding: 8px 12px; font-size: 0.78rem; }
+  .preset-group { gap: 6px; }
 }
 </style>
 </head>

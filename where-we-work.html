@@ -788,7 +788,7 @@
     /* ─── VALUE / MISSION CARDS ─── */
     .values-section {
       background: var(--light-bg);
-      padding: 80px 24px;
+      padding: 30px 24px;
     }
 
     .values-inner {
@@ -970,6 +970,7 @@
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+      width: fit-content;
     }
 
     /* ─── RESPONSIVE ─── */
@@ -1649,6 +1650,39 @@
       .www-legend-item {
         font-size: 0.65rem;
       }
+
+      .www-pin {
+        width: 14px;
+        height: 14px;
+      }
+
+      .www-pin-dot {
+        border-width: 2px;
+      }
+
+      .www-pin[data-loc="gujarat"] { left: 15% !important; }
+      .www-pin[data-loc="west-bengal"] { left: 64% !important; }
+      .www-pin[data-loc="punjab"] { top: 25% !important; }
+      .www-pin[data-loc="odisha"] { left: 55% !important; }
+      .www-pin[data-loc="tamil-nadu"] { top: 75% !important; }
+
+      .www-pin-tooltip {
+        bottom: calc(100% + 8px);
+        min-width: 130px;
+        padding: 10px 14px;
+      }
+
+      .www-pin-tooltip h4 {
+        font-size: 0.85rem;
+      }
+
+      .www-pin-tooltip p {
+        font-size: 0.75rem;
+      }
+
+      .www-map-wrap.zoomed {
+        transform: scale(1.1);
+      }
     }
 
     @media (max-width: 480px) {
@@ -1660,17 +1694,37 @@
         max-height: 280px;
       }
 
+      .www-pin {
+        width: 12px;
+        height: 12px;
+      }
+
+      .www-pin-dot {
+        border-width: 2px;
+      }
+
+      .www-pin[data-loc="gujarat"] { left: 17% !important; }
+      .www-pin[data-loc="west-bengal"] { left: 62% !important; }
+      .www-pin[data-loc="punjab"] { top: 26% !important; }
+      .www-pin[data-loc="odisha"] { left: 53% !important; }
+      .www-pin[data-loc="tamil-nadu"] { top: 73% !important; }
+
       .www-pin-tooltip {
-        min-width: 120px;
-        padding: 8px 12px;
+        min-width: 100px;
+        padding: 8px 10px;
+        bottom: calc(100% + 6px);
       }
 
       .www-pin-tooltip h4 {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
       }
 
       .www-pin-tooltip p {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+      }
+
+      .www-map-wrap.zoomed {
+        transform: scale(1.05);
       }
     }
   </style>
@@ -2289,20 +2343,7 @@
         </div>
         <p class="footer-desc"> Serving humanity with compassion, dignity, and hope — empowering lives through food,
           education, healthcare, and community support</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+       
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -2314,6 +2355,7 @@
           <li><a href="where-we-work.html">Where We Work</a></li>
           <li><a href="awards.html">Awards / Achievements</a></li>
         </ul>
+        
       </div>
       <div class="footer-col">
         <h4>Our Projects</h4>
@@ -2338,6 +2380,20 @@
           <li><a href="school/school.html">School/Institute Collaboration</a></li>
           <li><a href="ngo-collaboration/ngo-ollaboratio.html">NGO Collaboration</a></li>
         </ul>
+         <div class="social-icons">
+          <a href="https://www.facebook.com/share/1P33YzE6HM/?mibextid=wwXIfr" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/beingsevak?igsh=MTRjam5nNjU4a2w1Mw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@beingsevak?si=T_qcPUg699KmS8_2" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/www-linkedin-cominshwetashah2658ba102/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
